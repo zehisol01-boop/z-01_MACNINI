@@ -9,7 +9,11 @@
 Sou engenheiro de redes de computadores, a mais de 25 anos de expleriencia, em tecnologia socio fundador da www.hisol.com.br
 
 ## Negócios Ativos
-- **HUB:** Aceleração empresarial foco em IA
+
+- **Hisol** (hisol.com.br) — conectividade crítica, eventos, infraestrutura. Cases: Rock in Rio, Olimpíadas 2016, Tomorrowland, Lollapalooza, Rio Open, UFC, Google, McDonald's, BBC
+- **Instituto Hisol** — capacitação técnica, formação de mão de obra
+- **HUB** — aceleração empresarial foco em IA
+- Expansão para EUA (Florida) — em exploração
 
 ## Valores Core
 - Negócios enxutos e lucrativos

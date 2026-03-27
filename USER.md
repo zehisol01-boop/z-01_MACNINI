@@ -9,6 +9,31 @@
 Sou engenheiro de redes de computadores, a mais de 25 anos de expleriencia, em tecnologia socio fundador da www.hisol.com.br
 
 ## Negócios / Projetos
+
+### Hisol (hisol.com.br)
+Empresa de engenharia de infraestrutura de TI aplicada. Core em três pilares:
+- **Conectividade** — Wi-Fi corporativo alta densidade, rede cabeada estruturada
+- **Segurança** — Firewall avançado, proteção contra ataques, segmentação
+- **Alta Disponibilidade** — Redundância real, failover automático, NOC 24/7
+
+**Serviços:**
+- Internet e rede para eventos (Wi-Fi alta densidade, baixa latência, streaming)
+- Link dedicado com redundância (fibra, rádio, Starlink, failover automático)
+- Segurança de rede (firewall, proteção, segmentação)
+- Monitoramento e operação (NOC tempo real, relatórios, diagnóstico)
+- Locação de equipamentos (Cisco, switches, APs, câmeras, infra completa)
+- Soluções off-grid e energia solar para áreas remotas
+
+**Cenários:** Shows/festivais, eventos esportivos, feiras, hackathons/eSports, empresas, indústria, áreas remotas
+
+**Cases validados:** Rock in Rio, Olimpíadas Rio 2016, Tomorrowland, Lollapalooza, Rio Open, UFC, Google, McDonald's, BBC
+
+**Diferencial:** Resolve onde não tem infraestrutura pronta, não pode dar erro, tem muita gente conectada, tem transmissão ao vivo / credenciamento / operação crítica.
+> Ambiente hostil + exigência alta + zero margem de erro
+
+### Instituto Hisol
+Capacitação de jovens e profissionais para o mercado de redes/infra. Missão: devolver ao mercado a experiência acumulada. Foco em mão de obra qualificada onde há escassez.
+
 ### HUB
 Aceleração empresarial foco em IA
 
