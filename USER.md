@@ -1,29 +1,45 @@
-# USER.md - About Your Human
+# USER.md — Perfil de Sergio Andrade
 
-- **Name:** Sergio Andrade
-- **What to call them:** Sergio (ou "chefe" se o contexto pedir)
-- **Pronouns:** ele/dele
-- **Timezone:** America/New_York (EDT)
-- **Notes:** Brasileiro, mas operando também nos EUA (Florida)
+## Dados Básicos
+- **Nome completo:** Sergio Andrade
+- **Chamado de:** Sergio
+- **Timezone:** florida eua
 
-## Context
+## Quem é Sergio
+Sou engenheiro de redes de computadores, a mais de 25 anos de expleriencia, em tecnologia socio fundador da www.hisol.com.br
 
-Sérgio tem mais de 25 anos de experiência em redes, infraestrutura e segurança.
-É fundador da **Hisol** — empresa especializada em conectividade crítica, eventos de grande porte e ambientes complexos (Rock in Rio, Olimpíadas 2016, Tomorrowland, etc.).
-Também fundou o **Instituto Hisol**, com foco em capacitação de profissionais.
+## Negócios / Projetos
+### HUB
+Aceleração empresarial foco em IA
 
-Perfil: direto, estratégico, orientado a execução. Mente técnica que está expandindo para negócios e escala.
+## Valores
+- Negócios enxutos e lucrativos
+- Automação > trabalho manual
+- Feito > perfeito
+- Bootstrap > investimento externo
+- Networking e comunidade
 
-### Projetos/Empresas
-- **Hisol** (hisol.com.br) — conectividade de missão crítica, eventos, alta disponibilidade
-- **Instituto Hisol** — educação técnica, capacitação de mercado
-- Explorando oportunidades nos EUA (ex: piso epóxi, expansão da Hisol)
+## Estilo de Comunicação
+- **Preferência:** direct
 
-### Como ele trabalha
-- Tem muitas ideias e visão forte — precisa de estrutura e execução
-- Prefere linguagem direta, sem enrolação
-- Quer ser tirado da operação e colocado no nível estratégico
-- Usa OpenClaw como plataforma central de agentes
+## Horários
+- **Silêncio:** 23:00 — 08:00
+- **Foco:** 09:00 — 12:00
+- **Notificações:** 08:00 — 10:00
 
-### Agentes que usa
-- **Zé** — CEO Operacional (braço direito, foco em execução e escala)
+## Desafios
+- TDAH / dificuldade de foco — preciso de lembretes proativos
+- Procrastino tarefas administrativas
+- Aceito projetos demais — me ajude a dizer não
+- Muitas ideias, pouca execução
+
+## Ferramentas
+- Google Workspace
+- Telegram
+- WhatsApp Business
+- Instagram
+- YouTube
+- Canva
+
+---
+*Gerado pelo Configurador da Clawdete — Workshop OpenClaw Brasil 🦞*

@@ -1,34 +1,31 @@
-# MEMORY.md — Long-Term Memory
+# MEMORY.md — Configuração de Memória
 
-## Sobre o Sergio
+## Dados do Usuário
+- **Nome:** Sergio Andrade (Sergio)
+- **Timezone:** florida eua
+- **Perfil:** Empreendedor / Founder
 
-- **Nome:** Sergio Andrade
-- **Empresa:** Hisol (hisol.com.br) — conectividade crítica, eventos, infraestrutura
-- **Instituto Hisol** — capacitação técnica
-- **Background:** 25+ anos em redes, infraestrutura, segurança
-- **Perfil:** direto, estratégico, executor. Mente técnica expandindo pra negócios
-- **Base:** Brasil + exploração nos EUA (Florida)
-- **Cases:** Rock in Rio, Olimpíadas 2016, Tomorrowland, Lollapalooza, Rio Open, UFC
+## Contexto Inicial
+Sou engenheiro de redes de computadores, a mais de 25 anos de expleriencia, em tecnologia socio fundador da www.hisol.com.br
 
-## Projetos ativos
+## Negócios Ativos
+- **HUB:** Aceleração empresarial foco em IA
 
-- Hisol (operação + crescimento)
-- Instituto Hisol (capacitação)
-- Expansão para EUA (em estudo)
+## Valores Core
+- Negócios enxutos e lucrativos
+- Automação > trabalho manual
+- Feito > perfeito
+- Bootstrap > investimento externo
+- Networking e comunidade
 
-## Agentes criados
+## Lições Aprendidas
+_Será preenchido automaticamente pela ZE_
 
-- **Zé** — CEO operacional, braço direito. Arquivos em `agents/ze/`
+## Preferências Confirmadas
+_Será preenchido durante o uso_
 
-## Sessão de onboarding (27/03/2026)
+## Decisões Importantes
+_Será preenchido durante o uso_
 
-- Primeiro contato estabelecido via webchat
-- Sergio se apresentou, descreveu a Hisol em detalhe
-- Criamos juntos o perfil completo do agente Zé (CEO)
-- Arquivos salvos em `agents/ze/` — pronto pra rodar
-
-## Preferências
-
-- Português BR como idioma padrão
-- Comunicação direta, sem enrolação
-- Foco em execução prática, não teoria
+---
+*Gerado pelo Configurador da Clawdete — Workshop OpenClaw Brasil 🦞*
