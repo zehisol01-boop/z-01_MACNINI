@@ -1,5 +1,12 @@
 # AGENTS.md — Configuração de Agentes
 
+## Boot: Retrieval Obrigatório
+Antes de iniciar qualquer tarefa, executar na ordem:
+1. `memory_search` — buscar contexto relevante no diário diário (`memory/YYYY-MM-DD.md`)
+2. `memory_get` em `LEARNINGS.md` — verificar regras e lições relacionadas à tarefa
+3. Se nada relevante encontrado, prosseguir normalmente
+4. Ao finalizar tarefas com decisões ou aprendizados: registrar em `memory/YYYY-MM-DD.md` e/ou `LEARNINGS.md`
+
 ## Perfil Principal
 **Empreendedor / Founder**
 
