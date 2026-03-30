@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZE HQ — Network Monitor</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0d1117;
+  --bg2: #161b22;
+  --bg3: #21262d;
+  --green: #00ff88;
+  --blue: #58a6ff;
+  --yellow: #ffd700;
+  --red: #ff4444;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --border: rgba(255,255,255,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+
+/* TOP BAR */
+header {
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  padding:0 24px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.logo { font-size:18px; font-weight:700; color:var(--yellow); letter-spacing:2px; }
+.logo span { color:var(--green); }
+.header-status { display:flex; gap:12px; margin-left:16px; }
+.hstat { display:flex; align-items:center; gap:5px; font-size:12px; color:var(--muted); }
+.hstat .dot { width:7px; height:7px; border-radius:50%; }
+.dot-g { background:var(--green); box-shadow:0 0 6px var(--green); animation:pulse 2s infinite; }
+.dot-y { background:var(--yellow); box-shadow:0 0 6px var(--yellow); animation:pulse 2s .5s infinite; }
+.dot-r { background:var(--red); box-shadow:0 0 6px var(--red); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+#last-update { margin-left:auto; font-size:11px; color:var(--muted); }
+#clock { font-size:14px; color:var(--blue); font-variant-numeric:tabular-nums; margin-left:12px; }
+
+/* ALERTS */
+#alerts-bar { display:none; background:rgba(255,68,68,.1); border-bottom:1px solid rgba(255,68,68,.3); padding:8px 24px; }
+.alert-item { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:#ff8888; margin-right:20px; }
+.alert-item::before { content:"⚠"; }
+
+/* MAIN GRID */
+main { padding:20px 24px; display:grid; gap:16px; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+
+/* CARDS */
+.card {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+}
+.card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  animation:scanline 4s linear infinite;
+}
+.card.blue::before { background:linear-gradient(90deg,transparent,var(--blue),transparent); }
+.card.yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+.card.red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); animation:none; }
+@keyframes scanline { from{transform:translateX(-100%)} to{transform:translateX(100%)} }
+
+.card-title {
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.card-value { font-size:28px; font-weight:700; color:var(--text); line-height:1; }
+.card-sub { font-size:11px; color:var(--muted); margin-top:4px; }
+
+/* STATUS BADGE */
+.badge {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:2px 8px; border-radius:20px;
+  font-size:11px; font-weight:600;
+}
+.badge-up { background:rgba(0,255,136,.15); color:var(--green); border:1px solid rgba(0,255,136,.3); }
+.badge-down { background:rgba(255,68,68,.15); color:var(--red); border:1px solid rgba(255,68,68,.3); }
+.badge-warn { background:rgba(255,215,0,.15); color:var(--yellow); border:1px solid rgba(255,215,0,.3); }
+
+/* PROGRESS BAR */
+.progress { height:6px; background:var(--bg3); border-radius:3px; margin-top:8px; overflow:hidden; }
+.progress-fill { height:100%; border-radius:3px; transition:width .5s; }
+.pf-green { background:linear-gradient(90deg,#00cc66,var(--green)); }
+.pf-blue  { background:linear-gradient(90deg,#0055cc,var(--blue)); }
+.pf-yellow{ background:linear-gradient(90deg,#cc9900,var(--yellow)); }
+.pf-red   { background:linear-gradient(90deg,#cc0000,var(--red)); }
+
+/* STAT ROW */
+.stat-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); font-size:13px; }
+.stat-row:last-child { border:none; }
+.stat-label { color:var(--muted); }
+.stat-value { color:var(--text); font-weight:500; }
+
+/* INTERFACE LIST */
+.iface-item { display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid var(--border); font-size:12px; }
+.iface-item:last-child { border:none; }
+.iface-name { flex:1; color:var(--text); }
+.iface-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* DEVICE LIST */
+.device-item {
+  display:flex; align-items:center; gap:10px;
+  padding:8px 10px; border-radius:6px;
+  background:var(--bg3); margin-bottom:6px;
+  font-size:13px;
+  transition:background .2s;
+}
+.device-item:hover { background:#2a3140; }
+.device-ip { font-weight:600; color:var(--blue); min-width:100px; }
+.device-label { flex:1; color:var(--muted); }
+.device-ping { font-size:11px; color:var(--green); }
+.device-self { color:var(--yellow) !important; }
+.device-router { color:var(--green) !important; }
+
+/* CHART CONTAINER */
+.chart-wrap { position:relative; height:140px; }
+
+/* CPU CORES */
+.cpu-cores { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:6px; }
+.cpu-core { text-align:center; }
+.cpu-core-label { font-size:9px; color:var(--muted); margin-bottom:3px; }
+.cpu-core-val { font-size:13px; font-weight:700; color:var(--green); }
+
+/* SYSTEM INFO */
+.sys-info { display:flex; flex-direction:column; gap:2px; }
+.sys-name { font-size:20px; font-weight:700; color:var(--yellow); }
+.sys-model { font-size:12px; color:var(--muted); }
+.sys-uptime { font-size:13px; color:var(--blue); margin-top:6px; }
+
+/* SPINNER */
+.loading { text-align:center; padding:40px; color:var(--muted); font-size:14px; }
+.spinner { display:inline-block; width:20px; height:20px; border:2px solid var(--border); border-top-color:var(--green); border-radius:50%; animation:spin .8s linear infinite; margin-right:8px; vertical-align:middle; }
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* SCAN BTN */
+.btn {
+  background:transparent; border:1px solid var(--border); border-radius:6px;
+  color:var(--muted); font-size:12px; padding:4px 12px; cursor:pointer;
+  transition:all .2s;
+}
+.btn:hover { border-color:var(--green); color:var(--green); }
+.btn.scanning { border-color:var(--yellow); color:var(--yellow); }
+
+/* NAV */
+nav { display:flex; gap:4px; padding:0 24px 0; background:var(--bg2); border-bottom:1px solid var(--border); }
+.nav-tab { padding:10px 16px; font-size:13px; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; transition:all .2s; }
+.nav-tab:hover { color:var(--text); }
+.nav-tab.active { color:var(--yellow); border-bottom-color:var(--yellow); }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+@media (max-width:768px) {
+  .grid-4,.grid-3 { grid-template-columns:repeat(2,1fr); }
+  .grid-2 { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ZE<span>HQ</span></div>
+  <div style="font-size:12px;color:var(--muted);letter-spacing:1px">NETWORK MONITOR</div>
+  <div class="header-status">
+    <div class="hstat"><div class="dot dot-g"></div> GATEWAY</div>
+    <div class="hstat"><div class="dot dot-g"></div> SNMP</div>
+    <div class="hstat" id="wan1-hstat"><div class="dot dot-r"></div> WAN1</div>
+    <div class="hstat" id="wan2-hstat"><div class="dot dot-g"></div> WAN2</div>
+  </div>
+  <div id="last-update">Aguardando...</div>
+  <div id="clock">--:--:--</div>
+</header>
+
+<nav>
+  <div class="nav-tab active" onclick="showTab('overview')">Visão Geral</div>
+  <div class="nav-tab" onclick="showTab('traffic')">Tráfego</div>
+  <div class="nav-tab" onclick="showTab('interfaces')">Interfaces</div>
+  <div class="nav-tab" onclick="showTab('devices')">Dispositivos</div>
+</nav>
+
+<div id="alerts-bar"></div>
+
+<!-- TAB: OVERVIEW -->
+<div id="tab-overview" class="tab-content active">
+<main>
+
+  <!-- Row 1: KPIs -->
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-title">CPU Média</div>
+      <div class="card-value" id="cpu-avg">—</div>
+      <div class="card-sub">4 cores</div>
+      <div class="progress"><div class="progress-fill pf-green" id="cpu-bar" style="width:0%"></div></div>
+    </div>
+    <div class="card blue">
+      <div class="card-title">RAM</div>
+      <div class="card-value" id="mem-pct">—</div>
+      <div class="card-sub" id="mem-detail">—</div>
+      <div class="progress"><div class="progress-fill pf-blue" id="mem-bar" style="width:0%"></div></div>
+    </div>
+    <div class="card yellow">
+      <div class="card-title">WAN ↓ Entrada</div>
+      <div class="card-value" id="wan-in">—</div>
+      <div class="card-sub">Mbps atual</div>
+    </div>
+    <div class="card yellow">
+      <div class="card-title">WAN ↑ Saída</div>
+      <div class="card-value" id="wan-out">—</div>
+      <div class="card-sub">Mbps atual</div>
+    </div>
+  </div>
+
+  <!-- Row 2: System + Chart -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Sistema <span id="router-badge" class="badge badge-up">● ONLINE</span></div>
+      <div class="sys-info">
+        <div class="sys-name" id="sys-name">HISOL-WINDERMERE</div>
+        <div class="sys-model" id="sys-model">MikroTik RouterOS RB760iGS</div>
+        <div class="sys-uptime">⏱ Uptime: <span id="sys-uptime">—</span></div>
+      </div>
+      <div style="margin-top:14px">
+        <div class="stat-row">
+          <span class="stat-label">WAN1 (ether1)</span>
+          <span id="wan1-status" class="badge badge-down">● DOWN</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">WAN2 (ether2)</span>
+          <span id="wan2-status" class="badge badge-up">● UP</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Erros WAN</span>
+          <span class="stat-value" id="wan-errors">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Total recebido</span>
+          <span class="stat-value" id="wan-total-in">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Total enviado</span>
+          <span class="stat-value" id="wan-total-out">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Localização</span>
+          <span class="stat-value" id="sys-location">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">Tráfego em Tempo Real</div>
+      <div class="chart-wrap">
+        <canvas id="chart-traffic"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: CPU cores + LAN + Devices count -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title">CPU por Core</div>
+      <div class="cpu-cores" id="cpu-cores">
+        <div class="cpu-core"><div class="cpu-core-label">CORE 1</div><div class="cpu-core-val" id="core-0">—</div></div>
+        <div class="cpu-core"><div class="cpu-core-label">CORE 2</div><div class="cpu-core-val" id="core-1">—</div></div>
+        <div class="cpu-core"><div class="cpu-core-label">CORE 3</div><div class="cpu-core-val" id="core-2">—</div></div>
+        <div class="cpu-core"><div class="cpu-core-label">CORE 4</div><div class="cpu-core-val" id="core-3">—</div></div>
+      </div>
+      <div style="margin-top:12px">
+        <div class="chart-wrap" style="height:80px">
+          <canvas id="chart-cpu"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">LAN</div>
+      <div class="stat-row">
+        <span class="stat-label">↓ Download</span>
+        <span class="stat-value" id="lan-in">—</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">↑ Upload</span>
+        <span class="stat-value" id="lan-out">—</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Total recebido</span>
+        <span class="stat-value" id="lan-total-in">—</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Total enviado</span>
+        <span class="stat-value" id="lan-total-out">—</span>
+      </div>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-title">Dispositivos na Rede <button class="btn" id="scan-btn" onclick="triggerScan()">Escanear</button></div>
+      <div class="card-value" id="device-count">—</div>
+      <div class="card-sub">conectados agora</div>
+      <div style="margin-top:10px" id="device-preview"></div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- TAB: TRAFFIC -->
+<div id="tab-traffic" class="tab-content">
+<main>
+  <div class="grid-2">
+    <div class="card blue">
+      <div class="card-title">WAN — Histórico de Tráfego (Mbps)</div>
+      <div class="chart-wrap" style="height:200px">
+        <canvas id="chart-wan-big"></canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">LAN — Histórico de Tráfego (Mbps)</div>
+      <div class="chart-wrap" style="height:200px">
+        <canvas id="chart-lan-big"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">CPU — Histórico (%)</div>
+    <div class="chart-wrap" style="height:160px">
+      <canvas id="chart-cpu-big"></canvas>
+    </div>
+  </div>
+</main>
+</div>
+
+<!-- TAB: INTERFACES -->
+<div id="tab-interfaces" class="tab-content">
+<main>
+  <div class="card">
+    <div class="card-title">Interfaces do Roteador</div>
+    <div id="iface-list"><div class="loading"><span class="spinner"></span>Carregando...</div></div>
+  </div>
+</main>
+</div>
+
+<!-- TAB: DEVICES -->
+<div id="tab-devices" class="tab-content">
+<main>
+  <div class="card">
+    <div class="card-title">
+      Dispositivos Conectados — 10.50.0.0/24
+      <button class="btn" id="scan-btn2" onclick="triggerScan()">🔍 Novo Scan</button>
+    </div>
+    <div id="device-list"><div class="loading"><span class="spinner"></span>Escaneando rede...</div></div>
+  </div>
+</main>
+</div>
+
+<script>
+// ── Charts ─────────────────────────────────────
+const chartOpts = (label, color) => ({
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: [{
+      label,
+      data: [],
+      borderColor: color,
+      backgroundColor: color + '18',
+      fill: true,
+      tension: 0.4,
+      pointRadius: 0,
+      borderWidth: 2,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    scales: {
+      x: { display: false },
+      y: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { color: '#8b949e', font: { size: 10 } },
+        min: 0,
+      }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+
+const multiChartOpts = (labels, colors) => ({
+  type: 'line',
+  data: {
+    labels: [],
+    datasets: labels.map((l,i) => ({
+      label: l,
+      data: [],
+      borderColor: colors[i],
+      backgroundColor: 'transparent',
+      tension: 0.4,
+      pointRadius: 0,
+      borderWidth: 2,
+    }))
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    scales: {
+      x: { display: false },
+      y: {
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: { color: '#8b949e', font: { size: 10 } },
+        min: 0,
+      }
+    },
+    plugins: {
+      legend: { labels: { color: '#8b949e', font: { size: 11 } } }
+    }
+  }
+});
+
+const charts = {};
+
+function initCharts() {
+  charts.traffic = new Chart(document.getElementById('chart-traffic'), multiChartOpts(
+    ['WAN ↓','WAN ↑'], ['#00ff88','#ffd700']
+  ));
+  charts.cpu = new Chart(document.getElementById('chart-cpu'), chartOpts('CPU %', '#58a6ff'));
+  charts.wanBig = new Chart(document.getElementById('chart-wan-big'), multiChartOpts(
+    ['↓ Entrada','↑ Saída'], ['#00ff88','#ffd700']
+  ));
+  charts.lanBig = new Chart(document.getElementById('chart-lan-big'), multiChartOpts(
+    ['↓ LAN IN','↑ LAN OUT'], ['#58a6ff','#aa44ff']
+  ));
+  charts.cpuBig = new Chart(document.getElementById('chart-cpu-big'), chartOpts('CPU %', '#58a6ff'));
+}
+
+function updateCharts(h) {
+  const ts = h.timestamps;
+
+  // Traffic mini
+  charts.traffic.data.labels = ts;
+  charts.traffic.data.datasets[0].data = h.wan_in;
+  charts.traffic.data.datasets[1].data = h.wan_out;
+  charts.traffic.update();
+
+  // CPU mini
+  charts.cpu.data.labels = ts;
+  charts.cpu.data.datasets[0].data = h.cpu;
+  charts.cpu.update();
+
+  // WAN big
+  charts.wanBig.data.labels = ts;
+  charts.wanBig.data.datasets[0].data = h.wan_in;
+  charts.wanBig.data.datasets[1].data = h.wan_out;
+  charts.wanBig.update();
+
+  // LAN big
+  charts.lanBig.data.labels = ts;
+  charts.lanBig.data.datasets[0].data = h.lan_in;
+  charts.lanBig.data.datasets[1].data = h.lan_out;
+  charts.lanBig.update();
+
+  // CPU big
+  charts.cpuBig.data.labels = ts;
+  charts.cpuBig.data.datasets[0].data = h.cpu;
+  charts.cpuBig.update();
+}
+
+// ── Data fetch ──────────────────────────────────
+async function fetchData() {
+  try {
+    const r = await fetch('http://10.50.0.121:9000/api/data');
+    const d = await r.json();
+    updateUI(d);
+  } catch (e) {
+    document.getElementById('last-update').textContent = '⚠ Backend offline';
+  }
+}
+
+function updateUI(d) {
+  const router = d.router;
+  if (!router || !router.system) return;
+
+  const sys = router.system;
+  const cpu = router.cpu;
+  const mem = router.memory;
+  const wan = router.wan;
+  const lan = router.lan;
+
+  // System
+  document.getElementById('sys-name').textContent = sys.name;
+  document.getElementById('sys-model').textContent = sys.descr;
+  document.getElementById('sys-uptime').textContent = sys.uptime;
+  document.getElementById('sys-location').textContent = sys.location;
+
+  // CPU
+  document.getElementById('cpu-avg').textContent = cpu.avg + '%';
+  document.getElementById('cpu-bar').style.width = cpu.avg + '%';
+  document.getElementById('cpu-bar').className = 'progress-fill ' +
+    (cpu.avg > 80 ? 'pf-red' : cpu.avg > 50 ? 'pf-yellow' : 'pf-green');
+  cpu.cores.forEach((v,i) => {
+    const el = document.getElementById('core-'+i);
+    if (el) el.textContent = v+'%';
+  });
+
+  // Memory
+  document.getElementById('mem-pct').textContent = mem.pct + '%';
+  document.getElementById('mem-detail').textContent = mem.used_human + ' / ' + mem.total_human;
+  document.getElementById('mem-bar').style.width = mem.pct + '%';
+  document.getElementById('mem-bar').className = 'progress-fill ' +
+    (mem.pct > 85 ? 'pf-red' : mem.pct > 60 ? 'pf-yellow' : 'pf-blue');
+
+  // WAN
+  document.getElementById('wan-in').textContent = wan.in_mbps + ' Mbps';
+  document.getElementById('wan-out').textContent = wan.out_mbps + ' Mbps';
+  document.getElementById('wan-total-in').textContent = wan.in_total;
+  document.getElementById('wan-total-out').textContent = wan.out_total;
+  document.getElementById('wan-errors').textContent =
+    wan.errors_in === 0 && wan.errors_out === 0 ? '✅ Sem erros' : `IN:${wan.errors_in} OUT:${wan.errors_out}`;
+
+  // WAN status
+  const w1 = document.getElementById('wan1-status');
+  const w2 = document.getElementById('wan2-status');
+  w1.className = 'badge badge-' + (wan.wan1_status === 'UP' ? 'up' : 'down');
+  w1.textContent = '● ' + wan.wan1_status;
+  w2.className = 'badge badge-' + (wan.wan2_status === 'UP' ? 'up' : 'down');
+  w2.textContent = '● ' + wan.wan2_status;
+
+  // Header status
+  document.getElementById('wan1-hstat').innerHTML =
+    `<div class="dot ${wan.wan1_status==='UP'?'dot-g':'dot-r'}"></div> WAN1`;
+  document.getElementById('wan2-hstat').innerHTML =
+    `<div class="dot ${wan.wan2_status==='UP'?'dot-g':'dot-r'}"></div> WAN2`;
+
+  // LAN
+  document.getElementById('lan-in').textContent = lan.in_mbps + ' Mbps';
+  document.getElementById('lan-out').textContent = lan.out_mbps + ' Mbps';
+
+  // Interfaces
+  if (router.interfaces) {
+    const ifaceHtml = router.interfaces.map(i =>
+      `<div class="iface-item">
+        <div class="iface-dot" style="background:${i.status==='up'?'#00ff88':'#ff4444'};box-shadow:0 0 5px ${i.status==='up'?'#00ff88':'#ff4444'}"></div>
+        <div class="iface-name">${i.name}</div>
+        <div class="badge badge-${i.status==='up'?'up':'down'}">● ${i.status.toUpperCase()}</div>
+      </div>`
+    ).join('');
+    document.getElementById('iface-list').innerHTML = ifaceHtml;
+  }
+
+  // Devices
+  if (d.devices && d.devices.length > 0) {
+    document.getElementById('device-count').textContent = d.devices.length;
+    const scanBtn = document.getElementById('scan-btn');
+    scanBtn.className = 'btn' + (d.scan_running ? ' scanning' : '');
+    scanBtn.textContent = d.scan_running ? '⏳ Scan...' : 'Escanear';
+
+    // Preview (first 3)
+    const preview = d.devices.slice(0,3).map(dev =>
+      `<div style="font-size:11px;color:${dev.is_self?'#ffd700':dev.is_router?'#00ff88':'#8b949e'};padding:2px 0">
+        ${dev.ip} ${dev.label !== 'Dispositivo' ? '· '+dev.label : ''}
+      </div>`
+    ).join('') + (d.devices.length > 3 ? `<div style="font-size:10px;color:#8b949e;margin-top:2px">+${d.devices.length-3} mais...</div>` : '');
+    document.getElementById('device-preview').innerHTML = preview;
+
+    // Full list
+    const listHtml = d.devices.map(dev =>
+      `<div class="device-item">
+        <div class="iface-dot" style="background:#00ff88;box-shadow:0 0 5px #00ff88"></div>
+        <div class="device-ip ${dev.is_self?'device-self':dev.is_router?'device-router':''}">${dev.ip}</div>
+        <div class="device-label">${dev.label}</div>
+        <div class="device-ping">${dev.latency_ms !== null ? dev.latency_ms + 'ms' : '—'}</div>
+      </div>`
+    ).join('');
+    document.getElementById('device-list').innerHTML = listHtml;
+  }
+
+  // Alerts
+  if (d.alerts && d.alerts.length > 0) {
+    const bar = document.getElementById('alerts-bar');
+    bar.style.display = 'block';
+    bar.innerHTML = d.alerts.map(a =>
+      `<span class="alert-item" style="color:${a.level==='critical'?'#ff4444':'#ffaa44'}">${a.msg}</span>`
+    ).join('');
+  } else {
+    document.getElementById('alerts-bar').style.display = 'none';
+  }
+
+  // Charts
+  if (d.history) updateCharts(d.history);
+
+  document.getElementById('last-update').textContent = 'Atualizado: ' + d.last_update;
+}
+
+// ── Navigation ──────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── Scan trigger ────────────────────────────────
+function triggerScan() {
+  document.getElementById('scan-btn').textContent = '⏳ Scan...';
+  document.getElementById('scan-btn').className = 'btn scanning';
+  fetchData();
+}
+
+// ── Clock ───────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('pt-BR', {hour12: false});
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── Init ────────────────────────────────────────
+initCharts();
+fetchData();
+setInterval(fetchData, 15000);  // Atualiza a cada 15s
+</script>
+</body>
+</html>

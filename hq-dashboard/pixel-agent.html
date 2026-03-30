@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZE — Pixel Agent</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; image-rendering: pixelated; }
+
+body {
+  background: #0a0a0f;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+canvas { display: block; }
+
+#ui {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+/* HUD top bar */
+#hud-top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 36px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid #00ff8833;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hud-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+  letter-spacing: 4px;
+}
+
+#hud-clock { color: #0088ff; }
+
+.hud-status {
+  display: flex;
+  gap: 16px;
+}
+
+.hud-dot {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+}
+
+.dot {
+  width: 6px; height: 6px;
+  border-radius: 1px;
+  animation: blink-dot 1.5s infinite;
+}
+
+.dot.green { background: #00ff88; box-shadow: 0 0 4px #00ff88; }
+.dot.blue { background: #0088ff; box-shadow: 0 0 4px #0088ff; }
+.dot.yellow { background: #ffcc00; box-shadow: 0 0 4px #ffcc00; animation-delay: 0.5s; }
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+
+/* Right panel */
+#panel-right {
+  position: fixed;
+  top: 36px; right: 0;
+  width: 260px;
+  bottom: 0;
+  background: rgba(0,0,0,0.9);
+  border-left: 1px solid #00ff8822;
+  padding: 12px;
+  overflow-y: auto;
+  pointer-events: all;
+}
+
+.panel-section {
+  margin-bottom: 16px;
+  border: 1px solid #00ff8822;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #00ff8866;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Agent card */
+.agent-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  margin-bottom: 4px;
+  border: 1px solid #00ff8811;
+  background: rgba(0,255,136,0.03);
+  cursor: pointer;
+  pointer-events: all;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.agent-card:hover { border-color: #00ff8844; background: rgba(0,255,136,0.07); }
+.agent-card.active { border-color: #00ff88; background: rgba(0,255,136,0.1); }
+
+.agent-pixel {
+  width: 24px; height: 24px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.agent-info { flex: 1; }
+.agent-name { font-size: 11px; color: #00ff88; }
+.agent-task { font-size: 9px; color: #00ff8866; margin-top: 1px; }
+
+.agent-online { font-size: 9px; color: #00ff88; }
+.agent-standby { font-size: 9px; color: #ffcc0088; }
+
+/* Progress bar */
+.progress-bar {
+  height: 2px;
+  background: #00ff8811;
+  margin-top: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #00ff88;
+  animation: progress-anim 3s ease-in-out infinite alternate;
+}
+
+@keyframes progress-anim {
+  from { width: 20%; } to { width: 95%; }
+}
+
+/* Log stream */
+#log-stream {
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.log-line {
+  padding: 2px 0;
+  border-bottom: 1px solid #00ff8808;
+  display: flex;
+  gap: 6px;
+}
+
+.log-t { color: #00ff8844; flex-shrink: 0; }
+.log-m { color: #00ff88aa; }
+.log-m.info { color: #0088ffaa; }
+.log-m.warn { color: #ffcc00aa; }
+.log-m.err { color: #ff4444aa; }
+
+/* Metrics */
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  padding: 3px 0;
+  border-bottom: 1px solid #00ff8808;
+}
+
+.metric-l { color: #00ff8866; }
+.metric-v { color: #00ff88; font-size: 11px; }
+.metric-v.blue { color: #0088ff; }
+.metric-v.yellow { color: #ffcc00; }
+
+/* Bottom bar */
+#hud-bottom {
+  position: fixed;
+  bottom: 0; left: 0; right: 260px;
+  height: 28px;
+  background: rgba(0,0,0,0.9);
+  border-top: 1px solid #00ff8822;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  font-size: 9px;
+  color: #00ff8888;
+  letter-spacing: 1px;
+}
+
+#activity-ticker {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#ticker-text {
+  display: inline-block;
+  animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Speech bubble */
+#speech-bubble {
+  position: fixed;
+  background: rgba(0,0,0,0.95);
+  border: 1px solid #00ff88;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #00ff88;
+  max-width: 220px;
+  pointer-events: none;
+  display: none;
+  z-index: 100;
+  line-height: 1.4;
+}
+
+#speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 20px;
+  width: 10px; height: 6px;
+  background: #00ff88;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #00ff8833; }
+
+/* Network nodes */
+#network-map {
+  position: relative;
+  height: 100px;
+  background: rgba(0,255,136,0.02);
+  border: 1px solid #00ff8811;
+  margin-top: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.net-node {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #00ff88;
+  border-radius: 1px;
+  box-shadow: 0 0 6px #00ff88;
+  transform: translate(-50%, -50%);
+}
+
+.net-node.main {
+  width: 12px; height: 12px;
+  background: #0088ff;
+  box-shadow: 0 0 10px #0088ff;
+}
+
+.net-node.dim {
+  background: #00ff8833;
+  box-shadow: none;
+}
+
+.net-label {
+  position: absolute;
+  font-size: 7px;
+  color: #00ff8866;
+  transform: translate(-50%, 8px);
+  white-space: nowrap;
+}
+
+/* Ping rings */
+@keyframes ping-ring {
+  from { transform: translate(-50%,-50%) scale(1); opacity: 0.8; }
+  to { transform: translate(-50%,-50%) scale(3); opacity: 0; }
+}
+
+.ping-ring {
+  position: absolute;
+  width: 8px; height: 8px;
+  border: 1px solid #00ff88;
+  border-radius: 50%;
+  animation: ping-ring 2s ease-out infinite;
+  transform-origin: center;
+}
+</style>
+</head>
+<body>
+
+<!-- Canvas for pixel world -->
+<canvas id="world"></canvas>
+
+<!-- HUD Top -->
+<div id="hud-top">
+  <div class="hud-title">ZE · PIXEL AGENT</div>
+  <div class="hud-status">
+    <div class="hud-dot"><div class="dot green"></div> SISTEMA</div>
+    <div class="hud-dot"><div class="dot blue"></div> GATEWAY</div>
+    <div class="hud-dot"><div class="dot yellow"></div> BACKUP 03:00</div>
+  </div>
+  <div id="hud-clock">--:--:--</div>
+</div>
+
+<!-- Right Panel -->
+<div id="panel-right">
+
+  <div class="panel-section">
+    <div class="section-title">▸ Agentes</div>
+
+    <div class="agent-card active" id="card-ze" onclick="focusAgent('ze')">
+      <canvas class="agent-pixel" id="sprite-ze" width="24" height="24"></canvas>
+      <div class="agent-info">
+        <div class="agent-name">ZE 🧠</div>
+        <div class="agent-task" id="ze-task">Processando mensagem...</div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+      </div>
+      <div class="agent-online">● ON</div>
+    </div>
+
+    <div class="agent-card" id="card-ops" onclick="focusAgent('ops')" style="opacity:0.5">
+      <canvas class="agent-pixel" id="sprite-ops" width="24" height="24"></canvas>
+      <div class="agent-info">
+        <div class="agent-name">OPS ⚙️</div>
+        <div class="agent-task">Aguardando...</div>
+        <div class="progress-bar"><div class="progress-fill" style="animation-delay:1s"></div></div>
+      </div>
+      <div class="agent-standby">◌ STBY</div>
+    </div>
+
+    <div class="agent-card" id="card-fin" onclick="focusAgent('fin')" style="opacity:0.5">
+      <canvas class="agent-pixel" id="sprite-fin" width="24" height="24"></canvas>
+      <div class="agent-info">
+        <div class="agent-name">FIN 📊</div>
+        <div class="agent-task">Aguardando...</div>
+        <div class="progress-bar"><div class="progress-fill" style="animation-delay:2s"></div></div>
+      </div>
+      <div class="agent-standby">◌ STBY</div>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <div class="section-title">▸ Métricas</div>
+    <div class="metric-row">
+      <span class="metric-l">Sessão</span>
+      <span class="metric-v" id="m-session">ATIVA</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-l">Modelo</span>
+      <span class="metric-v blue">Sonnet 4.6</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-l">Memória</span>
+      <span class="metric-v">QMD · 12 docs</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-l">Dispositivos</span>
+      <span class="metric-v">10 online</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-l">Próx. backup</span>
+      <span class="metric-v yellow">03:00 AM</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-l">Uptime</span>
+      <span class="metric-v" id="m-uptime">00:00:00</span>
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <div class="section-title">▸ Rede Local</div>
+    <div id="network-map">
+      <!-- Nodes renderizados por JS -->
+    </div>
+  </div>
+
+  <div class="panel-section">
+    <div class="section-title">▸ Log em Tempo Real</div>
+    <div id="log-stream"></div>
+  </div>
+
+</div>
+
+<!-- Speech bubble -->
+<div id="speech-bubble"></div>
+
+<!-- Bottom ticker -->
+<div id="hud-bottom">
+  <span>▶</span>
+  <div id="activity-ticker">
+    <span id="ticker-text">
+      ZE ONLINE · GATEWAY ATIVO · QMD INDEXADO (12 DOCS) · BACKUP 03:00 · WHISPER PT-BR · TTS PT-BR ATIVO · GITHUB SYNC · 10 DISPOSITIVOS NA REDE · CONTEXT PRUNING 5m · MEMORY FLUSH 4K TOKENS
+    </span>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────
+// PIXEL SPRITES (16x16 via canvas 2d)
+// ─────────────────────────────────────────
+function drawSprite(canvasId, color, headColor) {
+  const c = document.getElementById(canvasId);
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  ctx.clearRect(0, 0, 24, 24);
+  ctx.imageSmoothingEnabled = false;
+
+  // Body
+  ctx.fillStyle = color;
+  ctx.fillRect(8, 10, 8, 8);    // torso
+
+  // Head
+  ctx.fillStyle = headColor;
+  ctx.fillRect(8, 4, 8, 7);     // head
+
+  // Eyes
+  ctx.fillStyle = '#000';
+  ctx.fillRect(10, 6, 2, 2);
+  ctx.fillRect(14, 6, 2, 2);
+
+  // Legs
+  ctx.fillStyle = color;
+  ctx.fillRect(8, 18, 3, 4);
+  ctx.fillRect(13, 18, 3, 4);
+
+  // Arms
+  ctx.fillRect(5, 10, 3, 6);
+  ctx.fillRect(16, 10, 3, 6);
+}
+
+drawSprite('sprite-ze', '#00aa55', '#00ff88');
+drawSprite('sprite-ops', '#004488', '#0088ff');
+drawSprite('sprite-fin', '#886600', '#ffcc00');
+
+// ─────────────────────────────────────────
+// WORLD CANVAS
+// ─────────────────────────────────────────
+const canvas = document.getElementById('world');
+const ctx = canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+
+function resize() {
+  canvas.width = window.innerWidth - 260;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+// Agentes
+const agents = {
+  ze: {
+    x: 200, y: 200, tx: 200, ty: 200,
+    color: '#00aa55', head: '#00ff88',
+    name: 'ZE', active: true,
+    task: 'idle', dir: 1,
+    frame: 0, frameTimer: 0,
+    room: 'main', speech: '', speechTimer: 0
+  },
+  ops: {
+    x: 400, y: 300, tx: 400, ty: 300,
+    color: '#004488', head: '#0088ff',
+    name: 'OPS', active: false,
+    task: 'idle', dir: 1,
+    frame: 0, frameTimer: 0,
+    room: 'tech', speech: '', speechTimer: 0
+  },
+  fin: {
+    x: 600, y: 280, tx: 600, ty: 280,
+    color: '#886600', head: '#ffcc00',
+    name: 'FIN', active: false,
+    task: 'idle', dir: 1,
+    frame: 0, frameTimer: 0,
+    room: 'finance', speech: '', speechTimer: 0
+  }
+};
+
+// Rooms / furniture
+const rooms = [
+  // Main ops room
+  { x: 40, y: 50, w: 380, h: 280, label: 'OPS CENTER', color: '#00ff8808', border: '#00ff8833' },
+  // Tech room
+  { x: 460, y: 50, w: 260, h: 180, label: 'TECH', color: '#0088ff08', border: '#0088ff33' },
+  // Finance room
+  { x: 460, y: 270, w: 260, h: 180, label: 'FINANCE', color: '#ffcc0008', border: '#ffcc0033' },
+  // Server room
+  { x: 40, y: 380, w: 180, h: 120, label: 'SERVER ROOM', color: '#ff444408', border: '#ff444433' },
+  // Meeting room
+  { x: 260, y: 380, w: 180, h: 120, label: 'BRIEFING', color: '#aa44ff08', border: '#aa44ff33' },
+];
+
+// Furniture / objects
+const furniture = [
+  // Desks in ops center
+  { type: 'desk', x: 80, y: 100, w: 60, h: 30, color: '#00ff8822' },
+  { type: 'desk', x: 200, y: 100, w: 60, h: 30, color: '#00ff8822' },
+  { type: 'desk', x: 320, y: 100, w: 60, h: 30, color: '#00ff8822' },
+  // Screens on desks
+  { type: 'screen', x: 85, y: 90, w: 50, h: 20, color: '#00ff8844' },
+  { type: 'screen', x: 205, y: 90, w: 50, h: 20, color: '#0088ff44' },
+  { type: 'screen', x: 325, y: 90, w: 50, h: 20, color: '#ffcc0044' },
+  // Big screen on wall
+  { type: 'bigscreen', x: 100, y: 55, w: 200, h: 40, color: '#00ff8818' },
+  // Server racks
+  { type: 'server', x: 60, y: 400, w: 20, h: 80, color: '#00ff8833' },
+  { type: 'server', x: 90, y: 400, w: 20, h: 80, color: '#0088ff33' },
+  { type: 'server', x: 120, y: 400, w: 20, h: 80, color: '#00ff8833' },
+  // Tech desks
+  { type: 'desk', x: 490, y: 110, w: 60, h: 30, color: '#0088ff22' },
+  { type: 'screen', x: 495, y: 100, w: 50, h: 20, color: '#0088ff44' },
+  // Finance desk
+  { type: 'desk', x: 490, y: 320, w: 60, h: 30, color: '#ffcc0022' },
+  { type: 'screen', x: 495, y: 310, w: 50, h: 20, color: '#ffcc0044' },
+  // Meeting table
+  { type: 'table', x: 290, y: 410, w: 120, h: 60, color: '#aa44ff22' },
+];
+
+// Particles
+const particles = [];
+
+function addParticle(x, y, color) {
+  for (let i = 0; i < 4; i++) {
+    particles.push({
+      x, y,
+      vx: (Math.random() - 0.5) * 3,
+      vy: (Math.random() - 0.5) * 3,
+      life: 1.0,
+      color
+    });
+  }
+}
+
+// Data packets (flying between nodes)
+const packets = [];
+let packetTimer = 0;
+
+function addPacket(x1, y1, x2, y2, color) {
+  packets.push({ x: x1, y: y1, tx: x2, ty: y2, color, t: 0 });
+}
+
+// ─────────────────────────────────────────
+// DRAW
+// ─────────────────────────────────────────
+let globalTime = 0;
+
+function drawWorld() {
+  const W = canvas.width;
+  const H = canvas.height;
+
+  // Background
+  ctx.fillStyle = '#050508';
+  ctx.fillRect(0, 0, W, H);
+
+  // Grid
+  ctx.strokeStyle = '#00ff8808';
+  ctx.lineWidth = 1;
+  for (let x = 0; x < W; x += 20) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y < H; y += 20) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Rooms
+  rooms.forEach(r => {
+    if (r.x + r.w > W || r.y + r.h > H) return;
+    ctx.fillStyle = r.color;
+    ctx.fillRect(r.x, r.y, r.w, r.h);
+    ctx.strokeStyle = r.border;
+    ctx.lineWidth = 1;
+    ctx.strokeRect(r.x, r.y, r.w, r.h);
+
+    // Room label
+    ctx.fillStyle = r.border;
+    ctx.font = '8px Courier New';
+    ctx.fillText(r.label, r.x + 6, r.y + 12);
+  });
+
+  // Furniture
+  furniture.forEach(f => {
+    if (f.x > W || f.y > H) return;
+    ctx.fillStyle = f.color;
+    ctx.fillRect(f.x, f.y, f.w, f.h);
+
+    if (f.type === 'screen' || f.type === 'bigscreen') {
+      // Animated screen content
+      const flicker = Math.sin(globalTime * 0.1 + f.x) * 0.3 + 0.7;
+      ctx.fillStyle = f.color.replace(/[\d.]+\)$/, `${flicker})`);
+      ctx.fillRect(f.x + 2, f.y + 2, f.w - 4, f.h - 4);
+
+      // Draw tiny pixels on screen
+      ctx.fillStyle = f.color;
+      for (let i = 0; i < 3; i++) {
+        const bx = f.x + 4 + (i * (f.w - 8) / 3);
+        const bh = (Math.sin(globalTime * 0.05 + i + f.x) * 0.5 + 0.5) * (f.h - 6);
+        ctx.fillRect(bx, f.y + f.h - 4 - bh, 4, bh);
+      }
+    }
+
+    if (f.type === 'server') {
+      // Blinking lights
+      const on = Math.floor(globalTime * 0.1 + f.x) % 3 === 0;
+      ctx.fillStyle = on ? '#00ff88' : '#00ff8833';
+      ctx.fillRect(f.x + 4, f.y + 8, 4, 4);
+      ctx.fillStyle = Math.floor(globalTime * 0.07) % 2 === 0 ? '#0088ff' : '#0088ff33';
+      ctx.fillRect(f.x + 4, f.y + 18, 4, 4);
+      ctx.fillStyle = Math.floor(globalTime * 0.13) % 4 === 0 ? '#ffcc00' : '#ffcc0033';
+      ctx.fillRect(f.x + 4, f.y + 28, 4, 4);
+    }
+  });
+
+  // Data packets
+  packets.forEach(p => {
+    const px = p.x + (p.tx - p.x) * p.t;
+    const py = p.y + (p.ty - p.y) * p.t;
+    ctx.fillStyle = p.color;
+    ctx.fillRect(px - 2, py - 2, 4, 4);
+    // Trail
+    ctx.fillStyle = p.color + '44';
+    ctx.fillRect(px - p.t * 10 - 2, py - 1, p.t * 10, 2);
+  });
+
+  // Particles
+  particles.forEach(p => {
+    ctx.globalAlpha = p.life;
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x, p.y, 3, 3);
+  });
+  ctx.globalAlpha = 1;
+
+  // Agents
+  Object.values(agents).forEach(a => {
+    drawAgent(a);
+  });
+
+  // Speech bubbles
+  Object.values(agents).forEach(a => {
+    if (a.speech && a.speechTimer > 0) {
+      drawSpeech(a);
+    }
+  });
+}
+
+function drawAgent(a) {
+  const s = globalTime;
+  const walk = a.active ? Math.sin(s * 0.18) : 0;
+  const breathe = Math.sin(s * 0.05) * 1.5;
+
+  // Shadow
+  ctx.save();
+  ctx.fillStyle = 'rgba(0,0,0,0.25)';
+  ctx.beginPath();
+  ctx.ellipse(a.x, a.y + 58, 18, 5, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  ctx.save();
+  ctx.translate(a.x, a.y);
+  if (a.dir < 0) ctx.scale(-1, 1);
+
+  // ── LEGS ──
+  const legSwing = walk * 10;
+  // Left leg
+  ctx.save();
+  ctx.translate(-7, 30);
+  ctx.rotate((legSwing * Math.PI) / 180);
+  // Pants
+  ctx.fillStyle = '#1a1a2e';
+  ctx.fillRect(-5, 0, 10, 22);
+  // Shoe
+  ctx.fillStyle = '#111';
+  ctx.beginPath();
+  ctx.roundRect(-6, 20, 14, 6, 2);
+  ctx.fill();
+  ctx.restore();
+
+  // Right leg
+  ctx.save();
+  ctx.translate(7, 30);
+  ctx.rotate((-legSwing * Math.PI) / 180);
+  ctx.fillStyle = '#1a1a2e';
+  ctx.fillRect(-5, 0, 10, 22);
+  ctx.fillStyle = '#111';
+  ctx.beginPath();
+  ctx.roundRect(-6, 20, 14, 6, 2);
+  ctx.fill();
+  ctx.restore();
+
+  // ── TORSO ──
+  // Jacket/shirt
+  ctx.fillStyle = a.color;
+  ctx.beginPath();
+  ctx.roundRect(-13, 2 + breathe * 0.3, 26, 30, [2, 2, 0, 0]);
+  ctx.fill();
+
+  // Collar / lapel
+  ctx.fillStyle = a.head;
+  ctx.beginPath();
+  ctx.moveTo(-4, 2);
+  ctx.lineTo(0, 12);
+  ctx.lineTo(4, 2);
+  ctx.closePath();
+  ctx.fill();
+
+  // Shirt detail line
+  ctx.strokeStyle = a.head + '88';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, 8);
+  ctx.lineTo(0, 30);
+  ctx.stroke();
+
+  // Belt
+  ctx.fillStyle = '#333';
+  ctx.fillRect(-13, 29, 26, 4);
+  ctx.fillStyle = a.head + '88';
+  ctx.fillRect(-3, 30, 6, 2);
+
+  // ── ARMS ──
+  const armSwing = walk * 8;
+  // Left arm
+  ctx.save();
+  ctx.translate(-14, 6);
+  ctx.rotate((-armSwing * Math.PI) / 180);
+  ctx.fillStyle = a.color;
+  ctx.beginPath();
+  ctx.roundRect(-4, 0, 8, 22, 3);
+  ctx.fill();
+  // Hand
+  ctx.fillStyle = '#e8c99a';
+  ctx.beginPath();
+  ctx.arc(0, 23, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // Right arm
+  ctx.save();
+  ctx.translate(14, 6);
+  ctx.rotate((armSwing * Math.PI) / 180);
+  ctx.fillStyle = a.color;
+  ctx.beginPath();
+  ctx.roundRect(-4, 0, 8, 22, 3);
+  ctx.fill();
+  ctx.fillStyle = '#e8c99a';
+  ctx.beginPath();
+  ctx.arc(0, 23, 5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+
+  // ── NECK ──
+  ctx.fillStyle = '#e8c99a';
+  ctx.fillRect(-4, -6, 8, 10);
+
+  // ── HEAD ──
+  // Head shape
+  ctx.fillStyle = '#e8c99a';
+  ctx.beginPath();
+  ctx.roundRect(-12, -28 + breathe * 0.2, 24, 26, [8, 8, 5, 5]);
+  ctx.fill();
+
+  // Hair
+  ctx.fillStyle = a.name === 'ZE' ? '#1a1a1a' : a.name === 'OPS' ? '#3a2a00' : '#222';
+  ctx.beginPath();
+  ctx.roundRect(-12, -28, 24, 12, [8, 8, 0, 0]);
+  ctx.fill();
+  // Hair side
+  ctx.fillRect(-12, -22, 4, 8);
+
+  // Eyes
+  ctx.fillStyle = '#fff';
+  ctx.beginPath();
+  ctx.ellipse(-5, -16, 4, 4.5, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(5, -16, 4, 4.5, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Pupils — look direction
+  const pupilX = a.dir >= 0 ? 1 : -1;
+  ctx.fillStyle = a.name === 'ZE' ? '#003322' : a.name === 'OPS' ? '#001133' : '#221100';
+  ctx.beginPath();
+  ctx.ellipse(-5 + pupilX, -15, 2.5, 3, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(5 + pupilX, -15, 2.5, 3, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Eye shine
+  ctx.fillStyle = 'rgba(255,255,255,0.7)';
+  ctx.beginPath();
+  ctx.arc(-4, -17, 1, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(6, -17, 1, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Eyebrows
+  ctx.strokeStyle = a.name === 'ZE' ? '#111' : '#3a2a00';
+  ctx.lineWidth = 1.5;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(-8, -22); ctx.lineTo(-2, -21);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(2, -21); ctx.lineTo(8, -22);
+  ctx.stroke();
+
+  // Nose
+  ctx.strokeStyle = '#c8a080';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(1, -13); ctx.lineTo(2, -9); ctx.lineTo(-1, -9);
+  ctx.stroke();
+
+  // Mouth — slight smile
+  ctx.strokeStyle = '#a07060';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.arc(0, -7, 4, 0.2, Math.PI - 0.2);
+  ctx.stroke();
+
+  // Ear
+  ctx.fillStyle = '#d8b890';
+  ctx.beginPath();
+  ctx.ellipse(-12, -15, 3, 4, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(12, -15, 3, 4, 0, 0, Math.PI * 2);
+  ctx.fill();
+
+  // ── ACCESSORIES ──
+  // ZE: glasses
+  if (a.name === 'ZE') {
+    ctx.strokeStyle = '#00cc66';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.roundRect(-9, -19, 7, 6, 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.roundRect(2, -19, 7, 6, 2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(-2, -16); ctx.lineTo(2, -16);
+    ctx.stroke();
+    // Temple
+    ctx.beginPath();
+    ctx.moveTo(-9, -16); ctx.lineTo(-14, -14);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(9, -16); ctx.lineTo(14, -14);
+    ctx.stroke();
+  }
+
+  // OPS: headset
+  if (a.name === 'OPS') {
+    ctx.strokeStyle = '#0066cc';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(0, -22, 13, Math.PI, 0);
+    ctx.stroke();
+    ctx.fillStyle = '#0066cc';
+    ctx.beginPath();
+    ctx.roundRect(-14, -26, 5, 8, 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.roundRect(9, -26, 5, 8, 2);
+    ctx.fill();
+    // Mic boom
+    ctx.strokeStyle = '#0066cc';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(-9, -16); ctx.lineTo(-14, -8); ctx.lineTo(-10, -8);
+    ctx.stroke();
+  }
+
+  // FIN: tie
+  if (a.name === 'FIN') {
+    ctx.fillStyle = '#cc8800';
+    ctx.beginPath();
+    ctx.moveTo(-2, 2); ctx.lineTo(2, 2);
+    ctx.lineTo(3, 18); ctx.lineTo(0, 22);
+    ctx.lineTo(-3, 18);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#ffcc00';
+    ctx.beginPath();
+    ctx.moveTo(-2, 2); ctx.lineTo(2, 2); ctx.lineTo(0, 8);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  ctx.restore();
+
+  // ── NAME TAG ──
+  ctx.save();
+  ctx.textAlign = 'center';
+  if (a.active) {
+    // Glow ring
+    ctx.strokeStyle = a.head + '55';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(a.x - 20, a.y - 35, 40, 100, 4);
+    ctx.stroke();
+
+    // Name
+    ctx.shadowColor = a.head;
+    ctx.shadowBlur = 8;
+    ctx.fillStyle = a.head;
+    ctx.font = 'bold 11px Courier New';
+    ctx.fillText(a.name, a.x, a.y - 38);
+    ctx.shadowBlur = 0;
+  } else {
+    ctx.fillStyle = a.head + '88';
+    ctx.font = '9px Courier New';
+    ctx.fillText(a.name, a.x, a.y - 36);
+  }
+  ctx.textAlign = 'left';
+  ctx.restore();
+}
+
+function drawSpeech(a) {
+  const SCALE = 3;
+  const H = 12 * SCALE;
+  const text = a.speech;
+  ctx.font = '9px Courier New';
+  const tw = ctx.measureText(text).width;
+  const bw = tw + 12;
+  const bh = 18;
+  const bx = a.x - bw/2;
+  const by = a.y - H * 0.6 - bh - 8;
+
+  ctx.fillStyle = 'rgba(0,0,0,0.9)';
+  ctx.fillRect(bx, by, bw, bh);
+  ctx.strokeStyle = a.head;
+  ctx.lineWidth = 1;
+  ctx.strokeRect(bx, by, bw, bh);
+  ctx.fillStyle = a.head;
+  ctx.fillText(text, bx + 6, by + 12);
+
+  // Arrow
+  ctx.fillStyle = a.head;
+  ctx.beginPath();
+  ctx.moveTo(a.x - 4, by + bh);
+  ctx.lineTo(a.x + 4, by + bh);
+  ctx.lineTo(a.x, by + bh + 6);
+  ctx.fill();
+}
+
+// ─────────────────────────────────────────
+// AGENT AI / MOVEMENT
+// ─────────────────────────────────────────
+const zeTasks = [
+  'Analisando contexto...',
+  'Buscando memória...',
+  'Processando tarefa...',
+  'Executando cron...',
+  'Verificando rede...',
+  'Gerando resposta...',
+  'Indexando QMD...',
+  'Verificando backup...',
+];
+
+const zeSpeech = [
+  'Tudo certo!',
+  'Executando...',
+  'Na rede agora',
+  'Backup ok!',
+  'Memória salva',
+  'Rede scaneada',
+  'Aguardando...',
+];
+
+let taskTimer = 0;
+let speechTimer = 0;
+let moveTimer = 0;
+
+function getRoomCenter(name) {
+  const map = {
+    main: { x: 220, y: 190 },
+    tech: { x: 590, y: 140 },
+    finance: { x: 590, y: 360 },
+    server: { x: 130, y: 440 },
+    briefing: { x: 350, y: 440 },
+  };
+  return map[name] || { x: 220, y: 190 };
+}
+
+function randomRoomPos(room) {
+  const r = rooms.find(rm => rm.label.includes(room.toUpperCase().slice(0,3)));
+  if (!r) return getRoomCenter(room);
+  return {
+    x: r.x + 30 + Math.random() * (r.w - 60),
+    y: r.y + 30 + Math.random() * (r.h - 60)
+  };
+}
+
+// ─────────────────────────────────────────
+// GAME LOOP
+// ─────────────────────────────────────────
+const startTime = Date.now();
+
+function update() {
+  globalTime++;
+
+  // Move agents
+  Object.values(agents).forEach(a => {
+    const speed = a.active ? 1.5 : 0.5;
+    const dx = a.tx - a.x;
+    const dy = a.ty - a.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+
+    if (dist > 2) {
+      a.x += (dx/dist) * speed;
+      a.y += (dy/dist) * speed;
+      a.dir = dx > 0 ? 1 : -1;
+    }
+
+    if (a.speechTimer > 0) a.speechTimer--;
+    else a.speech = '';
+  });
+
+  // ZE movement logic
+  moveTimer++;
+  if (moveTimer > 120) {
+    moveTimer = 0;
+    const rooms_list = ['main', 'main', 'main', 'tech', 'server', 'briefing'];
+    const r = rooms_list[Math.floor(Math.random() * rooms_list.length)];
+    const pos = randomRoomPos(r);
+    agents.ze.tx = Math.min(Math.max(pos.x, 60), canvas.width - 40);
+    agents.ze.ty = Math.min(Math.max(pos.y, 60), canvas.height - 60);
+  }
+
+  // ZE task update
+  taskTimer++;
+  if (taskTimer > 90) {
+    taskTimer = 0;
+    const task = zeTasks[Math.floor(Math.random() * zeTasks.length)];
+    document.getElementById('ze-task').textContent = task;
+    addParticle(agents.ze.x, agents.ze.y, '#00ff88');
+  }
+
+  // ZE speech
+  speechTimer++;
+  if (speechTimer > 200) {
+    speechTimer = 0;
+    agents.ze.speech = zeSpeech[Math.floor(Math.random() * zeSpeech.length)];
+    agents.ze.speechTimer = 80;
+  }
+
+  // Data packets
+  packetTimer++;
+  if (packetTimer > 30) {
+    packetTimer = 0;
+    const routes = [
+      [100, 120, 200, 90, '#00ff88'],
+      [210, 90, 340, 120, '#0088ff'],
+      [100, 120, 130, 440, '#00ff88'],
+      [490, 140, 590, 320, '#ffcc00'],
+    ];
+    const r = routes[Math.floor(Math.random() * routes.length)];
+    addPacket(r[0], r[1], r[2], r[3], r[4]);
+  }
+
+  // Update packets
+  for (let i = packets.length - 1; i >= 0; i--) {
+    packets[i].t += 0.04;
+    if (packets[i].t >= 1) {
+      addParticle(packets[i].tx, packets[i].ty, packets[i].color);
+      packets.splice(i, 1);
+    }
+  }
+
+  // Update particles
+  for (let i = particles.length - 1; i >= 0; i--) {
+    const p = particles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= 0.04;
+    if (p.life <= 0) particles.splice(i, 1);
+  }
+}
+
+function loop() {
+  update();
+  drawWorld();
+  requestAnimationFrame(loop);
+}
+
+// ─────────────────────────────────────────
+// NETWORK MAP
+// ─────────────────────────────────────────
+function buildNetworkMap() {
+  const map = document.getElementById('network-map');
+  const nodes = [
+    { ip: '.1', x: 50, y: 50, main: false, label: 'Router' },
+    { ip: '.121', x: 130, y: 50, main: true, label: 'Mac Mini' },
+    { ip: '.103', x: 20, y: 80, main: false, label: '' },
+    { ip: '.110', x: 60, y: 85, main: false, label: '' },
+    { ip: '.115', x: 100, y: 80, main: false, label: '' },
+    { ip: '.116', x: 160, y: 80, main: false, label: '' },
+    { ip: '.117', x: 200, y: 75, main: false, label: '' },
+    { ip: '.124', x: 230, y: 85, main: false, label: '' },
+    { ip: '.134', x: 170, y: 30, main: false, label: '' },
+    { ip: '.165', x: 210, y: 40, main: false, label: '' },
+  ];
+
+  map.innerHTML = '';
+
+  // Draw lines (SVG overlay)
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none';
+  nodes.forEach(n => {
+    if (!n.main) {
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', `${nodes[1].x}%`);
+      line.setAttribute('y1', `${nodes[1].y}%`);
+      line.setAttribute('x2', `${n.x}%`);
+      line.setAttribute('y2', `${n.y}%`);
+      line.setAttribute('stroke', '#00ff8822');
+      line.setAttribute('stroke-width', '1');
+      svg.appendChild(line);
+    }
+  });
+  map.appendChild(svg);
+
+  nodes.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'net-node' + (n.main ? ' main' : '');
+    el.style.left = n.x + '%';
+    el.style.top = n.y + '%';
+    el.title = '10.50.0' + n.ip;
+    map.appendChild(el);
+
+    if (n.main) {
+      const ring = document.createElement('div');
+      ring.className = 'ping-ring';
+      ring.style.left = n.x + '%';
+      ring.style.top = n.y + '%';
+      ring.style.borderColor = '#0088ff';
+      map.appendChild(ring);
+    }
+
+    if (n.label) {
+      const label = document.createElement('div');
+      label.className = 'net-label';
+      label.style.left = n.x + '%';
+      label.style.top = n.y + '%';
+      label.textContent = n.label;
+      map.appendChild(label);
+    }
+  });
+}
+
+buildNetworkMap();
+
+// ─────────────────────────────────────────
+// LOG STREAM
+// ─────────────────────────────────────────
+const logMessages = [
+  { t: 'info', m: 'Gateway online · porta 18789' },
+  { t: 'ok',   m: 'Telegram conectado' },
+  { t: 'info', m: 'QMD indexou 12 docs' },
+  { t: 'ok',   m: 'TTS pt_BR carregado' },
+  { t: 'ok',   m: 'Whisper turbo pronto' },
+  { t: 'info', m: 'Context pruning: 5m TTL' },
+  { t: 'warn', m: 'Backup: 03:00 AM' },
+  { t: 'ok',   m: 'GitHub sync ativo' },
+  { t: 'info', m: 'Nmap: 10 dispositivos' },
+  { t: 'ok',   m: 'ZipVoice clone pronto' },
+];
+
+let logIndex = 0;
+const logStream = document.getElementById('log-stream');
+
+function addLog() {
+  const entry = logMessages[logIndex % logMessages.length];
+  logIndex++;
+
+  const now = new Date();
+  const t = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+  const div = document.createElement('div');
+  div.className = 'log-line';
+  const cls = entry.t === 'info' ? 'info' : entry.t === 'warn' ? 'warn' : '';
+  div.innerHTML = `<span class="log-t">${t}</span><span class="log-m ${cls}">${entry.m}</span>`;
+  logStream.insertBefore(div, logStream.firstChild);
+
+  // Keep max 20 lines
+  while (logStream.children.length > 20) {
+    logStream.removeChild(logStream.lastChild);
+  }
+}
+
+setInterval(addLog, 4000);
+addLog();
+
+// ─────────────────────────────────────────
+// CLOCK & UPTIME
+// ─────────────────────────────────────────
+function updateHUD() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('hud-clock').textContent = `${h}:${m}:${s}`;
+
+  // Uptime
+  const elapsed = Math.floor((Date.now() - startTime) / 1000);
+  const uh = String(Math.floor(elapsed / 3600)).padStart(2,'0');
+  const um = String(Math.floor((elapsed % 3600) / 60)).padStart(2,'0');
+  const us = String(elapsed % 60).padStart(2,'0');
+  document.getElementById('m-uptime').textContent = `${uh}:${um}:${us}`;
+}
+
+setInterval(updateHUD, 1000);
+updateHUD();
+
+// ─────────────────────────────────────────
+// FOCUS AGENT
+// ─────────────────────────────────────────
+function focusAgent(id) {
+  Object.keys(agents).forEach(k => {
+    agents[k].active = k === id;
+    document.getElementById('card-' + k)?.classList.toggle('active', k === id);
+    document.getElementById('card-' + k).style.opacity = k === id ? '1' : '0.5';
+  });
+}
+
+// ─────────────────────────────────────────
+// START
+// ─────────────────────────────────────────
+loop();
+</script>
+</body>
+</html>
+EOF

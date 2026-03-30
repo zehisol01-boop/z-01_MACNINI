@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZE HQ — Central de Comando</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    color: #00ff88;
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Scanlines overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(0,255,136,0.03) 2px, rgba(0,255,136,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid #00ff8844;
+    background: rgba(0,255,136,0.04);
+  }
+
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #00ff88;
+    text-shadow: 0 0 20px #00ff88;
+    letter-spacing: 4px;
+  }
+
+  .logo span { color: #0088ff; }
+
+  #clock {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #0088ff;
+    text-shadow: 0 0 10px #0088ff;
+  }
+
+  .status-bar {
+    display: flex;
+    gap: 24px;
+    padding: 6px 24px;
+    background: rgba(0,136,255,0.05);
+    border-bottom: 1px solid #0088ff33;
+    font-size: 0.75rem;
+  }
+
+  .status-item { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; animation: pulse 2s infinite; }
+  .dot.green { background: #00ff88; box-shadow: 0 0 8px #00ff88; }
+  .dot.blue { background: #0088ff; box-shadow: 0 0 8px #0088ff; }
+  .dot.yellow { background: #ffcc00; box-shadow: 0 0 8px #ffcc00; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+    padding: 12px;
+    height: calc(100vh - 90px);
+  }
+
+  .panel {
+    border: 1px solid #00ff8833;
+    background: rgba(0,255,136,0.03);
+    border-radius: 4px;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff88, transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { opacity: 0; transform: translateX(-100%); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(100%); }
+  }
+
+  .panel.blue-accent { border-color: #0088ff33; }
+  .panel.blue-accent::before { background: linear-gradient(90deg, transparent, #0088ff, transparent); }
+
+  .panel.yellow-accent { border-color: #ffcc0033; }
+  .panel.yellow-accent::before { background: linear-gradient(90deg, transparent, #ffcc00, transparent); }
+
+  .panel.wide { grid-column: span 2; }
+  .panel.tall { grid-row: span 2; }
+
+  .panel-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: #00ff8888;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .panel.blue-accent .panel-title { color: #0088ff88; }
+  .panel.yellow-accent .panel-title { color: #ffcc0088; }
+
+  /* AGENTES */
+  .agent-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .agent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border: 1px solid #00ff8822;
+    border-radius: 3px;
+    background: rgba(0,255,136,0.04);
+  }
+
+  .agent-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    border: 1px solid #00ff8844;
+    flex-shrink: 0;
+  }
+
+  .agent-info { flex: 1; }
+  .agent-name { font-size: 0.8rem; color: #00ff88; font-weight: bold; }
+  .agent-role { font-size: 0.65rem; color: #00ff8866; margin-top: 2px; }
+  .agent-status { font-size: 0.65rem; }
+  .agent-status.online { color: #00ff88; }
+  .agent-status.standby { color: #ffcc00; }
+
+  .activity-bar {
+    height: 3px;
+    background: #00ff8822;
+    border-radius: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+  }
+
+  .activity-fill {
+    height: 100%;
+    background: #00ff88;
+    border-radius: 2px;
+    animation: activity 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes activity {
+    from { width: 30%; } to { width: 90%; }
+  }
+
+  /* MERCADO */
+  .market-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .market-item {
+    padding: 8px;
+    border: 1px solid #0088ff22;
+    border-radius: 3px;
+    background: rgba(0,136,255,0.04);
+  }
+
+  .market-label { font-size: 0.6rem; color: #0088ff88; letter-spacing: 1px; }
+  .market-value { font-size: 1rem; color: #0088ff; font-family: 'Orbitron', sans-serif; margin: 2px 0; }
+  .market-change { font-size: 0.65rem; }
+  .market-change.up { color: #00ff88; }
+  .market-change.down { color: #ff4444; }
+
+  /* REDE */
+  .network-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .network-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 8px;
+    border-left: 2px solid #00ff8844;
+    font-size: 0.7rem;
+  }
+
+  .network-ip { color: #00ff88; }
+  .network-type { color: #00ff8866; font-size: 0.6rem; }
+  .network-ping { color: #0088ff; font-size: 0.65rem; }
+
+  /* LOG */
+  .log-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .log-item {
+    font-size: 0.65rem;
+    padding: 3px 0;
+    border-bottom: 1px solid #00ff8811;
+    display: flex;
+    gap: 8px;
+  }
+
+  .log-time { color: #00ff8855; flex-shrink: 0; }
+  .log-msg { color: #00ff88cc; }
+  .log-msg.info { color: #0088ffcc; }
+  .log-msg.warn { color: #ffcc00cc; }
+
+  /* MÉTRICAS */
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #ffcc0011;
+  }
+
+  .metric-label { font-size: 0.7rem; color: #ffcc0088; }
+  .metric-value { font-size: 0.9rem; color: #ffcc00; font-family: 'Orbitron', sans-serif; }
+
+  /* MINI MAPA */
+  .globe-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    position: relative;
+  }
+
+  .globe {
+    width: 70px; height: 70px;
+    border: 2px solid #00ff8844;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { box-shadow: -4px 0 8px #00ff8844, 0 0 20px #00ff8822; }
+    50% { box-shadow: 4px 0 8px #00ff8844, 0 0 20px #00ff8822; }
+    to { box-shadow: -4px 0 8px #00ff8844, 0 0 20px #00ff8822; }
+  }
+
+  .ping-dot {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff88;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #00ff8844; }
+
+  .blink { animation: blink 1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ZE<span>HQ</span> // CENTRAL DE COMANDO</div>
+  <div id="clock">--:--:--</div>
+</header>
+
+<div class="status-bar">
+  <div class="status-item"><div class="dot green"></div> ZE OPERACIONAL</div>
+  <div class="status-item"><div class="dot blue"></div> GATEWAY ONLINE</div>
+  <div class="status-item"><div class="dot green"></div> TELEGRAM ATIVO</div>
+  <div class="status-item"><div class="dot yellow"></div> BACKUP: 03:00</div>
+  <div class="status-item"><div class="dot green"></div> QMD INDEXADO</div>
+  <div class="status-item" style="margin-left:auto; color:#00ff8866">MAC MINI · 10.50.0.121 · FLORIDA</div>
+</div>
+
+<div class="grid">
+
+  <!-- AGENTES -->
+  <div class="panel">
+    <div class="panel-title">▸ Agentes Ativos</div>
+    <div class="agent-list">
+      <div class="agent-item">
+        <div class="agent-avatar">🧠</div>
+        <div class="agent-info">
+          <div class="agent-name">ZE</div>
+          <div class="agent-role">COO Digital · Braço Direito</div>
+          <div class="activity-bar"><div class="activity-fill"></div></div>
+        </div>
+        <div class="agent-status online">● ONLINE</div>
+      </div>
+      <div class="agent-item" style="opacity:0.5">
+        <div class="agent-avatar">⚙️</div>
+        <div class="agent-info">
+          <div class="agent-name">OPS</div>
+          <div class="agent-role">Operador Técnico · Infra/Rede</div>
+          <div class="activity-bar"><div class="activity-fill" style="animation-delay:1s;width:10%"></div></div>
+        </div>
+        <div class="agent-status standby">◌ STANDBY</div>
+      </div>
+      <div class="agent-item" style="opacity:0.5">
+        <div class="agent-avatar">📊</div>
+        <div class="agent-info">
+          <div class="agent-name">FIN</div>
+          <div class="agent-role">Financeiro · Métricas</div>
+          <div class="activity-bar"><div class="activity-fill" style="animation-delay:2s;width:5%"></div></div>
+        </div>
+        <div class="agent-status standby">◌ STANDBY</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERCADO -->
+  <div class="panel blue-accent">
+    <div class="panel-title">▸ Mercado · Tempo Real</div>
+    <div class="market-grid">
+      <div class="market-item">
+        <div class="market-label">IBOVESPA</div>
+        <div class="market-value" id="ibov">133.420</div>
+        <div class="market-change up" id="ibov-chg">▲ +1.2%</div>
+      </div>
+      <div class="market-item">
+        <div class="market-label">PETR4</div>
+        <div class="market-value" id="petr">R$ 43.20</div>
+        <div class="market-change up">▲ +4.3%</div>
+      </div>
+      <div class="market-item">
+        <div class="market-label">WTI OIL</div>
+        <div class="market-value" id="oil">$84.50</div>
+        <div class="market-change up">▲ +2.1%</div>
+      </div>
+      <div class="market-item">
+        <div class="market-label">USD/BRL</div>
+        <div class="market-value" id="dolar">5.74</div>
+        <div class="market-change down">▼ -0.3%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REDE LOCAL -->
+  <div class="panel">
+    <div class="panel-title">▸ Rede Local · 10.50.0.0/24</div>
+    <div class="network-list">
+      <div class="network-item">
+        <span class="network-ip">10.50.0.1</span>
+        <span class="network-type">Gateway / Roteador</span>
+        <span class="network-ping">1.0ms</span>
+      </div>
+      <div class="network-item" style="border-color:#0088ff88">
+        <span class="network-ip" style="color:#0088ff">10.50.0.121</span>
+        <span class="network-type" style="color:#0088ff66">Mac Mini · ZE HQ</span>
+        <span class="network-ping" style="color:#00ff88">0.5ms</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.103</span>
+        <span class="network-type">Dispositivo</span>
+        <span class="network-ping">0.4ms</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.110</span>
+        <span class="network-type">Dispositivo</span>
+        <span class="network-ping">—</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.115</span>
+        <span class="network-type">Dispositivo</span>
+        <span class="network-ping">0.15ms</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.116</span>
+        <span class="network-type">Dispositivo</span>
+        <span class="network-ping">—</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.117</span>
+        <span class="network-type">Dispositivo</span>
+        <span class="network-ping">—</span>
+      </div>
+      <div class="network-item">
+        <span class="network-ip">10.50.0.124 · 134 · 165</span>
+        <span class="network-type">+3 dispositivos</span>
+        <span class="network-ping">online</span>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:0.6rem; color:#00ff8844">
+      TOTAL: 10 dispositivos · último scan: hoje
+    </div>
+  </div>
+
+  <!-- LOG DE ATIVIDADES -->
+  <div class="panel wide">
+    <div class="panel-title">▸ Log de Atividades</div>
+    <div class="log-list" id="log-list">
+      <div class="log-item"><span class="log-time">03:00</span><span class="log-msg">Cron backup-github-diario agendado</span></div>
+      <div class="log-item"><span class="log-time">02:37</span><span class="log-msg">Voz PT-BR configurada · vits-piper-miro</span></div>
+      <div class="log-item"><span class="log-time">02:09</span><span class="log-msg info">Voice cloning testado · ZipVoice ativo</span></div>
+      <div class="log-item"><span class="log-time">01:24</span><span class="log-msg">Whisper transcreveu áudio · 5 segmentos</span></div>
+      <div class="log-item"><span class="log-time">01:17</span><span class="log-msg info">Relatório Nucleopar analisado · 7/10</span></div>
+      <div class="log-item"><span class="log-time">00:50</span><span class="log-msg">Nmap scan · 10 dispositivos na rede</span></div>
+      <div class="log-item"><span class="log-time">Fri 19:04</span><span class="log-msg">Repos GitHub criados · z-01_MACNINI / ze01-backups</span></div>
+      <div class="log-item"><span class="log-time">Fri 15:35</span><span class="log-msg info">QMD backend ativado · 12 arquivos indexados</span></div>
+      <div class="log-item"><span class="log-time">Fri 15:29</span><span class="log-msg">Context pruning configurado · cache-ttl 5m</span></div>
+      <div class="log-item"><span class="log-time">Fri 15:28</span><span class="log-msg">Memory flush ativado · 4000 tokens</span></div>
+    </div>
+  </div>
+
+  <!-- MÉTRICAS HISOL -->
+  <div class="panel yellow-accent">
+    <div class="panel-title">▸ Hisol · Operações</div>
+    <div class="metric-row">
+      <span class="metric-label">PROJETOS ATIVOS</span>
+      <span class="metric-value">—</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">PRÓXIMO EVENTO</span>
+      <span class="metric-value">—</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">NOC STATUS</span>
+      <span class="metric-value" style="color:#00ff88; font-size:0.7rem">ONLINE 24/7</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">INSTITUTO HISOL</span>
+      <span class="metric-value" style="font-size:0.7rem">ATIVO</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">HUB IA</span>
+      <span class="metric-value" style="font-size:0.7rem">ATIVO</span>
+    </div>
+    <div style="margin-top:10px; font-size:0.6rem; color:#ffcc0044; text-align:center">
+      Conecte dados reais via ZE para atualização automática
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Relógio
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+  const days = ['DOM','SEG','TER','QUA','QUI','SEX','SÁB'];
+  document.getElementById('clock').textContent =
+    `${days[now.getDay()]} ${now.toLocaleDateString('pt-BR')} · ${h}:${m}:${s}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// Simular flutuações de mercado
+function fluctuate(id, base, decimals, prefix='') {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const delta = (Math.random() - 0.5) * base * 0.002;
+  const current = parseFloat(el.textContent.replace(/[^\d.]/g,'')) + delta;
+  el.textContent = prefix + current.toFixed(decimals);
+}
+
+setInterval(() => {
+  fluctuate('ibov', 133420, 0);
+  fluctuate('oil', 84.5, 2, '$');
+  fluctuate('dolar', 5.74, 2);
+}, 3000);
+
+// Auto-scroll log
+const logList = document.getElementById('log-list');
+if (logList) {
+  setInterval(() => {
+    logList.scrollTop = logList.scrollTop > 0 ? 0 : logList.scrollHeight;
+  }, 8000);
+}
+</script>
+</body>
+</html>
