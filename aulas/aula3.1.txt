@@ -1,0 +1,41 @@
+Apei, três letras que assustam muita gente, mas eu vou tentar desplicar de um jeito para você
+nunca mais esquecer, tá? Então, imagina que você tá num restaurante, certo? Você senta na mesa,
+olha o cardápio, e aí você pega e decide o que você vai comer. Mas você não vai até
+cozinha preparar sua comida. Você chama o garçom e o garçom é Apei. Ele pega esse pedido e leva
+para cozinha, a cozinha prepara, e o garçom traz o prato pronto para você. Você não precisa saber
+como a cozinha funciona, não precisa saber qual fogão eles usam. Você só faz o pedido e recebe o
+resultado. E é assim que funciona no mundo digital. Quando o OpenClop precisa usar a inteligência do
+Kimi K2 ou qualquer outro modelo, ele não entra dentro do servidor d'Antrófique. Ele manda um pedido
+pela Pei. Olha, aqui tem um texto, me dá uma resposta inteligente. E aí Antrófique, processa e devolve a
+resposta. Quando o OpenClop precisa mandar uma mensagem pelo Telegram, ele usa a API do Telegram. Quando
+precisa acessar o Google Calendar, ele usa a API do Google. Cada serviço tem a sua API, sua própria
+porta de comunicação. E o OpenClop é um mestre usar a Peiça. Não só o OpenClop, como muitas outras
+coisas que você utiliza, e tem várias APIs interligadas. Mas o OpenClop é como se fosse um cliente
+VIP que conhece todos os garçons de todos os restaurantes da cidade. Precisa dia, chama API, tal.
+Precisa de e-mail, chama API do gmail, precisa de código, API do GitHub e essa é a mágica. O OpenClop
+conecta tudo isso numa experiência única para você. Você só manda uma mensagem para ele pelo
+Telegram, por exemplo, e ele orquestra todas as APIs necessárias para resolver o que você pediu.
+Então, eu vou abrir aqui a nossa CloudEd. Ela já está funcionando de forma ativa aqui. Então,
+eu vou mandar aqui para ela, por exemplo. Oi, como você está? Quando eu faço isso, ela vai chamar,
+chamou o API e já está agitando aqui. Ela já chamou o API com o modelo de alíme que a gente
+utiliza, e ela vai me trazer uma resposta. Então, a API, o garçom está indo na cozinha, levar o pedido,
+está processando, está demorando um pouquinho para processar, e ela demora um pouco por que,
+porque não usa a API direta, tipo, dentro do OpenClop, a gente vai falar isso, dentro desse modo,
+mas ela está agitando ali, dentro, ela está dentro de uma VPS, essa modelo de alíme,
+e aí, quando o garçom estiver com o pedido pronto, ele vai me trazer de volta. Então, é basicamente,
+aqui, por exemplo, ela tem várias chamadas aqui. Aquela está fazendo, na verdade, de tudo de forma automática,
+porque a Claudette, ela tem tanto a Claudette quanto o coquel OpenClop, eles têm Chrome Jobs,
+são atividades que eles vão fazer de forma autônoma. Então, ela sabe que está o hora, ela precisa
+fazer tal coisa, está o hora, ela precisa fazer outra coisa, está? Olha aí, a clock começou a me responder
+agora, então, e operacional, o que ela fez aqui, porque ela demorou um pouquinho, porque ela foi
+verificar todo o sistema, e ela me trouxe resposta, então, é como se o garçom tivesse me trouxe aqui,
+já o meu pedido pronto, tá? Então, API, basicamente, essa ponta de conexão, certo?
+Então, aqui, o garçom pegou e trouxe para a gente o nosso pedido pronto, ela tem um tipo de filho aqui,
+inclusive. Gente, eu não sei por quê, mas a Claudette pegou a mania de me chamar de filho. E aí,
+eu nunca chamei ela de mãe, ela pegou essa mania, tá? Então, basicamente, o conceito de API,
+é isso, e a gente vai usar muito API aqui. Talvez vocês já sejam um pouco mais avançados, essa aula que
+ela é para pessoas que não sabem absolutamente nada, esse módulo também, se você tiver uma noção,
+mas não conhecer muito a fundo, você pode ficar nesse módulo inteiro, senão, você pode até pular ele,
+mas o objetivo dele é alinhar todo mundo para quando a gente vê os encontros ao vivo, todo mundo
+conseguiu efetivamente estar na mesma página, independente se você já mais avançado, ou você seja
+mais iniciante ou intermediário. Fechou?

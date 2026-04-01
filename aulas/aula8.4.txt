@@ -1,0 +1,191 @@
+Fala que lá o member tudo bem? Então, nessa aula aqui, eu vou mostrar para vocês como
+que vocês fazem para poder configurar os backups dentro do OpenClaw de vocês, tá bom?
+Por que isso é importante? Porque muitas vezes, quando a gente vai realizar algum tipo de
+modificação dentro do nosso OpenClaw, solicitando a nossa gente, ele acidentalmente pode cometer
+algum erro, e com isso a gente pode acabar quebrando ali a estrutura do nosso OpenClaw. Então,
+é importante a gente ter esses backups, para que caso aconteça alguma coisa, a gente não
+precisa começar do zero. Bom, eu vou estar iniciando uma estalação nova que agora, então,
+se você ainda não tem o OpenClaw instalado, vai ser interessante para você acompanhar esse processo,
+eu vou fazer uma estalação convencional, não vou fazer pelo OneClick, ok? Enquanto você já
+tem o seu OpenClaw instalado, você pode avançar um pouquinho essa aula, show? Então, vamos lá.
+Vamos partir aqui. Eu estou dentro da Luga Rooch, tá? Eu vou estalar a nossa VPS, então, vou começar lá
+do zero mesmo. Então, o primeiro passo é escolher o sistema opracional, que é o Ubuntu 24.04 LTS,
+esse é um modelo mais recente, de sistema opracional, e é um sistema muito bom porque ele tem
+suporte, um sistema que está bem consolidado, eu não vou selecionar chave SSH nesse exato momento,
+porque eu quero facilitar um pouco mais aqui a nossa estalação. Então, clico aqui em instalar,
+ele vai perguntar se quer que estala sem SSH, eu vou guardar um pouquinho, enquanto ele vai começar a
+fazer todas as estalações aqui no VPS e, em seguida, eu retorno para a gente começar a nossa
+estalação. Então, pessoal, o sistema operacional aqui já está instalado, ok? Agora que a gente vai
+fazer, eu vou ir lá no meu e-mail, vou pegar as informações aqui para poder acessar a nossa VPS.
+Então, eu vou vir aqui praça-savePS, SSH, Root, Aruba, o IP da VPS,
+e aqui ele vai dar essa mensagem, porque eu já pava com outro servido rodando aqui,
+vou jogar aqui no gm para vocês veem que vocês mesmos podem resolver esses tipos de problema,
+ele vai gerar o comando aqui para a gente poder corrigir essa situação. Então, não se assustem quando
+isso acontecer com vocês, ele já chegou aqui o comando. Então, se isso acontecer com vocês,
+é só rodar esse comandinho aqui que vai corrigir. E agora, se eu vou limpar aqui e vou de novo acessar
+a nossa VPS, ok? Então, SSH, Root, Aruba, o IP, pegar o IP aqui, beleza, vou dar a entre,
+vou colocar SSH, ele vai impedir a 100, a 100 é aqui, pá lá no e-mail,
+peguei aqui a 100, colo ela realmente não vai aparecer aqui, só da entre, tudo certo.
+Ele até dá uma mensagem aqui, que é interessante, você restartar a reiniciar a sua VPS para que ele
+baixe os pacotes mais recentes, mas eu não vou fazer esse processo, eu vou baixar esses pacotes aqui na mão,
+através da linha de comando, para a gente começar a instalação do nosso OpenClaw.
+Primeiramente, o que a gente vai fazer aqui é instalar o Node.js 22, é um pré-requisito, vou mostrar
+que para você ir na documentação do OpenClaw. Então, se você vim aqui doxopenclaw.ai, você vem
+em gaya-starrist, e aí ele vem essa informação de pré-requisito sobre o Node.js, eu testei ontem alguns
+modelos, algumas instalações aqui, e ele tentou baixar por conta própria, mas ele não conseguiu fazer,
+então eu acho que é importante, mediante essa minha experiência, a gente baixar antes, e aí,
+sim, começar a nossa instalação. E aí, para baixar o Node.js, a gente vai rodar, primeiro esse comando
+aqui, para ele atualizar os pacotes do nosso sistema, e aí a gente só precisa guardar um pouquinho,
+show, e o próximo passo, a gente vai baixar os cryptos no Node.js, e depois a gente vai estar aí,
+é esse segundo comando aqui, coloquei no seu terminal dentro do Sov.ps,
+perfeito, e agora, a gente vai estar lá no Node.js,
+então vamos guardar aqui o processo, tudo certo, vou limpar aqui o terminal rodando comando clia,
+e vou iniciar a instalação aqui do OpenClaw. Então, primeiro passo, vem aqui na documentação, ele já
+está o comando de instalação, e aí, está aqui Mac, tenho um comando aqui, primeiro também,
+vamos começar a instalação, ele já identificou que eu tenho o Node.js está lá, o npm está ativo,
+e agora ele vai executar o passo 2 de 3, e depois o 3 de 3 para poder finalizar a instalação. Então,
+vou deixar ele aqui estalando, ele está estalando essa versão 13.3 de 2026, e assim que finalizar a
+instalação, eu volto para a gente fazer a etapa de onboard e conclusão da instalação, beleza? Então,
+voltei aqui, ele já finalizou, e agora eu vou clicar em AIS, vou em Quick Start, você
+selecionar aqui o modelo que eu vou utilizar como provar a etapa de instalação, eu vou fazer
+pelo OpenHouter, a gente já tem algumas aulas mostrando para vocês como que vocês fazem para
+configurar a assinatura da Anthrop, como que vocês utilizam os modelos da olhama, mas para
+poder dar um pouco de agilidade aqui, eu vou fazer a configuração com o OpenHouter, bom, vou
+selecionar aqui o OpenHouter, ele vai me pedir para colar a chave de API, já tenho a chave de API aqui,
+deixa eu pegar aqui nas minhas anotações, perfeito, copiei, colei, ele vai plantar qual o modelo,
+eu tenho aqui os meus modelos padões aqui que eu utilizo, funciona muito bem, eu vou
+Sony, o GPT5.2 me atende bem nessa instalação inicial também, eu vou botar o Sony 4.6, qual é o canal,
+eu vou utilizar o Telegram, e para isso eu já vou ir lá no bot FAD, para poder criar o meu bot,
+o processo simples vem aqui, NewBot, ele vai me pedir um nome, eu vou botar GitHub,
+Hub, Backup, Bot, vamos ver se vai aceitar porque se você não já existia, ele não vai aceitar,
+vou repetir aqui,
+olha isso que já existe, então eu vou colocar GitHub Hub, Backup, Open,
+vou ficar bem ainda não dá um ótimo perfeito, já vou pegar aqui o meu token, para colar lá no meu
+OpenClore, copiei, você selecionar aqui o Telegram, vou colar aqui o token,
+e vou aguardar para ele poder configurar aqui o Telegram,
+ele pide para colar aqui de novo, perfeito, os próximos passos aqui, eu vou avançar,
+porque geralmente eu configure isso aqui com o meu bot, pronto, então para o meio que ele pergunta,
+qual é o que eu quero utilizar como mecanismo de busca na web, eu vou pular esse etapa agora,
+ele vai perguntar se eu quero configurar algum skill nesse momento, mas eu não vou configurar também,
+porque o nosso objetivo não é esse, ele vai perguntar, você quer habilitar os hooks,
+então eu vou habilitar o boot Md, bootstrap também, como a de longue e o session members,
+estou fazendo isso aqui um pouco mais rápido, porque você já viu um passo a passo do instalação,
+mas decidir começar uma instalação do zero para a gente até refrescar um pouco a memória,
+então aqui ele vai perguntar, por onde eu quero começar com o meu bot, eu sempre começo com o
+web UI, que aí ele vai me gerar aqui comandos para poder acessar o meu gateway,
+e agora o que eu vou precisar fazer, eu vou precisar criar um túnel SSH,
+e nada mais é que é uma conexão, uma ponte de conexão entre a minha vps,
+e também o meu computador, para que eu consiga acessar o meu gateway através do meu navegador,
+então aqui em cima ele já me dá o passo a passo de como eu vou fazer isso,
+então eu vou pegar esse comandinho aqui, copiar ele, eu preciso abrir um novo terminal,
+deixa eu dar um clia aqui, aumentar um pouco para que se consiga chegar, vou rodar esse comando
+para justamente criar essa ponte entre o meu computador e a minha vps, na porta de 18789,
+ele vai me pedir aqui a senda vps, deixa eu pegar aqui de novo,
+ele está reclamando aqui, porque eu já tenho um pincelor rodando na porta de 18789,
+que é o pincelor da minha outra instalação, vamos jogar aqui para o gm,
+poderia ser o cloud também, a gente usa muito cloud porque o gm já estava aberto aqui,
+e aí eu vou usar ele para poder me dar a solução, e o que eu vou precisar fazer é matar o processo
+ou montar o processo, que já está na porta de 18789, e subir esse novo vps, ou botar isso em outra porta,
+e aí repetir o processo, ou eu posso usar uma porta diferente, eu vou usar uma porta diferente,
+que é o segundo opção que me deu, que eu acho que vai ser mais rápido, eu vou dar um contra
+o psique para voltar, vou rodar na porta de 18790, vai pedir a senda da minha vps, e é assim,
+eu estou indo mais rápido, porque a gente já tem várias aulas sobre isso, estou dando uma recapitulada,
+mostrando para vocês os desafios que podem acontecer com vocês, e aí para isso vocês já vão estar preparados
+para poder saber como a gm, então deixa eu pegar aqui, estão pegando aqui agora a senda vps,
+colocar aqui, ele não vai dar nenhuma resposta mesmo, mais agora eu posso pegar, aqui preste muita
+atenção que ele sempre mostra qual é o meu token, de instalação, o indereço é colocar o roxo,
+porque eu acabei de criar o túnel, se eu não tivesse criado o túnel, o indereço seguiu, o indereço da minha vps,
+45 com 437.78, mas como eu crie o túnel, eu estou rodando na porta de 1879, mas em local roxo,
+dentro da minha máquina aqui, então vou pegar justamente esse comandinho que que ele me deu,
+junto com o meu token que é para vale dar o meu gate, e vamos ver se ele vai abrir aqui no meu computador,
+então ele já abriu essa nova telinha aqui do OpenClaw, ele vem com essa opção, com o token do gate,
+aqui fica um pouco mais intuitivo, tem uma opção dentro da instalação que eu ainda não realisei,
+mas parece que é hora você conseguir colocar 100, então vamos tentar conectar, ele está reclamando,
+porque a porta não é essa, a porta é essa de 187090, então vou vir aqui,
+vou mudar aqui, 187090, ok, preciso do meu gate, meu token, vou pegar ele aqui para poder
+levar ele dar, eu achei que ficou bem legal isso aqui, o pessoal ficava um pouco perdido,
+e olha, já consegui instalar, vamos ver se ele está respondendo, vou mandar um week para ele,
+ó, perfeito, já está instalado no OpenClaw, ve que foi um processo bem rápido, a gente encontrou algumas
+dificuldades, mas hoje com inteligência artificial, se você mandar essas dificuldades para qualquer
+ia, ela vai te guiar passo a passo, para que você faça a sua instalação, e outra coisa tem uma aula,
+que é a aula 8.3, onde eu mostro para vocês, como que vocês fazem para poder utilizar o Cloud
+Code dentro da VPS, para resolver qualquer tipo de problema técnico, então dá uma olhadinha lá também,
+que vale a pena, eu já vou aproveitar, vou configurar ele aqui dentro do Telegram, eu mandei a
+token para ele, mas agora eu preciso estartar ele, então aqui é bem fácil também, copia,
+bom aqui no chat, ele mesmo vai fazer a configuração do Telegram, onde vai aprovar aqui, enquanto ele está
+fazendo, o que a gente vai fazer agora, para fazer os backup, a gente vai usar o Geek Hub, então deixa eu
+abrir um Cloud aqui, para mostrar para vocês, sobre o que é o Geek Hub, explique de uma maneira
+simples, para quem não é o ganhador, então vou mostrar para vocês o que é o Geek Hub,
+o Geek Hub é basicamente uma plataforma na internet para guardar e compartilhar projetos, principalmente
+com ele, mas não só, pense assim, imagina o Google Drive ou o Dropbox, onde você salva os arquivos na
+Núven, o Geek Hub faz algo parecido, mas com super poderes voltados para quem quer software, as três
+principais são guardar versões, então vou redar uma resumida aqui, trabalhar em equipe, compartilhar com
+outras pessoas, então o Geek Hub vai ser utilizado aqui, como se fosse o nosso Google Drive, só como vocês
+viram ali, ele é uma ferramenta um pouco mais poderosa, mas se você quiser também realizar esse
+processo de backup no Google Drive, também é possível, mas eu vou mostrar para vocês como é que vocês
+fazem no Geek Hub e como vocês já viram o Geek Hub, ele é uma ferramenta muito melhor, ok? Então vou
+vir aqui no nosso navegador, vou criar minha conta no Geek Hub, a hora que é a minha gente, eu estou
+criando a conta com a minha gente, a conta da minha gente, vou deixar esse username mesmo, não tem
+problema, a verificação completa, muito bom, então agora que eu vou fazer, eu vou vir aqui
+no meu gente, no telegram, vou perguntar para ele, qual o passo para fazer, para te dar acessos ao Geek Hub,
+já tenho a conta criada, isso aí eu até errado ali que eu digitei rápido, vamos ver se ele vai
+conseguir me usulhar, nossa gente, eles acordam meio burrimos, mas, você vê que eu nem falei nada
+ainda com ele, mas ele já me deu um passo a passo aqui, então ele está falando aqui, ó, criar o
+Geek Hub, acesse Geek Hub, série Tokens, Geek Hub série Tokens, clique em Generate New Tokens,
+Generate New Tokes Classic, dá um nome, vamos lá, vamos seguir para a passo aqui, Generate New Tokens, já
+está aqui no Classic, Generate New Tokens Classic, aqui eu vou dar um nome, pode ser
+backup, OpenClaw, o nome do agente, que você pode colocar, qualquer nota, eu vou colocar
+essa inspiração, para ele não inspirar, bom, e ele está falando aqui, ó, marque os escupos,
+Rep, acesse completo os repositórios, e Workflow, então está aqui Rep, Workflow,
+eu acho que já dá pra ele conseguir mexer bem, com essas permissões, ok, Generate Tokens,
+já gerou aqui meu Tokens, vou copiar, ó, me vê que o seu Tokens e o Zername do Geek Hub,
+o RL de algum repositórios que você quer que eu acesse por pagão, então vou mandar para ele aqui,
+Solve o Tokens em variável de ambiente, ok, o username, vou pegar aqui agora,
+então vamos colocar aqui o username, vamos ver se com essas permissões que eu dei para ela,
+já consegue criar um repositório, essas credenciais, preciso que cria um repositório de backup,
+vamos ver se ela vai conseguir fazer isso é que sozinho, e a gente volta daqui a pouquinho para conferir,
+então aparentemente ele disse que ele já cria um repositório, repósitou a área, como se fosse uma pasta,
+então ele disse que já criou, chamado Backups, salvo, o Tokens, em ambiente, em tuza MD,
+pois ele pode até remover desse tuza MD, eu posso dar uma instrução aqui de segurança para ele,
+primeiro backup feito, todos os arquivos do workspace já estão lá, vou ver se ele fez isso mesmo,
+vou atualizar aqui, vou voltar aqui para minha conta, ó, já fez, realmente ele já criou aqui,
+então o que eu tenho aqui, eu tenho, o agentis MD, o bootstrap, o heartbeat, o identity,
+ridmy, soul, tools, user MD, uma coisa que ele não subiu aqui que eu posso pedir para ele fazer,
+deixa eu dar uma olhada, é o arquivo OpenClawJSON, que é onde ficar armazenado nos modelos,
+deixa eu ver se ele consegue criar também esse arquivo, pode inserir no backup,
+o arquivo OpenClaw.JSON, e assim eu estou impressionado, porque ele fez isso de primeira,
+eu achei que ele tem um pouco de dificuldade, mas parece que cada vez que está passando,
+o system pronto que o original dele está ficando cada vez melhor né, ó, já subiu, vamos ver se ele subiu minha,
+vou dar uma olhada aqui, tá aqui OpenClawJSON, então já adicionou também, e aí o que qual o próximo passo agora,
+é fazer com que ele realiza esses backups deariamente, vamos lá, cria um com job diário para realizar esses backups,
+todos os dias durante a madrugada, não ver se ele também melhorou com relação acrojam jobs, esses
+modelos eles não estavam tão bons né, mas eles realizaram algumas correções de acordo com o
+que eu vi, isso é muito bom, se mostra que a ferramenta está melhorando a cada dia, isso é bem
+interessante, então vamos ver se ele vai fazer aqui o cão, agora vou criar o cão diário, cão diário
+criado, tudo certo, vai rodar 3 horas da manhã, vai subir todos os arquivos, e aí vamos ver se ele fez
+aqui, vou vir em cronso, a interface do OpenClawJSON deu uma mudada, bem, ó, já está criado aqui também,
+tudo certo, e esse eu quiser por aventura ver esses backups, eu consigo ver eles aqui também,
+então se eu ver aqui em Compte, são todas as alterações que ele fez dentro do meu repository, então o
+initial como foi a criação, depois ele subiu o backup inicial, agora depois eu pedi para ele
+edicionar o OpenClawJSON, fica tudo salvo aqui, porque ele registra tudo que ele for fazendo aqui
+dentro do nosso repositório dentro da nossa pasta, e aí você vai me perguntar, o que acontece se
+eu precisar recuperar, vamos perguntar que para ele, se eu precisar recuperar esse backup em uma nova
+calação, qual é o processo, então assim eu acho interessante, é muito bacana porque tudo
+a gente fez aqui com ele, então todas as dúvidas que surgirem vocês também podem perguntar para ele,
+não que aquilo vai ser uma verdade absoluta né, se devem ser checadas as informações, mas ele já
+já está bastante tidas nas nossas dúvidas, então ele está falando aqui, primeira coisa, está o OpenClaw
+na nova máquina normalmente, siga na documentação oficial, gosta de fez, ok, restaurar os arquivos, então ele já
+me deu aqui um comando, configuração principal do OpenClaw, certinho, reiniciar o OpenClaw pronto, a nova
+distância vai ter exatamente o mesmo OpenClaw ponto de ação, canais, tokens, plugins, mais todo o workspace
+dos arquivos em memória, atenção, o OpenClaw de ação contenta o que ele cagrenciar e sensíveis, o
+repositório já está comprovado, mas vale guardar bem o personal s-token do kit hub, ele é a chave para tudo isso,
+além disso, o que a gente poderia fazer também é criar uma nova instalação, sem executar esses
+comandos que ele falou, e aí pegar esse token que a gente salvou ali do nosso repositório e dar
+para o nosso novo agente e pedir para ele restaurar aquele backup e ele vai conseguir fazer também esse
+acesso, talvez de uma forma até mais rápida do que os equipaços comandos aqui, outra coisa que
+você poderia fazer é pedir para o Cloud Code instalado dentro do seu VPS, temos a aula 8.3 do
+módulo 8, onde eu mostro para vocês que ele também conseguiria puxar esse backup e restaurar ele
+dentro da sua nova instalação, então a gente, essa aula que eu quis deixá-la um pouquinho maior para
+gente fazer como se fosse a vida real mesmo, os problemas que acontecem durante a instalação, mas que a gente
+não deve desistir e a gente hoje tem várias ferramentas que podem nos auxiliar durante esse processo, ok? Então a gente se vê
+até mais.

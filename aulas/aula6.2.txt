@@ -1,0 +1,131 @@
+Então, beleza, você vai entrar na sua VPS, vai ser uma tela mais ou menos como essa,
+servidores.ura.rost.br e barra dashboard.
+Beleza, eu tenho várias VPS configuradas aqui no nossa conta,
+e aqui a gente tem uma VPS que a gente zerou ela e vai ser mais ou menos assim,
+a sua, vocês podem ver vocês, no caso do CPU, vocês sentiram armazenamento,
+o outro diga de RAM, beleza?
+Eu vou entrar aqui e aí, a gente vai ver em sistema operacional, o OneClick,
+vai ter o nosso logo aqui, já no dia, tá?
+Clique em Instagram, conclique,
+espaço de swap, um diga, vocês podem adicionar uma chave de SSH,
+tá? Eu vou mostrar para vocês como faz, tá?
+Chave, SSH, SSH, Eduardo, maybe.
+Beleza? E aí, como que a gente vai criar essa chave?
+Então, para criar essa chave aqui, a gente vai abrir o terminal,
+beleza, eu tenho que tirar essa tela, tá até ela cheia.
+Terminal tá aqui, beleza? Então, a gente vai pegar aqui,
+vai pegar minha outra diretor de chave, só.
+Eu vou pegar o nome da minha chave, colocar aqui, ok?
+E aí, eu vou copiar isso aqui, não é pra salvar, tá, pessoal?
+Vou colar aqui no terminal, beleza?
+Ah, ali já achou que o usuário, pra aí,
+olha o que eu vou fazer aqui, vou dar não, porque eu já tinha uma chave de SSH aqui, tá?
+Eu mudei, eu vou mudar aqui, ó, que eu já tenho uma lura rosto, tá?
+Qualquer um lura ponto aleatório, vou vir no terminal, e vou gerar,
+ele vai pedir a senda do meu Mac, pegue de novo, pronto.
+E agora ele veio e ele efetivamente gerou.
+E aí, a gente vai usar esse comando aqui, ó, só vou ter que alterar aqui, tá?
+Deixa eu ver se chegar, me xava de segurança, tá, pessoal?
+Não salva ainda aqui, ó, vou pegar isso aqui, vou jogar no terminal contra o C,
+contra o V, beleza, aqui que ele fez.
+Se eu ver, dá um contra o V aqui, ó, essa é minha chave de SSH, tá?
+Então depois a gente vai pagar essa chave, obviamente, mas eu criei uma chave e tô vinculando aqui, tá?
+Então eu tenho uma chave com o meu Mac, o meu Mac tá permitido, efetivamente,
+ó, acessar, só o PPS, beleza?
+Instalar o pincel com comunidade, sim, pronto.
+E aí ele vai começar a fazer instalação, então é literalmente conclique mesmo.
+Pronto.
+E aí, isso aqui vai demorar alguns minutos pra ela botar, ó, você tem que estar a logar, pegar o IP dela aqui, ó.
+E logar ela não vai deixar aqui, a gente vai fazer.
+Deixa eu deixar ir pronta aqui, uma outra, que eu fiz um pouco mais cedo.
+Então, tenho esse, pode ver que o IP é diferente, contra o C, contra o V.
+Beleza, você vai cair aqui no instalador, nosso.
+E essa aqui é a grande sereginha do bolo, configurar meu pincel.
+Então, a gente tem aula de conforação de chave de IP, mas a gente vai fazer uma chave,
+form.antrófique aqui, a gente vai gerar uma nova chave.
+A gente tem aula que pra o ar está ensinando isso, pessoal, com detalhe.
+O copiasa chave, coledando trófique, tá?
+Vou fazer o compêmio é outro aqui também.
+Não, vocês vão ver nada, beleza.
+Você tem sua chave de IP do trófique.
+Ah, desculpa, esqueci.
+Tem que validar aqui.
+Validei, ele puxa o novo modelo de IP.
+Ele é límila, tá?
+Coloca meu nome.
+Edu, sou o empresário, o ramo, o tecnologia.
+E ajude as pessoas a construir.
+E per a gente esteia.
+Vou chamar de Maestro.
+Coloca meu negócio aqui.
+Comunidade cló Brasil.
+Primeira comunidade de desenvolvimento.
+Pém cló Brasil.
+Posso te chamar o negócio aqui.
+Business Hub.
+Empresa focada em aceleração.
+Presa aqui a outra vez.
+Interligência artificial.
+Então, a gente...
+Coloca meu negócio que você tiver.
+Negóis e valores, tá?
+Então, seleciona aqui quatro, por exemplo.
+Vocês vão ver o quanto isso aqui é importante, tá, pessoal?
+Gosto de ser direto ao ponto.
+Quero que a cló...
+A gente tá configurando o clodete aqui já.
+A gente vai configurando o clodete.
+Tem o TTH, pesado sobre carga de mensagens.
+Pode colocar mais desafios que você tiver também, tá?
+Eu utilizo Google Workspace, WhatsApp Business, Telegram.
+Deixa só esse Instagram.
+Tá.
+Só empresário e founder.
+E aqui você pode selecionar, ó,
+efetivamente, as suas prioridades.
+Beleza?
+É que o que a gente setou.
+A gente vai evoluindo esse sistema aqui.
+Vou colocar um nome aqui clodete com este mojo.
+Todo mundo quer ter uma clodete.
+Vai ser minha braço direita.
+Braço direita.
+Na seu após.
+Shop.
+Tem clod, Brasil.
+Então, aqui o que a gente tá fazendo?
+A gente tá dando vida para a gente.
+A gente tá configurando ele, criando ele.
+Beleza?
+Tão de vosso direto profissional.
+O que que me irrita?
+Então, elogios vazios me irritam.
+Repetite que disse.
+Eu gostaria aquela.
+Eu subi ele para muito passos antes.
+Confirmado em viago externo.
+Registrar lições automaticamente.
+Usar um morco quando fazer sentido.
+Lívio para fazer.
+Lá eu arquivos organizar, pesquisar na web.
+Responder meio simples ou dinheiro.
+Envia aí, e meia os mensagens.
+Aí precisa perguntar antes de enviar e meia.
+De agenda reuniões, de deletar, gastar dinheiro.
+Beleza?
+Heartbeats, né, que são os batimentos cardíacos dela.
+Quando ela vai despertar.
+Vou colocar cada duas horas aqui.
+A gente vai explicar como fazer a economia desses tokens.
+Mas, por enquanto, isso custa.
+Beleza?
+Checa no Heartbeats, conto.
+Promete-se nas próximas 24, 48 horas.
+Cronos todos rodaram, é mesmo urgente.
+Beleza.
+Então, agora, a gente está com a primeira parte feita.
+A gente não pode terminar ainda antes de implantar.
+Só vou explitar essa aula para não ficar muito longa aqui.
+A próxima aula, a gente vai fazer, efetivamente, a configuração
+do bot no Telecran, tá?
+Tudo quase automático.

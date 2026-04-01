@@ -1,0 +1,72 @@
+pessoal, a linha extra aqui, falando um pouquinho sobre a auditoria de segurança,
+né, no OpenClaw. Então assim, eu estou fazendo algumas avaliações, eu estou
+querendo dar um pouco mais de autonomia para Claudette. E eu rodei um simples
+comando aqui para ela, faz uma nova auditoria de segurança, tá? Eu vou fazer junto com vocês
+aqui agora, eu ia rodar essas autorizações sozinho, mas eu vou rodar em conjunto aqui,
+decidir começar a gravar se ela agora, só para você entender como funciona uma auditoria
+de segurança aqui, e o que pode ser feito, tá? Então, falar aqui, ó, Claudette,
+rod de uma auditoria de segurança. É, como eu estou usando modela de Android, que aqui
+estou usando o Sony 4.6? Então, ela está muito inteligente, tá? Então, não está perdendo
+o contexto, está muito rápida. Então, isso está tipo, está muito bom, muito bom mesmo.
+Então, outros quatro erros críticos aqui para a gente, a gente vai fazer agora as autorizações.
+Então, vamos lá. Vamos atualizar as regras do Telegram, do Group Polis, tá?
+O que é o Group Polis, pessoal? Group Polis, se são as políticas do grupo. E isso aqui
+é bem importante, a gente está sempre de olho nisso, tá? Então, ó, por exemplo, está
+open, conecta open, qualquer pessoa, em qualquer grupo pode te assonar. Então, aqui, a gente
+não quer que a Claudette fale com outra pessoa, porque a gente não quer que ela fale com
+outra pessoa, porque ela tem os meus dados. Então, se alguém vier falar com ela, provavelmente
+que puxar dados, entendeu? Ótimo, eu quero que apenas eu consiga assonar a Claudette,
+assonar você, e qualquer um dos subagentes. De esse momento que a gente está aqui agora,
+eu basicamente não estou usando mais terminal muito pouco, o Macmin está aqui ao meu lado,
+mas eu basicamente não estou utilizando terminal. Vamos ver aqui. Então, está demorando um
+pouquinho, provavelmente ele está processando por trás, no back, né? Ela não está
+enitando. Então, quando ela não está enitando, é porque ela está processando por trás.
+Às vezes elas vão ficar enitando por minutos, às vezes não. Enfim, mas agora a gente
+vai aguardar, ela faz a atualização. Vamos ver aqui, ela atualizou.
+Show. Então, está garantido que ninguém mais consegue te assonar, né? Nem você, nem o Claudião.
+Perfecto. E aí, tal que? Show. Agora, vamos para próximo, o update de segurança.
+Pode ligar o firewall, o Mac e o S. Você consegue? Você está com permissão para isso.
+Às vezes, no caso desse como tem que agir no Mac, talvez você tem que ir para o terminal.
+Não é sempre, pessoal. Então, o que eu vou fazer? Eu vou no Mac, estou aqui no Macminho.
+Eu não consigo compartilhar até o dele infelizmente com vocês, mas eu vou fazer o processo
+vai ser tipo isso aqui, copiar. E aí, eu joguei isso aqui lá. É o que eu vou fazer lá,
+agora. Acabei de fazer. Quando eu dou esse sudo aqui, ele aparece um campo para a péssaro de
+que a senha, eu digito a minha senha, e ele confirma. Então, vamos ver se foi. Já foi no Mac direto.
+Vía terminal. Veja se foi.
+Tá ativo.
+Não precisa.
+Coloco isso.
+Aonde eu colocar na sende box?
+Então ela mesma está fazendo auditoria dela, isso é o que é importante, galera, se
+fazer para mais uma vez por semana.
+Eu gosto normalmente de fazer uma vez por semana, ele falhou aqui e aí quando acontece isso
+aqui o que eu faço? Eu venho para o nosso amigo Claudinho, que já conhece nosso projeto,
+jogo aqui, eu vou colocar toda a autorização que a gente fez aqui, às vezes a gente quebra
+ele como prosseguir e forma direta, caso ocorreu no OpenClaw falando pelo telegram.
+Eu coloco, eu vou ter que desativar o sende box agora, porque eu coloquei todos os
+modelos em sende box, como se colocasse uma caixinha diaria, separada, então eu vou abrir
+aqui no MacMini agora, só vou trocar isso aqui, eu vou colar exatamente os cremetros,
+estou no 4.6 de sonê, poderia estar no Opus, eu preferiria, mas ele vai resolver tudo tranquilo.
+E aí a gente vai colocar isso lá agora, então na verdade aquele comum que ele deu, não deu certo,
+eu fui jogando os erros aqui, colando o terminal, o teu erro pode ser diferente ou parecido,
+mas podem acontecer erros desse tipo, então eu só fui basicamente jogando terminal e ele foi
+me guiando, faz isso, faz aquilo, aqui, forçando o reinício do OpenClaw, etc, fiz isso umas 4 vezes,
+e aí ele viu que tinha errado um valor ali, e ele gerou um script de Python, joguei o script,
+dei um gateway force, e aí, joguei aqui, o resultado final dele, ele falou o gateway subiu o link,
+o link zero erro de Docker não logue, então agora vou mandar uma mensagem aqui para ver se ele rodou,
+galera, muitas vezes a gente tem erros, foi, muitas vezes a gente tem erros dentro do OpenClaw,
+e a gente fica com medo, cara, travou tudo, meu a gente caiu, relaxa, fica de boa, porque esses erros
+podem acontecer, às vezes fazendo a configuração, a gente quebra alguma coisa, a gente acabou de quebra
+aqui ao vivo, e é normal, você saber no usar o Cloud, esquece, acabou, ah, posso usar o GPT,
+o Gemini, pode, mas provavelmente você vai ter uma jornada muito maior, ele vai demorar mais para
+conseguir corrigir, não sei que seja o GPT 5.4 Codex, mas em via de regra, vai ser muito, muito tranquilo,
+você consegue corrigir, às vezes você fica 10 minutos, 15, 20, eu fiquei três minutos para
+fazer essa correção desse erro aqui, basicamente copiando e colando, mostrando para ele, o que estava de
+errado, e aí ele vai entender, às vezes ele pede propuxar uma linha de comando, para ele me trazer
+quais são os parâmetros do OpenClaw, tem a atualização toda a hora, me traz aquilo, e ele vai ajustando, não
+se desespera, a correção vai vim, e vai acontecer, beleza? Boa, quebrou os agentes? Ok, ok,
+tá tudo certo agora, e aí a gente roda essa correção aqui, vocês vão ver que é tipo a super de boa,
+tá? Beleza? Não vamos instalar do que era agora, segurança, tá rodando o perfeito, né?
+Perfeito, roda o galera, então é isso, sempre rodem para o menos uma vez para o semana, e você pode
+colocar aqui ó, é cria um Chrome Job Semanal para toda, segunda tipo, 7 AM, rodar, uma Audit Security,
+beleza? Então, aí isso ele já vai adicionar no Chrome Job dele aqui, e tudo certo galera, tudo

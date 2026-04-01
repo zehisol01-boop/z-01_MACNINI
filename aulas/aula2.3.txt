@@ -1,0 +1,52 @@
+E essa aula que é sobre dinheiro, não sobre finanças, mas sobre dinheiro, porque se você usar
+a ir a profissionalmente, seja para o seu negócio ou para vender como serviço, você
+precisa entender o negócio chamado de Tolkien, tá galera? Tolkien são literalmente a moeda
+da ira, tá? O que é um Tolkien? Simplificando, ele é um pedaço de palavra, em inglês
+uma palavra comum vira mais ou menos um Tolkien, em português, como nossas palavras são
+um pouquinho maiores, cada palavra vira entre 1 e 2 Tolkien em média, e para você ter
+uma referência prática, uma página de texto em Word tem mais ou menos 500 palavras que viram
+700 Tolkien, um e meio curto, um senha 200 Tolkien, uma proposta comercial de cinco páginas,
+uns 3.500 Tolkien, tá? Então, quando o seu agente trabalha, ele consome Tolkien em duas direções,
+tá? Tem os Tolkien de entrada, que é tudo que você manda para ele, incluindo suas instruções,
+o histórico da conversa, os documentos, etc. Então, por exemplo, quando eu mando uma mensagem lá
+para o chat IPT, eu para o jaminar, é para o Claudio, qualquer um que seja, eu estou consumindo Tolkien
+de entrada, certo? E aí, temos os Tolkien de saída que é o quê? É a resposta aqui, ó, que ele gera para
+gente, tá? E os proveedores de API, tá, a gente vai ter uma aula sobre API, eles cobram um puldo
+por Tolkien consumido. Então, literalmente, cada pergunta que seu agente faz, cada resposta que ele gera,
+tem um custo associado em centavos de dólar. Agora, calma, não é, cara, deixa eu te dar números
+reais. Com o Claudio Sonê, por exemplo, que é o que a Claudio deixava lá atrás, a cada centarefa
+que ela executava, o custo ficava entre 50 centavos e 2 dólares rodando o dia inteiro. E ela
+me custava aí menos do que 10 reais por dia, que era os dois dólares que eu falava nos vídeos
+do Instagram, tá? Ele é o funcionário mais barato do mundo, trabalha 24 horas por dia, não
+tira férias, não reclama e custa menos do que um cafézinho por hora. Para você que a
+empresária, o empreendedor, pensa assim, se a Claudio é de economiza duas horas por dia, de
+trabalho operacional, e minha hora vale, sei lá, 200 reais, ela me gera 400 reais de valor por dia,
+custando 10. O roya de 40 para 1. Que investimento da 40 para 1?
+Beleza. E tem estratégias para você otimizar isso. Tarefa simples no modelo local, costa zero,
+só energia e processamento do seu computador. Tarefas que precisam de inteligente, Claudio ou
+GPT, o custo é baixo. E aí você tem que saber muito bem se está isso. Tarefas de alto volume,
+de psique, por exemplo, ou que me cados 0.5, que eu estou utilizando, o custo é mínimo se você
+soubesse, você está também, o de psique é mais barato, um modelo chinês, mas a gente está
+utilizando o outro que a gente vai falar sobre isso. Na aula de monetização lá na frente, eu vou te
+mostrar como esse custo de Tolkien se vira irrelevante perto do que você cobra do seu cliente. Quando você
+se implementa um agente para uma empresa e cobra ser lá, 10 a 20 mil reais de setup e uma mensalidade
+de 300 reais, por exemplo, a conta fecha muito rápida. Mas guarda esse conceito, Tolkien é a moeda,
+quem tende gerencia bem, maximiza, é lucro, quem ignora isso, gasta desnecessariamente. É igual qualquer
+um ponto operacional do seu negócio. Então, se a gente pegar aqui, eu estou com uma instância teste
+dentro de uma VPS. Então, aqui, talvez se você já instalou o seu open-closs, deve estar vendo isso,
+não queria que você ficasse na frente. Qual que é o modelo primário que eu estou utilizando na
+VPS aqui? Para ver se a gente vem aqui dentro do painel do open-closs, a gente vai vir em agentes.
+Eu estou usando o open-closs Google Gemini 2.5 Flash. E aí, eu vou abrir o open-closs aqui.
+A gente vai ter uma aula ensinando vocês a configurarem isso. Então, eu vou vim aqui, em atividade,
+e eu vou filtrar isso aqui. Este, a gente aqui, ele está vinculado diretamente com esta chave de API.
+A gente vai falar sobre isso. E ele me custou até agora, então, uns 4 dias, 13 dólares. Eu usei sonê,
+eu começo 3.5 sonê, e depois eu fui pro Gemini 2.5 Flash. Mas quando a gente começa a derreted
+de utilizar, vocês aqui não. Isso aqui é um 68. Aqui, ó. E aí, isso aqui começa a fazer sentido.
+A gente minimizar o custo e maximizar a operação. Olha que se a gente gastou. Isso aqui foi o começo da
+Claudette, está a gente. Gastou bem. Pouco, depois subiu, depois eu equalizei, depois eu troquei
+isso aí daqui do open-closs. Eu usou ele para várias coisas ainda, mas para esses modelos,
+efetivamente, não. Então, recapitulando para vocês aqui, tokens é dinheiro. Uma palavra você pega aí
+de uma, dois tokens em português, o sonê, sem tarefas de 2 a 10 reais. Podendo variar para cima
+para baixo, depende do tamanho da técnica que você está colocando. E aí, a Claudette, a meta dela
+sempre está rodando abaixo de 10 reais por dia ou 2 dólares. Tá? A gente, vocês vão ter o material
+como esse. É muito mais completo, inclusive, para vocês poderem estudar. Se tiverem interesse.

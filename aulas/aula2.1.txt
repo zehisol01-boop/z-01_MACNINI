@@ -1,0 +1,39 @@
+Então, beleza, pessoal. No último módulo, você entendeu o que é o Penclaw e o que
+ele importa. E agora, o que a gente precisa entender? A gente precisa entender o motor que
+faz ele funcionar. Porque se você vai ter um agente de ar trabalhando para o seu negócio,
+você precisa entender, aqui, pelo menos, um mínimo de como ele pensa. Não para virar
+técnico, mas para tomar decisão boa, é igual o carro. Você não precisa ser mecânico
+para dirigir, mas se você tem uma frota de veículos da empresa, precisa saber a diferença
+entre motor a diesel e motor a gasolina ou o carro elétrico, precisa saber quando
+troca o óleo, precisa saber o básico para não ser enganado na oficina.
+Qual é a mesma coisa? E o motor do O Penclaw se chama LLM, large
+language model ou modelo de grande linguagem. Nome feio com o jeito simples,
+ele que fica por trás aqui do O Penclaw. Então, pensa assim, imagina que você contratou
+um estagiário que leu absolutamente tudo, tudo da sua empresa. E do mundo, todos os livros,
+os artigos, todos os sites da internet, todos os manuals, todos os contatos. Ele tem
+uma base de conhecimento absurda, mas ele não pensa como eu e como você. Ele funciona
+tipo por padrão. E quando você manda uma mensagem para ele, ele analisa tudo que você
+escreveu e calcula. Qual é a próxima palavra mais provável? E depois a próxima e a próxima
+palavra por palavra. E ele vai construindo a resposta. É como o alto completar do WhatsApp.
+Sabe quando você começa a digitar e ele sugere a próxima palavra? O LLM faz a mesma coisa,
+só que no nível absolutamente mais avançado. O WhatsApp sugere uma palavra. O LLM escreve
+parágrafos inteiro que fazem sentido com lógica, com contexto e com coerência. E para isso
+funcionar, esses modelos foram treinados com trilhões de palavras, muitos parâmetros,
+livros, artigos científicos, código, contratos, e meio, tudo que existe na internet. E eles
+não entendem coisas como a gente, mas simulam compreensão tão bem que o resultado é verdadeiramente
+impressionante. E aqui está o ponto que eu preciso, você grave como empresário ou empreendedor.
+O OpenClaw não é um modelo. O OpenClaw é a estrutura que pega inteligência desse modelo
+e conecta com o mundo real. O modelo é o cérebro. O OpenClaw são umas mãos e as pernas.
+A Claudette usa o Cloud e está usando o Cloud. Mas ela poderia usar outro modelo amanhã e continuar
+funcionando. É como trocar o motor do carro sem mudar a carroceria. Entendê-se a separação.
+É fundamental. Porque quando a gente fala de custo, de escolha, de modelo, de performance,
+tudo vai ser sentido a partir deste modelo. Então aqui, por exemplo, a gente tem Cloud,
+GPT, de psique, modelo local, violhama. E, gente, na real, existem vários modelos,
+existem centenas de modelos na internet. Eu vou passar a minha configuração para vocês,
+o que eu estou utilizando e a minha utilização vem mudando gradativamente. E eu vou estar sempre
+por aqui, tanto eu quanto o meu time, trazendo para vocês o que a gente está efetivamente utilizando
+e está zerando o custo. Eu estou utilizando o Cloud hoje para algumas funções, mas ele não é o
+modelo principal. O modelo principal, nosso aqui, hoje, é o Kimi K2.5. A gente está rodando ele
+não local, a gente está rodando ele numa outra VPS. É uma por isso que a gente consegue ter um custo
+abaixo de 2 dólares por dia no plano que a gente utiliza de VPS. Nosso custo é de 20 dólares por mês.
+A gente vai abrir, vai ficar a conta juntos, que estava de API, etc. Tudo em conjunto. Beleza?

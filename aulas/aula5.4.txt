@@ -1,0 +1,42 @@
+E para fechar com o chave de ouro a anatomia do OpenClaw, a gente precisa falar sobre onde ele vive
+e como você conversa com ele efetivamente, tá?
+Então, o OpenClaw, ele suporta hoje mais de 20 canais de comunicação.
+Ah, o Telegram, Discord, Slack, Sign, Aumessas, de Microsoft Teams e outros.
+Isso significa que você conversa com o seu agente pelo mesmo app que já usa no seu dia a dia, isso é muito legal.
+Na prática, a maioria das pessoas escolhe um ou dois canais principais.
+Eu uso hoje, principalmente, ou Telegram para tudo.
+Tá, usar WhatsApp hoje não uso mais.
+Mas isso é preferência pessoal.
+Sobre infraestrutura, o OpenClaw, ele precisa de uma máquina para rodar.
+As opções mais comuns são um Macmini, que é o que eu uso e recomendo por ser silencioso potente
+e fica ligado 24 horas sem problema, ou um servidor na nuvem,
+tipo da Lura Hosting, que inclusive oferece instalação com um clique,
+ou até mesmo um notebook, se ele fica ligado.
+Os requisitos são modestos, você não precisa de uma máquina cara,
+um Macmini básico ou um servidor 5, que já resolve.
+O processamento pesado, quem faz, é a LLM, a nuvem que a gente está usando.
+O OpenClaw, em si, consome pouco recurso.
+Caso você falha assim, eu vou, aqui a gente tem até os custos, mas, por exemplo,
+caso você vá para uma VPS, que a gente recomenda hoje,
+de que a gente coloca de taúcha, mas eu super recomendo a Lura Hosting,
+que é nossa parceira, inclusive, o nosso pacote de instalação lá dentro,
+não é o que a gente desenvolveu?
+Em VPS, você não precisa ter um computador ligado 24 horas por dia,
+mas se você falar, eu quero rodar modelos locais da IA,
+aí começa a mudar a história, porque aí você precisa,
+efetivamente, de um computador físico para poder rodar isso.
+Beleza?
+Se você desliga a máquina, o agente para.
+Por isso, que a recomendação de uma máquina dedicada,
+que fica sempre ligado, inclusive aqui no escritório,
+porque eu vou colocar mais Macminis aqui,
+a gente vai colocar um sistema de Powerbank para aguentar caso caiu energia,
+ele vai segurar, eu vou pôr uma Starlink em uma das janelas
+para ela segurar a internet e trabalhar como redundância também.
+Beleza?
+E com isso, pessoal, você já entende a anatomia completa do Pencló.
+Gateway Modellos, que usou o ponto medir Hardbeat,
+os canais, todas as peças do quebra-cabeça,
+começam a se encaixar agora, entende?
+E agora, a gente vai começar a aprofundar mais cada uma dessas peças.
+Beleza, pessoal?

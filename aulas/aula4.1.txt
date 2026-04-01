@@ -1,0 +1,29 @@
+meus amigos, a palavra a gente tá em todo lugar, mas pouca gente sabe explicar a
+diferença entre um chat bot, um assistente e um agente, tá? É o que a gente chama
+aí de primeira, segunda e terceira geração, a gente tava vivendo aí, a era dos agentes
+de há, muita gente fala, estou criando um agente no chat PT, na verdade está
+criando um assistente ali, a era agente que tá iniciando agora efetivamente, tá? Então a gente
+quer resolver isso agora, pra não criar uma confusão mental, e se tiver uma confusão mental
+na sua mente já, pra que ela deixe de desistir a partir de agora, tá? Então um chat bot
+que que ele é, ele é a primeira geração, ele responde perguntas, você pergunta, ele responde,
+não tem memória, não tem contexto, não toma decisão, é como um faque automatizado, o chat bot
+de suporte que te rita no site de uma empresa, é isso, que eles, chat bot de WhatsApp,
+tradicionais, é isso, tá? Já um assistente é a segunda geração, ele tem mais inteligência,
+mais contexto de conversa, e pode fazer coisas mais complexas como escrever textos, analisadados,
+gerar código, o chat PT, cloud, eles são assistentes, tá? Então quando você usa pelo chat
+esses modelos, vamos te ver aqui, por exemplo, cloud.ai.niu, perplexed, a gente tá falando
+de um assistente, eles são poderosos, mas esperam que você peça, tá? Então, se eu não
+fizer nada aqui, ele não vai fazer absolutamente nada. Agora, se eu pegar a cloudete aqui, olha
+que quanto a coisa que ela me trouxe, sem eu nem pedir nada. Olha, uma avaliação técnica
+que eu tinha feito, de migração para o supoabeza, sei lá, tinha feito hoje mais cedo, não
+verdade não, eu nem tinha feito isso aqui, ele entendeu em algum momento que precisava, tá? Então,
+eles são poderosos, mas eles esperam que você peça, uma gente voltando aqui, ele já
+é o quê? Ele já é a terceira geração, e é aqui que o jogo muda, ou a gente não espera,
+ele age, como vocês viram, a cloud agora aqui, ele tem autonomia para tomar decisões,
+executações do mundo real, e continuar trabalhando mesmo quando você não tá olhando, tipo a
+interdação que eu mostrei ali, no supoabeza. A diferença fundamental é essa, o chat bot
+responde o assistente ajuda, e o agente faz. O assistente diz como mandar o e-mail, o agente
+manda o e-mail por você, e é isso que o OpenClaw é, é um agente, ele tem percepção
+ambiente raciocina sobre o que fazer, decide a melhoração e executa, tudo inlupi continuamente.
+2021 é o ano em que a gente sai da era dos assistentes, e a gente entra na era dos agentes.
+E quem tem isso primeiro, ganha a corrida.

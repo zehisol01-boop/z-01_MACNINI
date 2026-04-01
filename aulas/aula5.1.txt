@@ -1,0 +1,25 @@
+Bem, então agora que você já entende o que é um agente, a gente vai abrir o capô do
+OpenClaw e entender como que ele funciona por dentro, ele tem três camadas basicamente,
+camada um, o Gateway, esse é o coração do OpenClaw, ele é um processo que roda na sua
+máquina dentro do seu Macmini, seu notebook ou na VPS, ele fica ligado o tempo inteiro,
+o Gateway é responsável por receber as mensagens de qualquer canal WhatsApp, Telegram,
+Discord, Slack, etc. E aí ele faz o roteamento para a inteligência artificial, tá,
+no modelo de LLM, então pensa no Gateway como uma central telefônica, não importa de qual
+o telefone você ligue, o Gateway vai receber, processar e devolver a resposta pelo mesmo canal,
+tá. Depois aí, a gente vem para a camada 2, né, que é o LLM, que a gente já falou,
+Cloud, GPT, Dipsy, que olhama, etc., é um modelo local, e o Gateway manda a sua mensagem
+para o modelo junto com todas as instruções de contexto, e aí o modelo raciocina
+decide que fazer. Depois a gente vai para a camada 3, que são as skills, que são as ferramentas
+que a gente pode usar, Shell, Browser, Mail, Calendary ou arquivos, então quando o modelo
+decide, efetivamente, que precisa executar mação, ele é a Sonya, que é o correspondente,
+e aí o SQL executa no mundo real, e aí o fluxo completifica assim, você manda uma mensagem
+por WhatsApp ou no Telegram, o Gateway recebe e manda para o modelo com todo contexto,
+o modelo raciocina decide usar skill de e-mail, por exemplo, a skill accessa seu e-mail
+faz o que precisa retorna o resultado para o modelo, o modelo reformula resposta e o
+Gateway manda de volta para o seu WhatsApp, para o seu Telegram, enfim, tudo isso acontece
+em segundos, e tudo isso roda na sua máquina, seus dados não vão para nuvem de ninguém,
+se tiver a máquina, né, a não ser chamada de API para o modelo, que aí ela é criptografada,
+e essa arquitetura de três camadas, ela é bem elegante porque ela é modular,
+você pode trocar o modelo sem mudanada, você pode adicionar skills sem mexer no Gateway,
+pode conectar novos canais sem afetados skills, cada peça aqui, ela funciona de forma
+independente, fechou?

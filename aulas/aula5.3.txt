@@ -1,0 +1,42 @@
+E uma das features mais impressionantes do OpenClaw é o Heartbeat, que vocês estão vendo aqui.
+É literalmente isso que separa ele de qualquer chatbot.
+O Heartbeat significa batimento cardíaco.
+E exatamente isso, é um timer que fazemos acordar periódicamente e agir, mesmo que você peça nada.
+Então você configura cada 30 minutos a corde verifique se tem alguma coisa para fazer.
+Ou a gente acorda, olha os emails novos, checo calendário, verifique se tem alguma tarefa pendente e age.
+Sozinho, sem você mandar mensagem.
+É por isso que as pessoas chamam o OpenClaw e a gente pro ativo, né?
+Ele não fica sentado esperando ordem, ele tem uma iniciativa.
+Então imagina só, que você pegou e configurou o Heartbeat para checar os seus emails a cada hora, as três da manhã.
+E aí chega um e-mail urgente de um cliente.
+O seu agente acorda, a leua e-mail identifica, oupa, é urgente.
+E aí ele te manda uma mensagem no Telegram.
+É do Ardo, chegou um e-mail urgente do cliente X sobre o projeto Y.
+Quer que eu responde algo?
+E aí você vê de manhã e responde sim.
+E o agente manda a resposta pro cliente, do e-mail dele.
+Tudo isso enquanto você dormisse, só acordou para falar, que era o que envio o e-mail efetivamente, né?
+Então esse é o poder que a gente tem de ter um agente 24% por sete.
+E aí isso que a gente vai construir junto.
+É literalmente você ter um funcionário que a cada 30 minutos ele vai checar o e-mail.
+A gente já prestei construir para várias multinacionais.
+E é um processo normal, né?
+A cada X minutos eles vão lá e os emails.
+Aqui você tem o Heartbeat, que é o despertar.
+Então nesse exemplo aqui, ó, daqui 8, 9, 8 minutos, ele vai fazer um check.
+Check.
+Check.
+E vai verificar tudo que está ali setado.
+Beleza?
+Conselto importante.
+Eu estou tentando, pessoal, trazer de uma forma mais lúdica para vocês, os conceitos,
+para que vocês consigam efetivamente entender a anatomia de um agente de OpenClock.
+E a base é que a gente está falando de OpenClock, mas ele não é só de OpenClock.
+A gente pegar qualquer clock surgindo o mercado, basicamente a arquitetura por trás que vai rodar é isso.
+Se você chegar agora e falar, cara, eu não quero desenvolver o OpenClock.
+Está tudo bem, mas isso que você está aprendendo aqui vai te ajudar muito a desenvolver
+novas habilidades em trabalho como a A, porque você está começando a entender como que funciona por trás.
+Uma.
+E a, uma gente.
+Dei A.
+Beleza, galera.

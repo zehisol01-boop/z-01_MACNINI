@@ -1,0 +1,75 @@
+Agora, chegou a hora de fazer a configuração do Google.
+Dela, vocês vão ver que é super simples.
+Preciso configurar o Google.
+Estou usando o modelo do Cloud ainda, 4.6.
+Quero, gemeio, calendário.
+E calendário.
+Deixa eu la rodar aqui.
+Encontou isso em paralelo.
+A gente vai criar uma nova conta do Google.
+Vindo para minha Universidade aqui.
+Quando coloquei meu celular...
+Lá vai me via um código, enviou, chegou um código tipo assim, 3, 3, 4, 4, 8, 9,
+beleza, não quero medir com pressão agora, o cloudet c,
+beleza, vamos lá,
+precisamos ativar o log, então o nosso e-mail é isso aqui, não coloque a sua senha,
+não usa sua senha, não fica só como dica, algumas que é uma senha nova para ela,
+vai instalar o goge c ali, demoram um pouquinho as vezes,
+está buscando aqui, está mostrando o log de execução dela, beleza, então a gente vai
+criar um cliente, ou para fechei no google, beleza, vou concordar, continuamos em console.cloud.go.com,
+vamos criar um novo projeto, cloudet, porque não tem nenhuma organização, só que só para dar acesso
+para ela, então a gente vai em app e serviços, a gente vai em credenciais, criar um projeto, cloudet,
+de um prato criado ou não criou, beleza, então foi aqui criar uma credencial, ou
+alf cliente adi, idade cliente, ou alf, temos que configurar uma tela de consentimento sobre o
+criatório, vamos começar, nome do app cloudet, cloudet c, público, vai ser interno, não deixou criar
+os outros contas, a gente estava na sua escotora de empresa, beleza, dados de contato, cloudet c,
+concluir, criar, então, nome criei certo, beleza, vou criar um cliente, ou alf, isso para computador, cloudet,
+vpslura, beleza, agora a gente tem os dados aqui, o idade do cliente e chave secreta, salve isso aqui,
+gente, mas não compartilha com literalmente ninguém, beleza, então, baixe o arquivo, baixar JSON, baixei, beleza,
+a gente vai abrir o desktop, abrir esse JSON, e vamos mandar aqui, eu gravei tentar, hoje que a
+abre ficar lenta pessoal, então, como a gente está em vps aqui, ela vai mandar um link para a gente,
+eu vou colocar, autenticar, vamos lá, ele gerou um link para a gente, não vai dar certo, você vai ver
+porque o projeto não está publicado ainda, esse projeto já está publicado, tem um passo para você
+fazer aqui, que vai ser console, google aqui, aqui a gente criou o projeto, para toda a minha conta aqui,
+então, a gente, eu vou por aqui, esse coisa aqui, API, já vai aparecer, poupos, paze os serviços, aqui,
+pela de permissão wolf, beleza, a gente vai vir em público alvo, e aqui, a gente vai clicar em,
+a gente vai publicar o app, muita gente erra nesse ponto aqui, publica o app, beleza,
+aqui o ideal seria a gente colocar a comunidade, o que é o Brasil, aqui, adiciona domínio,
+a gente vai vir aqui, não precisa também, beleza, agora com domínio publicado, vou copiar aqui,
+vou colocar, avançando a cedeira clodete, continuar, selecionar tudo,
+opa, veja se foi o goge,
+se passar o rl de callback, vou copiar o rl, mandei de volta aqui,
+e agora com o rl de callback, a gente consegue esse link, ele vai fazer a vinculação, projeto,
+adicionam caracteres extras,
+Como você veio ver aqui, Kiwi, o que é isso aqui?
+Ele está processando e vai retornar para a gente já, mas ele está em fila, está vendo?
+Isso aqui é efetivamente uma fila.
+Então, se eu mandar alguma coisa, ele vai esperar terminar essa processagem aqui.
+Vou mandar.
+Ele pediu para verificar de novo, vou mandar um heartbeats ali, vou pegar o real, conectar
+de novo, avançado, acceder, seleciona tudo,
+e deu um callback, se ele vai agora, mas se ele não for, a gente tem uma chance de
+jogar isso pro cloud, não tinha alterado o outro, estava querendo, você sabe meu e-mail,
+para querer acessar meu, eu nem existe esse email do Robo Business Web, ele não estava querendo
+acessar ele, terminando, espera terminar, tá pessoal, esse processinho é chato mesmo.
+O novo, três vezes já, normal, tá, às vezes vai mais rápido, vocês não vão, copiou
+isso aqui ó, jogando pro cloud, filhão, estou com esse e-mail aqui.
+Com o cloud, resolve problemas, autorizou, acho que foi, tá aqui, o aqui ainda,
+então agora, espera aí, duas etapas, vamos ver, não dou várias coisas aqui, ainda não
+autorizou, chato, gente chato, mas é para autorizar, tá, agora, beleza, agora é
+fácil, a gente tem que ativar a API do, tá agrando a minha conta, agora a gente tem que ativar
+a API do Gmail, já ativar, vai, foi ativada, vou aproveitar que a gente tá aqui também, eu
+vou ativar a API, estou, places, drive calendário, shits, ativar, dox, eu não sei, tivaram
+tudo que dá aqui, isso que a gente vai utilizar, vocês viram, mesmo a gente que faz bastante
+vezes a mesma tarefa, vocês dão um bugzinho, a gente esquece de algumas coisas também,
+eu estou ativando, a gente não vai usar agora agora, adotivado, todo adotivado,
+e lá vai entender que eu chamo de bebê nos agentes de aos e para a gente, agora aproveita e já manda
+um e-mail para o Eduardo, Robo Business, Robo, Verre, dizendo, oi, formata bem, um HTML com uma canção no corpo do e-mail
+vamos ver se vai chegar aqui no tremeio, vamos ver, tá montando o e-mail já,
+quando eu inviar, confirmar,
+aqui, a manipula aqui,
+chegou e-mail, já vou pôr na tela aqui para vocês, ela mandou efetivamente uma canção,
+top né, então e-mail está enviado, eu vou falar, não beleza, as configurações do Google estão finalizadas,
+temos as configurações do Google, trabalhos aqui, de boa, não fiquei com medo, dica, se tiverem dúvidas,
+sempre joguem aqui no Cloud, modelo opos 4.6, se não resolver, raciocínio estendido e pão na máquina que vai,
+vamos certo.

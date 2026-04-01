@@ -1,0 +1,31 @@
+Olha, eu vou dizer pra vocês, a peça que realmente faz o agente ser útil é o Tuyuz, ou
+traduzindo português, o uso da ferramenta, um LLM sozinho é muito, muito inteligente,
+mas ele é limitado, ele só gera texto, ele não sabe o que oração, não sabe a contação
+do dólar, não sabe, consegue mandar um e-mail, ele é um cérebro sem corpo, o Tuyuz
+é esse cérebro, é quando o modelo tem a capacidade de chamar ferramentas externas durante o
+caso, se você não está associando dele, em vez de só gerar texto, ele pode dizer, pra
+responder essa pergunta, eu preciso pesquisar na web, ok, e aí ele chama ferramenta de pesquisa,
+no open-cloth, as ferramentas se chamam um skills, assim como no cloud, o agente tem acesso
+a desenas de skills, rodar comandos no terminal, navegar na web, ler, escrever arquivos,
+acessar a país, mandar mensagens, gerenciacalendário, e aqui está o poder real, então o agente
+decide sozinho qual ferramenta usar, e aí você diz, encontros voos, umas bravas para
+uma paulo semana que vem, o agente raciocina, preciso acessar o web, ok, fazer uma pesquisa,
+comparar preços, ele escolha a skill de browser na vega, coleta dados e te devolva o resultado,
+então você não precisa dizer como fazer, você diz o que quer, e o agente escolha as ferramentas,
+esse é o salto conceitual, que torna os agentes tão poderosos, então se eu pego aqui,
+a gente vai ter aula aqui só sobre cloud, tá pessoal, como bonos pra vocês, se eu pegar
+o cloud aqui, preciso que você crie uma apresentação, eu pego aqui, o pencloud, sei lá,
+fazer um teste que só para vocês verem, como funciona chamada de ferramentas, vou fazer aquele
+troclaro de mesmo, tá, nessa identidade visual, não me pergunte mais nada, só a traga,
+o meu SQL vai funcionar agora, ele tava parado de cedo, vai funcionar, e olha aí, já tá
+lendo, a skill de ppt, tá vendo, do PowerPoint, ele vai ler esse skill, provavelmente ele vai ler
+algumas outras skills, ele já leu esse conteúdo que eu mandei aqui pra ele, e aí daqui a pouquinho,
+sei lá, eu só copia o site e colhe aqui, tá, não fiz nada demais, só pra fazer um teste pra vocês
+verem, porque aqui a gente consegue ver de forma mais fácil, né, como que, como que é a chamada de uma skill,
+então o cloud, ele tem várias skills, eu vou pegar aqui da, o cloud da nossa empresa,
+aqui ó, não vou pegar aqui ó, vou pegar aqui ó, cria uma arte para o Instagram na identidade do
+open cloud, aqui na nossa empresa, a gente já tem esse skill do open cloud, você identidade ó,
+ele tá lendo a skill de criativos do open cloud, a gente tem um skill pra várias coisas aqui, então o skill
+ele faz realmente a diferença, tá, e ele vai demorar um tempo aqui pra fazer, não vou nem ficar,
+vamos ver se ele já fez o outro aqui que a gente colocou, não que eu saí da test, que ele parou,
+realmente assim que funcionam mais que o, tá, então o matu, a gente tá usando a skill e a tu,

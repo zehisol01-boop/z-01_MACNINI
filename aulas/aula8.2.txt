@@ -1,0 +1,112 @@
+Fala, pessoal, hoje vamos estar para vocês aqui, com o que vocês fazem para poder configurar
+a assinatura do Cloud de vocês dentro do OpenClaw. Bom, se você tem uma assinatura da LabClaw
+você paga o seu plano Max, o seu plano ProMax, sabe que é possível você estar utilizando
+isso aqui dentro do seu OpenClaw também. Então eu estou aqui com o meu terminal aberto
+e aqui eu já estou logado dentro da minha VPS, eu fiz uma estalação aqui através de um clique da Lura
+ok? Então esse é extremamente importante porque se você não fez dessa forma
+pode ser que os comandos sejam outros, mas um princípio é o mesmo, o que a gente precisa
+aqui, a primeira coisa tem uma assinatura do Cloud, a gente vai precisar recuperar
+esse Tolkien e a gente vai adicionar esse Tolkien em variável de ambiente dentro
+da nossa ação aqui da VPS e aí depois a gente vai setar isso no docker e por
+último a gente vai setar isso lá no OpenClaw de isso. Então se você não fez
+para um clique, esse passo a passo, mas eu souber desse passo a passo.
+Basta você jogar isso lá no Cloud que ele vai entender como foi feito sua estalação
+e vai te ajudar, ok? Mas o princípio é esse. Uma primeira coisa eu vou abrir um terminal
+e aqui eu estou em um terminal do computador, vou deixar ele maior aqui
+e o que vocês vão rodar para recuperar o Tolkien de vocês, é o seguinte comando,
+vocês vão rodar o Cloud Setup Tolkien. Só que é extremamente importante que você
+tenha o Cloud Code instalado na sua máquina, beleza? Então assim, eu não vou dar
+aqui para que vocês não vejam o meu Tolkien, eu não quero perder aqui minha
+assinatura, eu vou deixar um disclaimer também que isso vai contra a gera de
+Donald Trump, eu ainda não vi ninguém sendo banido, mas aqui, se você
+aqui colocar sua conta em risco, acho que faz sentido, eu estou te
+ensinando aqui e aí vai você que eu não, quando você der a intera aqui ele vai
+abrir uma aba no seu navegador, sobre a sua notabilização, basta você
+autorizar, ok? E aí logo em seguida vai aparecer um Tolkien em amarelo, então
+pega em Tolkien, salve em um lugar seguro e depois a gente vai estar utilizando
+ele aqui para poder fazer a configuração, ok? Então eu vou dar um pause aqui,
+vou pegar meu Tolkien e aí a gente volta lá para a VPS, com a lore que você já
+recuperou seu Tolkien, a gente vai configurar ele com o variável de ambiente dentro
+de sua pinclock, primeira coisa a gente precisa localizar o pinclock
+dentro do nosso doker, então a gente fez aqui para um clique e aí isso
+está dentro de um contém nem no doker, vou rodar esse comando aqui cd bar
+opt bar o pinclock, aí agora todo dentro da pasta do pinclock e aí a gente
+vai editar as nossas variáveis ambientes, e aí para esse eu vou rodar aqui
+num ponto, e aí eu já consigo ter a visibilidade aqui das minhas variáveis
+ambientes, eu inclusive aqui que vocês conseguem alterar tanto a peique
+da open halter quanto do bote do telegram, então tudo isso é possível ser
+feito aqui também, que a gente vai fazer remover esse joguinho da velha
+aqui, vou deixar aqui na mesma direção, aquela aí ele estava
+comentando a trope aqui, então a gente remove, e aqui na frente, depois
+desse igual a gente vai jogar o token que a gente acabou de recuperar
+lá do cloud code, quando a gente roda o cloud code, esse é taptoken, ele
+chegou aquele token para a gente, então é só a gente vinha aqui agora
+jogar esse comando, eu não vou colocar aqui novamente para que vocês
+aparecem aqui, depois eu vou estar excluindo, e aí
+é só vocês vão rodar o seguinte comando aí, vocês vão rodar
+contra o o, depois aperta entre por último, contra o x, ou seja,
+a gente vai salvar esse arquivo, e aí ele vai voltar para a pasta anterior
+que a gente já estava, então eu vou vim aqui, agora vou jogar o meu
+token, eu vou dar um pause, vou rodar contra o enter contra o x,
+ok, ele já volta aqui já, então já voltei, ele já voltou aqui
+para a nossa pasta do pinclo, e agora a gente vai colocar
+também, ele lá no nosso doker compôsia, e é mu, ok, então a gente
+vai rodar o comando, mano, doker com o buzer, e é mu, e
+é mu, e a gente vai precisar colocar uma variável aqui
+também, ok, então a gente vai colocar, vou copiar aqui
+variável, que eu já tenho aqui na minha colinha, para facilitar
+aqui dentro, então vocês vão vim aqui embaixo, de o pinclo, gate token
+vem com a setinha, e aí, vamos pro lado, tem que colocar
+certinho aqui na minha direção, vamos se atentem a isso,
+vem que eu peguei a variável errada, não é isso,
+paga isso aqui, vamos colocar aqui, beleza,
+tudo certo, eu vou precisar colocar isso aqui também, que embaixo
+que é environment, vamos pegar aqui, abaixo do cloud ai
+sejam aqui, eu vou colocar também, essa variável que eu coloquei ali
+certinho na mesma linha, para poder ficar perfeito
+eu acho que está tudo certo aqui, tudo configurado, e agora a gente vai
+fazer o comando, o outro ó, enter, contra o x, então a gente já tem a nossa
+variável salva, dentro do nosso .nve, e o que a gente precisa fazer
+agora é citar essa variável dentro do nosso .nve, agora a gente vai vim aqui
+e vai rodar nano root o pinclo de isson, nano root ponto o pinclo, bar o pinclo de isson,
+só copiar, dá um enter, e aqui a gente começa a ver o nosso de isson,
+e o que a gente vai fazer aqui, para poder configurar o modelo corretamente, a gente vai
+vencer aqui, a nossa variável de bens de .nve, e aí, a gente vai
+ver essa variável aqui embaixo de metra, então aqui, vou colocar bem aqui,
+vou colocar cuidado com passamento, vou ficar sempre na mesma direção, então
+a gente já está aqui, e eu preciso citar isso também, no meu modelo, então aqui,
+se vão subir, se vão encontrar esses ids, e aqui está vendo isso aqui, o modelo primário,
+a gente vai mudar, eu vou colocar aqui sonir 4.6, e mais, se vocês quiserem colocar o opus
+também, o que é o tom modelo, vai do oixo de vocês, vou apagar o opinhalte,
+coloque aqui o ontrópico, e eu vou aproveitar, vou colocar os modelos de fallback,
+vou colocar aqui na mesma direção, fallback,
+e aí os modelos de fallback, eles vão entrar numa lista, e lista a gente sempre utiliza conchetes,
+jogar aqui para baixo, vamos colocar aqui os nossos fallbacks,
+vou colocar dois fallbacks, vocês podem colocar quanto vocês quiserem, ou seja,
+se o nosso modelo primário falha, ele já vai chamar fallbacks,
+e aí também se a gente quiser deixar um modelo,
+dá o opinhalte aqui, o ontrópico, esse o opinhalte, o opinhalte, o braço,
+se eu só verificar se é esse mesmo, com isso meio, ver pausa de inqui pra confirmar,
+que a gente precisa fazer agora, é só salvar isso aqui,
+fazer contra o ó, entre, contra o x,
+é recriar o contém, então tá tudo certo, não dá uma olhada lá no lado,
+não dá uma olhada aqui no nosso, ele tá remissiando,
+então aqui o nosso gato já remissiou, se a gente for agora aqui nas config,
+aqui embaixo tem um botãozinho que é o hall, ele vai estar assim, vocês podem mudar pra cá,
+a gente vai ver o mesmo opinhalte de aição, a gente poderia ter configurado por aqui,
+a gente poderia ter setado, isso aqui, aqui dentro, somente o JSON,
+daqui pra fazer por aqui, e aí ele tá, depois era só salvar, também funciona,
+vocês quiserem fazer setado por aqui, pode fazer também,
+a nossa variável de um ambiente, também tá aqui, don't drop,
+então em som, agora a gente precisa responder com esses modelos,
+vamos lá, vou abrir aqui o beligra, e o transie,
+tê ela pra cá, do beligra,
+deixa eu diminuir aqui,
+então já estou aqui, um meu botão do telegram,
+vou rodar aqui um modelos, e ele já aparece os modelos de um drop,
+que eu configurei lá na minha instalação, então vamos selecionar aqui o Sonya,
+posso dar um tapa aqui pra ele, como eu digo, eu vou ser,
+então tá funcionando, perfeito, a gente tem essa questão terminal,
+mais, se vocês seguem, que certinho, passo a passo,
+pode ter certeza que vai funcionar aí na instalação de vocês,
+ok, então vou ficando por aqui, e a gente se vê na próxima aula.

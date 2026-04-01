@@ -1,0 +1,87 @@
+Então vamos lá pessoal, o cloud.net está on agora, a gente vai dar um overview aqui pelo painel dela, beleza?
+Então aqui, a gente tem o chat, a sessão do telegram fica aqui, tá?
+Então ele abre uma nova sessão, só mandar aqui um oi no telegram, oi.
+Ela não vem pra cá, vem pra cá, vem pra cá, vem pra cá.
+Só que só veio, ó, tá vendo a resposta dela, tá? Tudo bem?
+Ela não veio.
+O meu Deus.
+Então ela se incroniza, não se incroniza todas as mensagens, tá diferente do que quando a gente tá dentro do Macmini.
+Tá, mandei um tudo bem aqui, e ó.
+Não se incroniza aqui com o telegram, beleza?
+E aí eu sempre uso mens session aqui, tá?
+A gente pode ver aqui, ó.
+A gente tem modo de visualização, tá?
+E aí a gente vem aqui.
+Visão geral, a gente tem uma instância única dos sessões cronta ativado, tá?
+O nosso telegram, que são os canais, né?
+Eles estão aqui, efetivamente.
+Beleza, tudo configurado dentro dos nossos padrões, já?
+De forma automática, aqui a gente não vai entrar no detalhe em cada nível disso aqui.
+Nesse momento,
+instâncias, tá?
+Então, isso aqui é o nosso gateway, de ter um volume sobre gateway.
+Sessões, tá?
+Então, eu vou colocar uma lei brokey telegram,
+vai não, tá?
+Então, que são as sessões que a gente tem, né?
+Se eu tiver um WhatsApp, por exemplo, não recomendo, mas se tiver um WhatsApp,
+vai criar uma nova sessão, tá?
+Uso, aqui a gente consegue ver
+uns tempos de usos, isso aqui não tá funcionando muito bem, últimamente, tá pessoal.
+Tarefas Chrome, tá?
+Então, aqui a gente pode criar uma tarefa nova Chrome, tá?
+Quando o job a gente tem uma aula explicando sobre isso,
+ou a gente pode criar no chat para criar.
+Quando a gente vem em agentes aqui, a gente tem um único agente aqui, tá?
+Tá usando o sonê 4.6, caro pra dedel, tá?
+É caro.
+Mudro caro.
+Então, esse foi o mudro que a gente tem aqui, a gente vai instalar um outro mudro depois.
+Beleza?
+Tá, então, aqui é um modelo que tá setado.
+A gente não tem aqui um modelo de fallback para enquanto os arquivos.
+Aqui, ó, a gente tem aulas explicando tudo isso, tá, pessoal?
+Mas aqui, ó, a gente consegue ver
+todo o que a gente configurou lá, ela veio e configurou aqui.
+Se eu quiser adicionar alguma coisa, eu posso, pode vir aqui.
+Se pode adicionar mais alguma coisa, tá?
+Ou você pode vir aqui
+no cloud, por exemplo?
+Então, apan...
+Esse aqui é meu agent.md
+da cloud.net nova
+com base no que você...
+Pô, os pitibular... Eu não mexeria nisso agora, tá, pessoal?
+Só mostrando que vocês tenham a possibilidade.
+E aí, ela vai, a gente vai começar a customizar.
+A gente vai ter uma aula depois, provavelmente, a gente vai fazer uma aula ao vivo falando sobre isso, né?
+Pra fazer pra...
+derretê, aqui, em melhorar a configuração dela, tá?
+A gente tem que lembrar que a gente não pode deixar isso muito distenso, porque senão...
+ela vai se perder.
+Tá, a gente tem o sou, que é a alma dela.
+Resentando tudo o que a gente colocou nos botões em�as ali, ela fez monta essa configuração.
+A gente tem as ferramentas.
+A gente tem a identidade dela.
+E o user, o que ela sabe sobre mim, ó?
+Então, eu não coloquei tudo do detenado lá.
+Tudo o que a gente colocou aqui, ó?
+Heartbeat.
+Bootstrap.
+Bootstrap, a gente não vai usar agora.
+Em memory.md, tá? Pegou os meus negócios.
+Os valor score.
+Os seus aprendidas, preferências confirmadas, desses os importantes.
+Beleza?
+A gente tem aqui as habilidades, né, que são as esquíos.
+Então, a gente vem com tudo do detenado aqui por padrão,
+mas a gente vai precisar configurar algumas coisas aqui, como, por exemplo, Google.
+A gente vai ter uma aula para configurar o Google.
+Aqui, a gente não vai abrir agora.
+Configurações.
+A gente também não vai mexer, efetivamente, agora.
+Só um overview geral.
+Todos os logs do que ela vai fazendo,
+ela vai deixando aqui embaixo.
+E a gente tem a documentação do OpenClote,
+uma documentação que é aberta.

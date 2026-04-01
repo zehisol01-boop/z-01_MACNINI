@@ -1,0 +1,39 @@
+Vamos lá, chegamos agora no último conceito que você precisamente entender de APEZ,
+que são esses carinhas aqui, os webrux.
+Mas eu já tinha ouvido falar sobre isso, ou alguma vez ou não,
+mas eu sei que muito aluno meu de outros treinamentos que a gente já deu,
+sempre fica muito confuso, né, sobre que isso é o webrux,
+que fica até com medo de essas palavras, APEI, o webrux, etc.
+Gente, vamos lá, uma APEI normal, como que ela funciona?
+Você pede ela responde, você é ativo, APEI é reativa.
+Mas, e quando você quer que algo aconteça, tipo de forma automática,
+tipo, quando um evento ocorre, imagina que você bateu o carro,
+você quer que chame automaticamente a ambulância, ou quando, por exemplo,
+quando chegar um e-mail novo, você quer que a visa seu agente.
+Quando alguém preenchou o formulário no meu site, a visa o meu agente.
+Fonecta, vinha aí, eu vio algum outro lugar.
+Quando aconteceu um pagamento, a visa o meu agente.
+Isso é um webruque.
+Ao invés de se a gente ficar perguntando a cada minuto
+para a plataforma herramienta lá, o GameCP, o que é outro protocolo?
+Chegou e-mail novo? Chegou? Chegou? Chegou?
+O que não seria ineficiente, né? E geraria tokens, de gastaria tokens.
+O webruque funciona ao contrário.
+O serviço de e-mail, a visa o agente quando isso acontece.
+E é uma inversão.
+É como a diferença entre você ligar com uma pitsaria cada cinco minutos
+perguntando se a pits é ficar pronta,
+versus você deixar o seu telefone e eles te ligam quando ela tá pronta.
+Então, no OpenClop, isso funciona junto com o HardBit,
+que é o sistema que faz isso, é a gente checar as coisas periódicamente.
+E com integração diretas que recebem notificações em tempo real.
+Então, com a PIs, a PXMCP e o webrux,
+você agora entende toda a infra capaz da comunicação
+que faz o OpenClop funcionar.
+Você sabe como ele conversa com o mundo e na próxima aula,
+a gente vai entender, já no próximo módulo,
+o que faz ele um agente de verdade.
+No próximo módulo, a gente vai explicar o que são os agentes de A,
+uma palavra que tá em todo lugar, mas que pouca gente saber explicar exatamente
+qual é a diferença entre o chatbot e um agente de A.
+Fechou?

@@ -1,0 +1,36 @@
+E agora eu quero realmente tirar as confusões do caminho, tá pessoal, porque tem muita
+gente que confunde o CloudBot, OpenClaw, MultiBot, com assistentes, né, chatbots
+tradicionais, tá?
+Então, o objetivo dessa aula é tirar as confusões do caminho, porque, cara, tem muita gente
+tendo errado mesmo.
+Então, o OpenClaw, ele não é um chatbot, ele não é um chatPT, você não entra no site,
+faz uma pesquisa, recebe uma resposta, isso é modelo antigo.
+Ele não é a automação, tipo zapper, tipo make in 8n, nesses, você monta um fluxo
+fixo, né, tipo, enquanto quando você x faça y, ingessado, muda algo, quebra, não
+é produto de big tech com a assinatura mensal, ele é open source com licenciador mity e gratuito,
+você baixa instala e roda, tá?
+E agora o que que ele é, tá?
+OpenClaw é um agente autormo que roda localmente na sua máquina, ele é um processo que
+fica ligado 24 horas conectado aos seus apps de mensagem, eu utilizo o telegram, mas
+pode ser o WhatsApp, discord, etc, e que pode executar ações reais no seu computador
+e na internet.
+Então, você pega manda uma mensagem no WhatsApp, limpa meu e-mail, resume o que é importante,
+o que é urgente, e ele faz de verdade, não gera texto para você copiar, ele acesse
+o seu e-mail, ler, classifica, deleta e spam e te manda o resumo, a melhor definição
+que eu vi, o OpenClaw é a ia com mãos, os chatbots são ia com boca, só falam, o OpenClaw
+fala e faz.
+A Cloud Edge é minha implementação disso, ela tem nome, personalidade e regras, conhece
+o meu negócio, conhece os meus clientes, ela não é um chatbotionérico, ela é assistente
+do Eduardo, configurada pro Eduardo, e você vai montar a sua, configurada para você, mas
+eu repito, ela não faz tudo, ela é excelente, tá, ela é fazer operacionais, organização,
+pesquisa, comunicação rotineira, não espere que ela tome decisões estratégicas ou substitua
+relações humanas, ela é uma ferramenta poderosíssima desde que você saiba para que utilizar,
+um detalhe importante, quando eu falo que ela acessa seu e-mail, mensagens, etc, isso são as credenciais
+únicas dela, tá, se você participou do workshop ou da aula do Módulo 0 aqui, onde tem
+o workshop gravado, é isso que você vê, a gente fala muito sobre segurança, sobre você
+ter credenciais únicas para ela, por exemplo, no Mac Mini que está ali do lado, ela tem as
+próprias credenciais, inclusive a sua própria conta da Apple, nunca compartilhe a sua
+senha, a sua senha, o seu WhatsApp, o seu e-mail com ela, porque isso pode ficar exposto
+na internet e você ter todos os seus dados sugados, beleza pessoal, então, o OpenCló, ele não
+é um chatbot, não é um assistente, tá, ele é um agente, você pede, ele faz, manda e-mail,
+a gente executa, fechou?

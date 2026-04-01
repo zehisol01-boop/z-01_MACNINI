@@ -1,0 +1,82 @@
+Bem, e agora que você sabe o que é um LLM, a gente vai falar dos fornecedores, porque
+é exatamente isso.
+Escolher o modelo, é como você escolher um fornecedor para o seu negócio.
+Cada um tem suas vantagens, o seu preço, o seu melhor uso.
+Primeiro o Cloud d'antrothc, esse é o modelo que inspirou o próprio PENCLOA, o nome original
+era CloudBot, uma brincadeira com o Cloud, e o Cloud ele é conhecido por ser muito bom
+em seguir instruções longas e complexas, em raciocinar com cuidado e manter corência.
+Muita gente considera ele o mais confiável para tarefas que existem julgamento, e é o que
+a CloudDat usa como modelo principal.
+Quando ela precisa decidir se um email é urgente, como respondem um lide ou como organizar
+minha agenda, hoje ela, de vez em quando ela usa o Cloud, a gente está testando isso
+para eu tentar me arratiar com ele, porque para essas tarefas eu preciso de confiabilidade,
+tá?
+Segundo a gente tem um GPT da OpenS, já deve ter utilizado o chat GPT, ele é mais famoso
+do mundo, todo mundo conhece, mas os modelos são muito versáticos.
+Mas e bons em quase tudo, mas são bons e medianos, tá?
+Eles têm uma hora de ecossistema de ferramentas ao redor hoje, e se você precisar de algo
+que muita gente já tem sua documento hoje, a GPT é uma posta segura.
+Depois a gente vem para o DeepSique, é o modelo chinês que surpreendeu todo mundo
+quando lançou qualidade dele é boa, especialidade em lógica e código, e o custo dele é bem
+menor do que os americanos, tá?
+Então você está montando uma operação com o alto volume de tarefas e quer economizar?
+O DeepSique é uma opção forte, sim, ele é uma opção forte, mas o que que eu não
+gosto do DeepSique?
+O DeepSique, eu acho que ele é muito século nas conversas, eu gosto de tanta secura
+nas conversas, ele, pã, pã, pã, pã, mas se você for direto e reto, o DeepSique
+pode ser uma opção, tá?
+E você pode rodar ali em VPS, em Olhama, a gente vai falar sobre esse termo também para
+vocês, tá?
+Depois a gente tem o Gemini do Google, que surpreendeu demais nos últimos meses, tem
+melhorado bastante, tá?
+Ele é muito forte em pesquisa e em tarefas que envolvem buscar informações atualizadas,
+ele é menos utilizado no OpenClaw, eu usei bastante o Gemini 2.5 Flash no começo para
+conversação do dia a dia com a Cloud Edge, tá?
+Mas ele está crescendo muito, e aí a gente tem os modelos locais que eu posso rodar
+ou na minha máquina ou numa VPS, de Olhama que eu faço, Queen, Lama, Mistral, eles rodam
+direto na sua máquina ou em VPS, vou falar bastante disso, se você rodar diretamente
+dentro do seu computador, você não tem custo de API, você tem custo de processamento,
+né?
+Por isso você precisa de um computador que tenha GPU, que tenha núcleos aí para fazer
+esse processamento, e aí você acaba não tendo custo de API, tá?
+Eles são menores, alguns menos inteligentes, tem modelos com volume de parabéns maior,
+tá?
+Mas para tarefas simples e repetitivas, eles funcionam super bem, por exemplo, a Cloud Vision,
+Cloud Vision, que a gente que a gente tem debaixo da Cloud Edge, que ela lê as imagens,
+ela utiliza um modelo, não lembra o qual o nome agora, mas ela utiliza um modelo local
+dentro do meu mecminho aqui, tá?
+É o único modelo que eu tô processando localmente hoje, diário e derretendo bastante, tá?
+E mais ou mais importante, os seus dados não saem do seu computador quando você tem
+modelos locais, por isso tem muita gente montando hacks com vários mecmines aí,
+porque conseguem processar em maior volume, tá?
+Então, isso é bem importante, e agora falando sobre o OpenClaw, né, a gente, o OpenClaw
+é o que a gente chama de Model Agnostic, tá?
+Ele funciona com qualquer um desses, e isso é uma vantagem competitiva enorme para você
+como profissional empreendedor ou empresário, porque você pode montar uma estratégia
+inteligente.
+Então, você usa o Kimi K2 para tarefas que exige em qualidade de julgamento, o Dipsick
+para tarefas de volume que precisa ser baratas, e um modelo local para coisas simples e privadas,
+assim como eu utilizo o modelo de visão local, tá?
+É a mesma lógica de você ter fornecedores diferentes para produtos diferentes.
+Na inquética a gente fez no grupo, pouca gente pretende usar o mecmin e maior parte
+que é uma VPS, tá?
+E qualquer uma dessas opções funciona com qualquer modelo.
+Na prática, eu uso o Kimi K2.5 hoje, como o principal, mas eu tenho um modelo local
+de backup, como Fallback, se eu precisar, e o meu objetivo aqui é te fazer encontrar
+um modelo ideal para a sua operação, que às vezes pode não ser o mesmo que o meu,
+tá?
+Depende do tipo de tarefa que você utiliza com o OpenClaw, ou qualquer outro cló,
+mas isso também serve para a tua vida, tá, para o teu negócio.
+Eu vejo muita gente falando assim, eu casei com o chatTPT, o amo chatTPT, eu uso ele
+para tudo.
+Gente, ele é um modelo, hoje para mim, tirando os modelos para a Code, ele é um modelo
+padrão que não entrega praticamente nada de surpreendente, tá?
+Eu hoje, por exemplo, quando eu preciso fazer pesquisar, eu vou pesquisar conteúdo para
+gravar uma aula, ou para pesquisar sobre uma empresa para tender um cliente, gente,
+eu vou utilizar o perplex de para fazer isso, mas quando eu preciso criar projetos
+complexos, eu vou para o Clod, quando eu preciso resolver o problema efetivamente, eu vou
+para o Clod, ah, quando eu preciso gerar imagens, eu vou para o Gemini, ou conteúdo simples,
+poder conversar com a gente, eu vou para o Gemini Live, então você vai acabar aprendendo
+o qual é o melhor modelo para o teu negócio, para cada atividade do teu negócio,
+e aí quando a gente vem pro Open Clod, a gente pega e começa a configurar qual o melhor
+modelo para cada atividade que ele vai fazer, beleza?

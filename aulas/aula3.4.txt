@@ -1,0 +1,64 @@
+Agora, eu quero apresentar para vocês um conceito que vai ser cada vez mais importante.
+Inclusive, quando esse conceito começou a ser falado publicamente,
+falei sobre isso num congresso, lá em Dubai, no AI World Expo, no ano passado,
+foi escalado para falar sobre isso, que é a MCP Model Context Protocol.
+Então, se lembra da analogia que a gente fez um restaurante,
+imagina que um restaurante fala uma língua diferente.
+Cada um deles fala uma língua diferente, né?
+Um fala português, outro fala inglês, outro fala japonês.
+Pra pedir em cada um, você precisaria de um garçomro diferente
+que fala aquela língua específica.
+Então, o MCP, como se fosse um tradutor universal,
+ele é tipo um, aqui ó, ele é tipo um protocolo, um conjunto de regras
+que padroniza como a gente se as comunicam com ferramentas externas.
+Então, ao invés de cada ferramenta precisar de uma integração customizada,
+o MCP crie um padrão que funciona para todas, na prática,
+tipo assim, se um serviço tem um servidor MCP,
+qualquer a gente consegue se conectar nele, automaticamente.
+Então, o Open Cloud já suporta o MCP, o Cloud já suporta o MCP
+e essa é a direção para todo mundo tá indo, né?
+É, para o restaurante não tá indo.
+Então, se eu pegar aqui, por exemplo, o Cloud,
+a gente vai abrir ele aqui.
+A gente tem, ah, aqui ó, configurações,
+conectores, tá?
+Então, isso aqui já é via protocolo MCP
+que a gente tá conectando, beleza?
+É, e aí imagina, por exemplo, que você quer que seu a gente
+acesse o azão para a gente nesse projeto,
+o gemeio para ler meios, o seu esforço para todas as clientes,
+com o protocolo MCP, a invés de configurar cada integração de forma separada,
+seu a gente consegue se conectar os servidores MCP de cada um
+e já sabe exatamente se comunicar, né?
+Isso é muito poderoso por quê?
+Porque significa que o ecossistema de ferramentas disponíveis
+para o seu a gente só cresce.
+Cada empresa que implementa o servidor MCP
+é mais uma ferramenta que o seu a gente pode utilizar, tá?
+Então, se você decorar nada agora técnico sobre o MCP,
+mas você precisa saber que ele existe
+e que é o futuro da comunicação entre os agentes
+e as ferramentas, tá?
+Então, por exemplo, ó, se eu via aqui,
+fizer uma vinculação com o Active Campaign,
+que é nossa ferramenta de marketing,
+ele vai abrir aqui, eu vou colocar os dados para acessar
+e ele vai gerar a conexão.
+Preciso pegar o token aqui, ó.
+No meu telefone, já chegou um código,
+para aí, tá.
+E aí, eu vou fazer a conexão com ele, tá?
+Ó, ele quer acessar isso aqui, permitir.
+Beleza. Ah, deu o erro aqui agora.
+O cloud também é instável,
+mas é assim que ele funcionaria
+de abrir uma nova tela aqui.
+E aí, aqui, ó, eu consigo,
+por exemplo, ele, quando ele carregar,
+ele vai aparecer aqui como um conector nosso, tá?
+Então, quando a gente chegar num par de mais prática,
+isso vai fazer muito mais sentido para você.
+Mas acho que deu para entender mais ou menos a lógica,
+né, do que é o MCP, esse negócio fica subindo aqui,
+vai ficando na frente.
+Mas é a melhor forma que eu consegui de colocar essa aqui no estúdio, pessoal.

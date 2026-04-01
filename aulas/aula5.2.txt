@@ -1,0 +1,34 @@
+E de tudo que existe no Pencló, o arquivo mais importante é um que se chama Soul.MD.MD.
+Vocês vão ver várias coisas com um ponto MD aí, MD, que são os arquivos de Markdown.
+É o formato que os a gente se entendem melhorar para a comunicação.
+E o nome dele não é a toa, é literalmente a alma do seu agente.
+O Soul.MD é um arquivo de texto em Markdown, onde você define quem quer o seu agente.
+É como se fosse tipo a descrição de cargo mais detalhada do mundo, só que para uma inteligência artificial.
+Então, nesse arquivo, você escreve coisas como quem você é, qual seu nome, qual sua personalidade,
+como você deve se comportar, quais são as suas prioridades, o que você pode e não pode fazer,
+quem é seu dono, quais são as regas do negócio.
+Deixa eu te dar um exemplo real aqui, por exemplo, no Soul.MD, de uma das Claudettes,
+que é o nome do agente que a gente usa.
+Eu tenho várias Claudettes hoje, que estão em treinamento aqui, não é?
+Eu tenho para testes para poder melhorar as aulas para vocês.
+Tem instruções como, por exemplo, você é a Claudette, executiva do Eduardo Cabalcante e o da Business Hub.
+Você é proativa, eficiente e direta.
+Sua prioridade, aqui, ó, está a sua prioridade, ó.
+A gente é compromisso, os emails urgentes leads, organização de tarefas e projetos.
+A gente sempre diz para nunca tomar decisões financeiras sem aprovação, sempre respondendo em português.
+E aqui está a beleza da coisa.
+O Soul.MD é uma linguagem natural.
+Você não precisa programar ele.
+Você escreve como se tivesse danos instruções para um funcionário novo no primeiro dia.
+Inclusive, para quem utilizou o instalador da nossa VPS,
+tem até o configurador que fica super fácil para você conseguir definir o seu Soul.MD.
+Já faz isso para você de forma automática.
+E quanto mais claro e detalhado você for melhor a gente se comporta.
+Então você pode definir tons de voz, prioridades, restrições, protocolos.
+Pode dizer se alguém manda mensagem perguntando sobre preço.
+Tipo, aí respondo com a tabela X, se for gente, me avise pelo WhatsApp pessoal,
+se for expandando ignores silenciosamente.
+O Soul.MD é o que transforma um agente genérico no seu agente personalizado.
+Na aula de memória eu vou te mostrar como escrever um Soul.MD poderoso.
+A gente tem aqui um principal espaço de uma Soul.
+Esse aqui é um Soul simples, mas é uma Soul, uma alma que funciona efetivamente.

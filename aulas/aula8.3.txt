@@ -1,0 +1,202 @@
+E aí, claro, mesmo, tudo bem? Então, essa aula aqui, o que eu quero trazer para vocês,
+uma dica muito importante. Sabe quando você está usando o seu OpenClaw e, de repente, o bot
+para responder ou, às vezes, ele vai realizar algum tipo de atualização e trava tudo e você
+não tem domínio da parte técnica e não sabe o que você precisa executar aqui no seu terminal?
+Então, a dica que eu vou trazer para vocês aqui hoje é a seguinte, a gente vai fazer a
+instalação do Cloud, o Cloud Code dentro da VPS. Por que isso é interessante? Porque
+quando ele está dentro da VPS, ele tem uma visão completa da sua instalação e aí com isso
+todo o problema técnico que acontecer, o Cloud ele vai se acionado, você pode acionar
+ele, eu vou mostrar como você vai fazer isso para poder realizar todas as correções
+necessárias. Além disso, ele vai ser uma ferramenta fundamental para te ajudar também a
+realizar a sua configuração básica do OpenClaw, porque acaba sendo muito mais fácil
+ele executar isso para você do que você fica pedindo no chat, torrando todos os seus
+tokens para o OpenClaw se auto configurar e, às vezes, no início ele não está tão
+inteligente e com isso a gente acaba perdendo até um pouco a paciência. Então,
+eu estou logado já aqui na minha VPS da LuraRush, e aí, se você não se lembra como
+que você loja, você vai jogar o SSHRT, o IP da sua VPS, vai colocar sem aqui
+o permissão negado porque eu havia errado a senha, mas vai enviar a senha para vocês,
+tá bom? E aí, a partir disso ele vai aparecer todas as informações aqui da sua VPS.
+Então, se você não se lembra para onde foi a sua senha da sua VPS, ela está lá no
+sub-meio, é só você procurar pela LuraRush, eles sempre mandam, toda vez que você
+tem uma VPS dentro dos servidores deles, eles mandam para você esse IP e, também,
+acê. Então, esse eu sou o primeiro ponto de partida se você tiver utilizando
+a VPS. Se você tiver utilizando Mac, não existe a necessidade de você
+lugar porque você já está dentro do seu computador, né? Então, esse passo ele não precisa
+ser realizado, né? Então, estou aqui dentro da minha VPS também, sistema Linux,
+o Ubuntu que a gente está usando, eu que eu vou fazer aqui? Só para dar uma
+melhorada nessa tela, eu vou rodar um clia, vou rodar o comando clia, para dar uma
+limpada que a gente começar a nossa estalação. O primeiro comando que a gente
+vai fazer, ele vai realizar a instalação do Cloud Code dentro da minha máquina,
+só que antes de eu mostrar isso aqui para você, eu preciso mostrar para vocês o
+seguinte, além de você estar logado na sua VPS, você precisa ter uma
+cina atura do Cloud, e eu vou mostrar aqui agora quais são os planos e, na
+minha opinião, vale super a pena, tá? Perto do valor que ele entrega. Então,
+você tem ali o Free, né? Para você começar, a gente utiliza, eu estou
+utilizando aqui agora o Pro, que é esse de 17 dólares, para poder, para esse
+objetivo de conectar na minha VPS e realizar correções. Porém, se você quer
+utilizar ele na VPS e também quer utilizar o plano de assinatura, no seu Open
+Claw, eu recomendo que você comece a partir desse plano max de 100 dólares,
+e você conseguia ter aumentando também de acordo com o seu uso, tá bom? Então,
+se você quer utilizar tanto para o Open Claw quanto para realizar correções
+no seu VPS ou utilizar própria interface de chat aqui do Cloud, esse de 100
+dólares, ele vai ser o seu ponto de partida, bom? Então, você precisa ter
+assinatura do Cloud, você precisa estar alugado no seu VPS ou no terminal do
+seu max, e aí a gente vai começar na instalação. O comando é bem simples, tá? Eu
+até fiz uma busca no Google aqui para mostrar para vocês que, se vocês não soubesse,
+vocês poderiam até fazer essa busca aqui que ele vai trazer informação para
+fazer. Então, eu vou pegar aqui esse comando, eu vou jogar aqui no terminal,
+colher aqui no terminal, e agora a gente vai aguardar que ele vai começar a
+fazer a nossa instalação. Eu vou deixar ele aqui instalando a instalação aqui
+dele, costuma ser bem rápida, tá? A gente vai fazer o login para você entender
+como que você vai utilizar. Esse etapa aqui, gente, ela é fundamental, porque
+muita gente roda o comando a distalação, e aí depois vai rodar o comando
+principal do Cloud, que é o Cloud para você fazer o login, e acha que não
+não, porque ele fala que ele não reconhece esse comando. Por que que tá
+acontecendo isso? Porque você precisa, ele te dá até essa dica aqui embaixo,
+colocar o comando Cloud em variáveis ambientes do seu sistema para que ele
+reconheça esse comando. Então, assim que você faz a sua instalação, antes de
+rodar o comando Cloud, você precisa pegar esse, essa linha aqui, dá um
+comando C, um comando C, e colar aqui para que ele adicione isso em variável
+ambientes, e aí é isso. Então, quando eu agora dê um comando Cloud, ele
+já vai abrir essa interface, onde eu consigo escolher seu que é o Dark Mode,
+Light Mode, eu gosto muito de utilizar o Dark Mode aqui, e aí eu vou selecionar
+o primeiro opção, e aí ele vai me dar uma URL, onde essa URL é para mim
+realizar a autorização da minha conta que o assinei do Cloud para começar
+a utilizar ele aqui dentro. Então, você vai pegar essa URL, pegar o URL,
+você vai lá no seu browser, e aí aqui dentro ele vai aparecer
+essa telhinha, você vai autorizar, depois ele vai gerar para você um comando
+que você precisa copiar, copiei o comando, e você vai precisar colar,
+ele está esperando isso, como se fosse uma autenticação de dois fatores,
+assim, dando um exemplo para vocês entenderem melhor. Então, eu vou colar
+agora esse comando aqui, e aí ele vai dar a mensagem login realizado com sucesso,
+a pertinha em ter para continuar. Continuar de novo, opção 1, ótimo.
+Partir disso, você tem agora o Cloud Code instalado dentro da sua VPS,
+ou seja, ele tem uma visão completa de tudo que tem aqui dentro, e ele
+vai te auxiliar em todo o tipo de problemas técnicos que você tiver aqui.
+E aí a primeira linha aqui é justamente onde você vai escrever,
+detalhar qual é o seu problema, ou qual o seu objetivo, o que você quer
+instalar dentro do seu open-clore, isso funciona muito também.
+Então, um primeiro é dar um exemplo aqui, que eu é esse, essa VPS
+ela ainda não está com o open-clore instalado, mas eu vou dar uma noção
+para vocês do que ele consegue fazer. Cloud, qual o sistema operacional
+dessa VPS que você está instalado.
+Então, é justamente como se fosse o chat que a gente utiliza
+lá dentro do nosso navegador. Então, ele já trouxe a informação,
+o Bluetooth 24004, o kernel, arquitetura, qual o hostname, entendeu?
+Então, dessa forma ele consegue ter uma visão completa.
+Além disso, vou dar uma super dica para vocês aqui, que aí parte do
+princípio que você já está com o open-clore instalado na sua máquina.
+Isso aqui é uma super dica, que é o seguinte.
+Toda aí qualquer configuração que você precisa fazer dentro do seu
+open-clore seja para otimizar algum aspecto, por exemplo,
+você quer melhorar a identidade do seu agente, se você quer
+melhorar a memória do seu agente, eu sempre realizo o seguinte.
+Eu vou lá na documentação do open-clore, e aí você pode
+colocar o open-clore doc, e aqui dentro da documentação
+tem uma série de coisas que você consegue utilizar para melhorar
+o seu open-clore. Então, por exemplo, eu tive muitos problemas
+no início com relação a cron-jobs, né? São aqueles da
+agendamento de tarefa, porque eu pedi para o meu open-clore realizar
+o agendamento, e ele simplesmente ignorava. Então, o que eu fiz?
+Eu vim aqui na documentação, eu vim aqui em Search, e joguei cron-jobs.
+Bem, beleza. Aqui tem todo o detalhamento, tem como você ver o exemplo de como
+que deve ser realizado os agentamentos. Então, tem tudo aqui. Então, o que eu faço?
+Eu venho aqui, copia esse link, vou lá no meu Cloud, e simplesmente
+eu falo com ele. Cloud, estou com problema para realizar
+cron-jobs em meu open-clore. Com base na documentação,
+e aí você vai colar a documentação, verifique o que pode
+estar acontecendo, e realize a correção ou as correções
+necessárias. Então, quando eu vou dar esse comando aqui, ele vai fazer
+uma busca completa, ele vai me pedir algumas permissões, eu vou
+aceitar, e aí com isso ele vai realizar a correção. Vai acontecer
+de primeira? Nem sempre, nem sempre vai acontecer de primeira, mas aqui você
+consegue conversando com ele, e ele vai testando, e eu acho que isso
+é muito mais eficiante do que você fazer através do open-clore.
+Então, toda e qualquer configuração extra, eu gosto muito de realizar o Cloud
+de Code. Agora eu vou dar uma dica também, que é para o
+pessoal, que fez a instalação do open-clore através do one-click,
+o one-click, ele está ao seu open-clore, dentro de um contém,
+um docker. E aí, muitas vezes, quando você instala o Cloud
+de Code, dentro do seu VPS, ele diz que ele não encontrou
+a instalação do open-clore. Então, eu vou logo aqui, agora em
+outra VPS, que eu tenho o open-clore instalado, e eu vou mostrar
+isso para vocês, para que faça mais sentido, para quem
+realizou esse tipo de instalação, realizar as suas correções
+quando necessário. Beleza? Somo de 5, já volto. Então,
+pessoal, voltei aqui, já estou aqui na minha VPS, que tem o open-clore
+instalado, está bom, ele foi instalado via docker, então
+ele está dentro de um contém, em docker. E aí, porque
+é que você souber isso extremamente importante, essa
+instrução extremamente importante, porque aqui, se você
+rodar um comando o open-clore, ele não vai encontrar
+diferente da instalação convencional. A instalação
+convencional, quando você roda o open-clore, ele está
+instalado fora do contém, então ele consegue identificar
+esse comando. Então, essa informação extremamente
+importante, eu vou mostrar para vocês, por que? E além
+disso, é o que vocês precisam saber, também, para que o cloud
+ele seja eficiente, em todas as correções que vocês
+precisam realizar dentro do VPS, de vocês ou do Macmin, tá bom?
+Então, vamos lá, eu vou rodar aqui o cloud para poder
+logar novamente dentro do meu cloud code, ele já
+fez o login aqui, e eu vou perguntar para ele o
+seguinte, eu preciso saber qual é o nome desse
+contém, que o meu open-clore está instalado. Então,
+vamos lá, o cloud, o nome do contém, que o meu open-clore
+está instalado dentro dessa VPS. Então, ele já
+me deu aqui, eu tenho até dois aqui rodando,
+bom, está parado, e o que está rodando é esse open-clore
+open-clore gateway 1, tá? Então, eu vou pedir
+ele, agora, partindo desse princípio, o cloud,
+partindo desse princípio, com qual comando
+eu usaria para acessar o meu open-clore.dson
+no contém, né? Vou parar esse no contém,
+vamos deixar assim para que ele vai para eu comando
+certinho.
+ele vai fazer aqui a busca, tá?
+lá, ele já me deu algumas opções, eu
+vou pegar essa primeira opção, isso aqui é só
+para identificar a gente, porque ele próprio
+conseguiria ir lá e fazer qualquer tipo de
+configuração que eu precise, ok? Então,
+assim, se você ainda não sabe o que é o open-clore
+de e-son, recomendo que você volte algumas
+aulas, você vai aos poucos entender o que isso
+significa, não se preocupe agora, eu só quero
+te mostrar que o cloud, ele vai ser a principal
+ferramenta de configuração e ajuste
+do seu open-clore. Bom, então, ele já me deu aqui o
+comando, eu não vou digitar aqui por que? Porque
+eu estou dentro dele, então eu preciso sair dele,
+sair, vou limpar, que eu tenho o final utilizando
+clia, limpei e vou rodar o comando que ele
+me mandou ali, e aqui eu já tenho toda
+visão do meu open-clore de e-son, tá bom?
+Eu vou colocar aqui dentro dele para mostrar
+para vocês também que vocês conseguem
+acessar essa mesma informação, onde ele
+próprio vai lá e vai fazer essa pesquisa e
+se for necessário que ele faça algum tipo de
+correção dentro desse arquivo, ele também vai
+realizar, tá? Então, agora que ele fez a
+modificação, eu limpei aqui, loguei
+novamente, eu vou mostrar para vocês como
+ficou o trecho do meu open-clore de e-son.
+Agora, me mostre como ficou o trecho
+dos modelos, dois agentes dentro do
+open-clore.de e-son.
+Ele vai fazer uma busca, né? Ele tá
+encontrando o open-clore de e-son.
+Olha lá. E aí, ele já me trouxe
+trecho, então tá lá certinho, modelo
+primário, antropic. E aí, o showbacks que
+eu configurei nessa instalação. Então,
+isso aqui facilita muito, muito, muito,
+mesmo, então me trouxe até uma tabelinha aqui
+aqui. Então, todo e qualquer problema
+agora que você tiver no seu open-clore,
+você tem essa baita ferramenta para
+poder te auxiliar passo a passo e assim
+você conseguir realizar todas as
+correções necessárias. Ok? Então, a gente
+se vê na próxima aula.

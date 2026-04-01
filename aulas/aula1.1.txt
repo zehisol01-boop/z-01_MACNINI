@@ -1,0 +1,62 @@
+E aí, seja muito bem-vindo a Comunidade de Clor Brasil, eu sou Edu Cavalcante, essa aqui
+é a primeira comunidade de Clor do Brasil.
+E antes de qualquer coisa, eu quero ser muito transparente com você.
+Essa comunidade acabou de ser lançada.
+Esse curso está sendo gravado aula por aula com conteúdo mais atualizado possível.
+Se você está assistindo isso agora, você já é pionero e pionero aqui tem muita vantagem.
+Agora, por que você está aqui?
+Provavelmente, porque você ouviu falar de Open Clor, vi algum conteúdo meu ou assistiu
+o workshop.
+Talvez você está pensando, eu quero ter a minha própria cloud.
+Eu sei, eu sei.
+Todo mundo quer ter sua própria cloud-ed.
+Aliás, ter sua cloud-ed, e customizar até o nome dela.
+Para quem não sabe, a cloud-ed é o nome da minha assistente DIA.
+Ela roda dentro do meu Macmin e poderia estar dentro de uma VPS conectada ao meu Telegram.
+E executa tarefas por mim, gerenciar e meios, organizar agenda, pesquisa coisas, me avisa
+sobre compromissos, e enquanto estou gravando essa aula, agora ela está trabalhando na verdade
+delegando para outras pessoas umas tarefas que eu passei a uns minutos atrás.
+E eu vou ser bem honesto, a cloud-ed não é a solução para tudo.
+Ela não substituí tudo, por enquanto.
+Ela não toma decisões estratégicas para o meu negócio ainda, mas me ajuda muito.
+Mas para tudo que é operacional, repetível e que consome em tempo e não precisa necessariamente
+de mim, ela resolve.
+E resolve bem.
+Eu vou te ensinar do zero.
+Não importa se você é técnico ou não, não enquete que a gente fez lá no grupo do WhatsApp,
+logo no começo que a gente abriu.
+Algumas pessoas disseram que ainda não instalaram o OpenClock para o foto de tempo, outros
+disseram que tem medo.
+E se você se encaixa aí, relaxa, porque esse treinamento foi feito para você.
+A gente vai começar entendendo de onde vir essa ferramenta, como que ela funciona, preciso
+de passar a anatomia dela, para que fique mais claro na atualmente, para que você entenda
+efetivamente.
+O que esse carinho aqui, o OpenClock efetivamente faz.
+Então, se você participou do workshop ou se você assistiu a aula do workshop que está
+aqui no modo anterior, você vai ver que a instalação dele ela é relativamente simples.
+O grande lance é que a gente tem que trabalhar com bastante segurança, e aqui você
+tem diretamente, como você vai fazer a instalação, calma, calma, calma.
+Se você está fazendo em VPS, não faça por aqui, temos a parceria com uma lura hosting
+que desenvolveu uma VPS dimensionada para o OpenClock, são três modelos que a gente tem
+quando a gente grava esse vídeo, três formas que você tem de três configurações diferentes
+de VPS, e vai ser incrível você instalar ela na sua VPS ou até mesmo no teu
+Mac mini, se você já tiver um, lembra não precisa comprar o Mac mini para começar
+agora, comece em VPS, quando eu negocio esse cala muito, você precisa rodar e alocar
+o elem local, aí você vai para o Mac mini, mas nesse momento, se você não comprou,
+não precisa comprar, beleza galera, então é isso, sejam muito bem-vindos, contem comigo,
+a gente tem um time para dar o suporte para vocês aqui, essas aulas dentro da comunidade,
+elas são mais balizadoras, a gente vai ter várias aulas ao vivo ao longo da sejornada
+que você vai ter aqui com a gente da comunidade, mas importante, a gente tá colocando
+nosso time, não somente eu, mas o meu time de déves e técnicos que são especialistas
+em cada um em uma área, eles vão estar dividindo essas aulas aqui comigo para que a gente
+consiga esse cala e trazer o maior quantidade de conteúdo possível para quem me acompanha
+nas redes sociais, sabe que eu sou empresário, viagem muito, então às vezes saio uma atualização,
+saio uma novidade, eu não consigo estar aqui no estúdio para estar gravando o conteúdo,
+mas o meu time sim, o time está dedicado a cuidar da sua jornada e te ajudar a ter o máximo
+de sucesso possível, a gente tem nosso time de sesse que são as pessoas chaves que vão
+te ajudar em toda essa jornada de onboarding e para garantir que você efetivamente tenha
+uso, a ideia não é que você compra a comunidade só por comprar a ideia que você entra para
+fazer parte do nosso time, você já virou um claw member e eu não quero que você simplesmente
+assista as aulas e tá tudo certo, não é a ideia que a gente acompanha e construa esse
+ecossistema de forma conjunta, beleza galera, então é isso, a gente se vê daqui a pouquinho
+na próxima aula.

@@ -1,0 +1,155 @@
+Fala pessoal, tudo bem? Então, eu vou mostrar aqui para vocês hoje
+como vocês fazem para poder utilizar os modelos da olhama
+dentro do OpenClaw de vocês, só que eu não vou utilizar o modelo local, ou seja, não vou baixar o modelo
+no meu computador, eu vou, na verdade, utilizar os serviços da olhama
+dentro do meu OpenClaw através dos servidores da olhama, ok?
+Então, a primeira coisa que vocês precisam fazer é acessar olhama.com
+e aí, dentro, eu queria uma conta aqui no site, e aqui dentro, eu vou se juntar em configurações
+e aqui, vocês vão ouvir em chaves, vai criar uma chave para o seu API, tá bom?
+E aí, o próximo passo que a gente vai precisar fazer é ir lá no OpenClaw
+e adicionar as informações necessárias dentro do OpenClaw de aição, ok?
+Então, deixa eu abrir aqui o OpenClaw de aição, basta vir em configurações
+depois, vocês vão ouvir, aqui tem um botãozinho, ele tá um pouquinho escondido
+se você, assim, vai para ver que é o How, é só clicar nele, bom?
+E aqui, vocês vão ouvir, é o adição de vocês. Então, o que eu adicionei aqui no meu adição?
+Primeira coisa foi esse código aqui, tá? Eu vou até copiar ele aqui para mostrar para vocês
+e também vou disponibilizar isso aí para que vocês adicionem isso no adição de vocês.
+Então, deixa eu abrir aqui um bloco de notas para vocês olharem.
+Então, eu abri aqui um Google Docs para poder ficar melhor, eu vou colar aqui esse código, tá?
+Então, todo esse código aqui, vocês vão colocar lá no OpenClaw de aição de vocês
+sendo que aqui, a Pei aqui, vocês vão colocar a chave que vocês abacularam
+no site da olhama, ok? Vamos colocar ele aqui.
+E aí, vai voltar aqui, dentro do Agents, vocês vão precisar adicionar o modelo aqui,
+eu coloquei ele como Fallback, mas se vocês quiserem utilizar ele como Primer também,
+fica a vontade. Eu testei aqui, eu achei que o Sonya ainda dá um banho no olhama,
+mas vocês podem ir em postão. E aqui vocês vão colocar essa informação também,
+vocês vão precisar colocar essa informação para ele poder funcionar de arreitinho.
+Então, eu vou pegar também esse trecho aqui, que foi o trecho que eu modifiqui,
+dentro de Agents, eu vou vir aqui novamente o bloco indignato,
+eu estava com a documentação aqui olhando como que eu iria adaptar aqui,
+a documentação não fala muito sobre esse tipo de utilização,
+eu coloquei aqui, bom, eu vou escrever aqui primeiro,
+ali ali, esse código, aqui, vou colocar assim depois que vocês apagam,
+a sua chave, e aí, bom,
+esse código aqui depois. E é isso por acaso,
+vocês sem querer copiar errado, faltar alguma coisa,
+o que vocês vão fazer? Pega aqui o OpenColor de som de vocês,
+se vocês quiser ir facilitar quando fazer errado,
+copia da forma que está, bom. E aí, depois,
+vocês pegam o meu código,
+jogam, por exemplo, um Cloud, um, um, um Gemini,
+ele fala com ele, eu quero pegar esse trecho de código,
+que é o código do Elisio, e quero juntar no meu código,
+ele vai mandar já o código inteiro formatado,
+e você vem aqui, colo, aperta save, e aí, o seguinte,
+se você estiver rodando isso em Dock,
+utilizando o OneClick, você vai ser,
+vai ser importante que você restaure o gaito aqui para que
+essa modificação ela funcione. Bom,
+então eu vou mostrar que para vocês,
+então vamos clique, deixei o,
+joga e eu pica cá para não atrapalhar,
+webpesta, deixa eu só voltar aqui,
+e aí, primeiro, a gente precisa
+acessar a parte do OpenClore,
+acessar a parte do OpenClore,
+isso na estalação OneClick, bom,
+ou se você estiver utilizando Dock,
+e aí, depois, a gente vai
+reiniciar o container, com isso comando aqui,
+dock compose, restarte gaito e para a gente poder
+salvar o gaito e feijar de modificação
+dentro do OpenClore de som,
+bom, dentro do gait, onde a genteição
+dos 3 do código,
+então a gente vai aguardar alguns segundos aqui,
+para ele poder voltar, e a gente sabe
+isso aqui dentro, então,
+deixa eu ver que isso já está
+tudo ok, está vendo, ele já está
+com a saúde ok, e aí,
+agora, para assim o passo,
+é mandar um Models aqui para
+o nosso agente,
+eu já estava fazendo 10 aqui,
+vamos andar aqui um Models,
+e ele já aparece o leão
+atrás Cloud,
+eu selecionei o KimiKa 2.5,
+seleciona aqui,
+já está certo, ele já citou o leão,
+vamos fazer um bar,
+eu percebi que ele demora um
+pouco para poder responder,
+então, é normal,
+onde está certinho,
+posso rodar uns dados também para
+o que vocês possam ver,
+então, já está configurado aqui,
+o nosso Modelo do Leão,
+é o KimiKa 2.5,
+e aí, a gente consegue dar uma olhada aqui,
+na utilização,
+que a gente tem
+uma corta grátis,
+que a gente pode utilizar aqui,
+então, se a gente vir aqui em uso,
+eu consigo vir aqui embaixo a utilização,
+na forma que eu vou usando isso aqui,
+vai sendo preenchido,
+e aí, a gente tem a possibilidade também,
+de fazer uma assinatura
+de 20 dólares ou de 100 dólares,
+porque a gente consiga ter
+mais possibilidade ali,
+de utilizar esse Modelo da olhama,
+então, caso a gente perceba
+que a corta está inserindo muito rápida,
+talvez seja o momento
+da gente conseguir,
+da gente fazer o Upgrade,
+então, aqui, não fica muito claro,
+qual a quantidade de tokens aqui,
+não estou achando isso aqui de forma
+muito clara,
+vou clicar aqui para ver,
+que parece,
+mas ele já vai direto
+para o cartão de crédito.
+Então, isso, pessoal,
+a gente cabe a mostrar que,
+para vocês como vocês fazem,
+para configurar o Kimi K2.5,
+é um bom Modelo também,
+é um Modelo bem inteligente,
+e aí, a gente fecha por aqui,
+a gente vai estar,
+posteriormente,
+também mostrando como vocês configuram isso,
+de forma local,
+ou seja,
+baixar um Modelo desses,
+salvar isso no computador,
+é uma configuração pesada
+de ser feita,
+mas a gente vai mostrar isso
+para vocês também,
+e quando a gente faz isso,
+a questão dos tokens,
+o gasto com tokens,
+ele deixa de ser relevante,
+porque a gente já não tem gasto,
+a gente vai estar utilizando isso
+dentro da nossa máquina,
+quando a gente utiliza,
+o Modelo local,
+não foi a gestação que mostrei,
+vai ser uma próxima que eu mostrei para vocês,
+e aí, outra vantagem também,
+é a questão da privacidade,
+porque os dados eles estão
+dentro da sua própria máquina,
+então,
+estrasa um pouco de privacidade também.
+Bom, então, a gente
+se vê na nossa próxima aula.

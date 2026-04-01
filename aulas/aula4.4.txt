@@ -1,0 +1,34 @@
+E aí, com todo esse poder, vem uma pergunta óbvia.
+E se o a gente fizer besteira, essa é uma preocupação legítima.
+E a resposta se chama Human in the Loop.
+Humano no circuito.
+É quando a gente pede sua permissão antes de executar ações importantes ou irreversíveis.
+Então, imagina que se o a gente recebeu uma tarefa.
+Cancela todas as reuniões de manhã.
+De amanhã.
+Isso é irreversível.
+Se ele simplesmente cancelar tudo, pode gerar um problema sério.
+Com o Human in the loop configurado, aqui ó, tá?
+Em vez de cancelar direto, ele te manda uma mensagem, encontrei quatro reuniões amanhã.
+Posca cancelar todas e lista quais são.
+Você olha a avalia e responde.
+Cancelas duas da parte da manhã.
+Mantenha a tarde.
+O a gente executa exatamente o que você autorizou.
+No pinclo, você configura o nível de autonomia do agente.
+Pode ir do modo mais controlado, onde ele pede permissão para tudo.
+Até o mais autônomo, onde ele age sozinho e te avisa depois.
+A minha recomendação para quem está começando começa no modo controlado.
+Deixou a gente pedir permissão para tudo.
+Conforme você não é confiança, entende como ele se comporta, aí você vai soltando
+as rèdias aos poucos, tá?
+É como você, efetivamente, delegar para um funcionário novo.
+No começo, você supervisou, não fica de olho ali.
+Que ele prova, né, que é competente, você vai dando mais autonomia.
+Como a gente já é a mesma lógica.
+Na aula de segurança, eu vou aprofundar mais sobre isso, mas, por agora, o importante é.
+Os agentes são poderosos, mas você tem que estar no controle.
+Só de nível de autonomia, quando, efetivamente, você sabe que pode confiar
+que a quilolha já está o que ele já fez várias vezes pelo meu.
+Esse processo já está funcionando, rodando e totalmente validado.
+Você sempre no controle.

@@ -1,0 +1,40 @@
+pessoal, o último conceito desse módulo aqui, e ele é um dos mais importantes, que é o contexto
+oindo ou o janela de contexto, e eu vou te dar uma analogia que nunca mais vai sair da
+tua cabeça, imagina a mesa de trabalho de um escritório, quanto maior a mesa, mais papéis,
+contratos, relatórios, você consegue espalhar e consultar o mesmo tempo, se a mesa pequena,
+você tem que ficar tirando um documento para colocar outro, se é grande, tá tudo ali na sua frente,
+a contexto oindo é a mesa do modelo de A, então é tudo que ele consegue considerar o mesmo tempo
+para gerar uma resposta, sua mensagem, o histórico da conversa, as instruções do soul.md,
+vocês viram, isso é no workshop, tá aqui ó, a gente é só, então a gente tem o soul.md aqui,
+os documentos que ele tá consultando, tudo isso precisa caber dentro dessa mesa, os primeiros
+modelos de A tinha uma mesa de escritório de criança, cabiam umas mil palavras, cabiam
+uma hora, era uma hora, os modelos atuais têm mesa de diretor, o cloud por exemplo suporta
+até 200 mil tokens, que dá mais ou menos 150 mil palavras, gente, é um livro inteiro, um livro
+inteiro esparado na mesa e o modelo consegue consultar qualquer parte dele em mil e segundos,
+e por que isso importa para você, porque quando a cloud ativa a executar uma tarefa, ela precisa
+ver várias coisas ao mesmo tempo, quem ela é, as instruções do soul.md, quais são as regras
+do negócio, o que você falou nas últimas mensagens, qual a tarefa atual, informações sobre o cliente,
+tudo isso consome espaço na janela de contexto, se a janela é pequena, o que a gente esquece
+coisas, ele pode esquecer uma regra, esquecer uma informação que você deu sei lá cinco
+mil centímetros atrás ou perdeu o fio da ameaada, se a janela é maior, se ela é grande, ele
+mantém tudo isso na cabeça por muito mais tempo, então assim, na prática, os modelos mais modernos
+já têm janelas grandes o suficiente para a maioria das tarefas do dia a dia, mas quando você
+montar agentes, com muitas instruções, muita memória e muitos documentos, vai precisar saber
+gerenciar esse espaço, é como organizar aquela mesa de diretor, se você enche de papel sem
+diretor, vira bagunça mesmo sendo grande, e o openclog já resolve parte disso para você com o sistema
+de memória persistente, que a gente vai ver lá para frente, então em vez de carregar tudo na
+janela de contexto tempo todo, ele pode salvar informações em arquivos locais e puxar só quando você
+precisa, olha só quando ele precisa, é como você ter um arquivo organizado do lado da mesa, você não
+sabe exatamente onde encontrar quando precisar, a Claudia utiliza essa estratégia, o sol ponto
+em medir dela é relativamente enxuto, as informações detalhadas sobre clientes, projetos, históricos
+ficam em arquivos de memória que ela consulta sobre demanda, assim a janela de contexto fica limpa
+para o que importa naquele exato momento, certo pessoal?
+Bem, então com esses quatro conceitos, ele lembre modelos toque exiginado de contexto,
+já tem a base técnica para entender tudo que vem pela frente, você sabe como o motor funciona,
+sabe as opções de fornecedor, sabe quanto custa e sabe o limite de memória, isso pode parecer
+teórico agora, mas quando a gente chegar nas alas práticas, cada decisão que você vai tomar
+vai ser baseada nesses conceitos, qual modelo usar para caltar efa, quanto investir, como
+estimizar tudo passa por aqui, então no próximo módulo a gente vai falar sobre a país, que é como
+se eu a gente conversa com o mundo, e eu vou usar uma analogia tão boa que você nunca mais vai esquecer,
+o nosso objetivo aqui é trazer conceitos de forma não técnica para que você entenda quando um
+que eu vou falar com você, beleza? Então é isso, bora para o módulo 3.

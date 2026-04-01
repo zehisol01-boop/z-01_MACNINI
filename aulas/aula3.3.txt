@@ -1,0 +1,143 @@
+pessoal, agora é mão na massa, tá? Então eu vou te guiar para você criar as suas
+chaves de API, nos principais probedores, a gente vai começar pela Anthropic, que é
+adorando o Cloud, então para isso a gente vai vim aqui, com sol.entrófic.com ou é
+um ponto cloud, um ponto cloud, pronto. Beleza, esse link vai estar aqui embaixo também para vocês, tá?
+E aí entrando dentro do cloud com o sol, o que a gente tem aqui? A gente tem uma página que é
+diferente dessa aqui, tá? Até o outro link. E por que isso é do? Porque aqui é um, isso é que
+para desenvolvedores, quando você vai, efetivamente, plugar uma pegar uma chave de API, tá? Então, se a gente
+pegar aqui, ó, aqui eu tenho, eu consigo ver os analítics, né? De custo, a gente não está usando
+mais diretamente dentro do cloud, mas a gente vai fazer juntos, o caso você queira. Nesse
+mês a gente não usou, mas esse pegar de 2025, ó, a gente teve até 2020, ele não deixa pegar mais do
+que o ano passado a gente usava essa aqui ainda, tá? Eu consigo ter os logs, o cloud hoje, no dia que a gente
+vai gravando isso, tá um pouco instável, mas o que interessa para a gente aqui agora, tá? É API
+que é o chaves de API, tá? Quando a gente entra aqui, a gente tem a nossa organização, a nossa
+empresa, tá? Primeiro passo é vir aqui em Billin e colocar créditos. Minha conta ela limita aqui,
+de cinco, a mil dólares de créditos, tá? Pode começar aí com 10 dólares, não vou por crédito agora
+porque a gente não usa muito aqui. Beleza, hoje eu tenho 9 e 41, tá? A última vez que eu piscredito aqui
+nela foi em outubro, mas a gente usa muito pouquinho aqui, a gente usa via uma outra plataforma, tá? Aqui, a gente
+está os limites por tipo demodelo, tá? Então, por exemplo, o cloud opus ele é o que mais torra, tá?
+Eles têm aqui a janela de contexto menor ou igual a 200 mil tokens, tá? É bastante pagina na grande
+hoje, tá? E aqui a gente consegue efetivamente configurar, eu vou deixar ele no padrão, se fosse
+mas você pode configurar de acordo com o modelo. Chaves de API aqui, é aqui que a gente vai criar, então
+depois que você põe o crédito aqui, vem em chave de API e vou criar uma nova chave, tá? Open
+Cloud, aulas BR, eu vou criar aqui, ó, a API, aulas, ó, dolo, três, adicionar. E ele me gerou uma chave,
+esse chave vai se diletar daqui a pouco, porque se alguém de vocês for sacana comigo e pegar essa chave aqui,
+vocês vão derreter o meu cartão de crédito, tá? Pega e salvo isso aqui, você vai usar isso quando você for
+configurar o Open Cloud, tá? Ou configurar qualquer outra ferramenta, nunca compartilha mesmo a senha para,
+a mesma chave de API para para as coisas, tá? Então, ela já ficou aqui, dois de março, tá? E veja,
+que eu não consigo mais ver essa chave de API, porque é uma vez que você vê aqui no caso, tá? Então,
+eu vou desabilitar ela, posso vir aqui, desabilitar, beleza? E aí você vai, quando pedir uma API que,
+lá no terminal, ou para fazer a instlação do Open Cloud, é isso que você vai usar. Se a gente vier para
+o form.openiai.com, é quase a mesma coisa, eu quero usar do chat IPT, beleza? Então, a gente vai vir aqui,
+tem o chave de API antes, a gente precisa vir aqui em Bearing, tem um crédito aqui, tá? Eu posso adicionar
+mais crédito se eu quiser. E aqui, ah, no Cloud, a gente também tinha, não mostrei mais igual, aqui a gente tem o
+recharge, o que é isso aqui, tá? Então, ó, quando o meu crédito tiver abaixo de 20 dólares,
+coloque mais cinco, tá? Então, aí, o que ele faz? Para garantir que mais aplicações nunca vão parar,
+então eu tenho o autopapo, mas isso tem um risco. Hoje aqui na empresa, a gente gasta muito dinheiro com o API,
+usa muito, só que a gente nunca deixou o autopapo, que já aconteceu, uma vez eu tive um sequestro de uma API,
+do Perplex, que ela ficou exposta num projeto, é um robôzinho pegou, e começaram a derreter. Quando eu
+vi o estrago, em poucas horas também, mais de quatro mil reais, bilhado no meu cartão. E por exemplo,
+agora a gente tem aula, o meu telefone, tá aqui, ó, ele nem veja a tela dele, ó, se eu olhar,
+ele tem 300 mil WhatsApp, então, eu não fico olhando o telefone, e aí estava no meu cartão pessoal,
+e aí, foi um prejuízo, tá? Então, eu recomendo não deixar o autopapo, beleza? A gente vem aqui,
+em Chaves de API, vou criar um new secret, API aula, módulo 3, a gente pode ter um projeto, tá?
+Você pode criar um projeto que a gente mostra como criar, e aí, eu vou usar dentro
+desse projeto aqui, tem uma Chaves de API, é a mesma coisa, salva esse no local, seguro, tá pessoal.
+Projetos, a gente tem aqui, eu posso criar um aula, o pen, claro, se eu vier aqui em Chaves de API,
+ela tá num geral, o ideal seria eu colocar aqui dentro. Beleza? Então, temos OpenAI,
+temos Antiofic, e agora a gente vai para o nosso cridinho, favorito, que é o OpenHouter.
+Vamos lá, qual que é a diferença, tá? Porque é o OpenHouter do que tem diferente aqui.
+Se a gente pegar aqui, olha a quantidade de modelos que a gente tem, infinitos modelos,
+como melhor modelo, a gente na comunidade, a gente vai compartilhando até o network
+e as pessoas vai acabar ajudando para a gente compartilhando com o melhor modelo para cada atividade.
+Antiofic é como sociou McDonald's, OpenAI é o Burger King, que você vai lá, você vai comer o Big Mac,
+o Big Taste, ou vai comer o Whopper no Burger King, mas eu não consigo pedir um Big Mac no Burger King,
+é impossível. Agora, se eu tiver um lugar, que é uma praça de alimentação que é o que OpenHouter é,
+eu tenho acesso a vários modelos, tá? Então, pra, olha, 637 modelos disponíveis nesse momento,
+eles sempre estão trazendo outros. É mais cara do, é um pouquinho mais cara,
+só que vocês vão ver que quando vocês calarem os projetos de vocês, fica muito mais fácil
+para vocês gerenciarem, tá? Quando eu venho aqui em Credits, eu vou ver eu tenho 5 dólares,
+eu vou por um créditozinho aqui agora, tá? Aqui ele tá habilitado, então,
+ele, quando baixar de aqui, tá habilitado porque aqui minha gerenha fica de olho, tá?
+Eu vou colocar aqui, eu vou colocar 10 dólares, meu cartão já tá aqui,
+se o seu não tiver aqui, você vem adicionar o seu cartão, beleza? Eu vou usar meu cartão que tá salvo,
+já, eu vou por 10 dólares, e veja aqui, o Serbsifis,
+se eu colocar 20 dólares, o Fivé diminuindo, tá? Se eu colocar 50 dólares,
+tá? O percentual do Fivé um pouquinho menor, então, eu vou colocar 15 dólares aqui,
+tá? Posso mandar envoias para mim, beleza? E eu vou comprar,
+e nesse momento ele vai processar,
+vai fazer o top up, adicionou 15 dólares aqui na minha conta,
+beleza? Temos crédito adicionado, se adicionar aqui,
+crédits, e aí a gente vai, a gente tem algumas coisas dentro do openholder,
+tá? Aqui tem uma coisa muito legal que é isso aqui,
+deve gravar uma alaça disso, né? Eu consigo, por exemplo,
+colocar para que ele fale com vários modelos simultaneamente,
+posso fazer um teste aqui? Oi, em que você é bom?
+E olha que legal, ele vai, ó, velocidade do Prince,
+vai testar velocidade de processamento,
+vai testar qualidade, ó, então, ó, o Gemini,
+estou no 3 próprio review, o modelo grande,
+trazimentópicos aqui, o cloud,
+um pouquinho mais conciso, né? O Gemini já foi
+mais explícito, o groque,
+nadmais, ó? O GPT, mais simplão, o que com o em 3.5,
+35 bilhões de parâmetros, um gol modelo, tá?
+E aí, você consegue fazer comparação de modelos aqui,
+também, inclusive? Beleza, viagem um pouquinho aqui já,
+sou fanzácio aqui do openholder, então, a gente vai aqui,
+e aí, vou voltar na tela inicial, que é a API aqui,
+eu posso colocar o limite de crédito,
+ó, essa chave aqui só vai crédito, o limite dele é
+4 dólares por semana, weekly,
+dele ou manfer, tá? Espira, espere um dia,
+criei, temos uma chave de API, guarde essa chave de API,
+gente, beleza? Então, com isso aqui, a gente tem a chave de API,
+eu consigo vir aqui, e é efetivamente, né?
+Eu consigo ver os logs aqui, ó, de tudo que consumiu,
+ó, aquela conversa que eu perguntei aqui, ó,
+ela custou fração de centavos, ó,
+e eu consigo pegar aqui, ó,
+por exemplo, eu vou fazer um sobrigadrinho com vocês,
+2 e 3,
+vamos ver aqui, jogar pro cloud, ó,
+por 4.6, essa comparação pra gente,
+mesmo achamado, ó, o GPT-5.2,
+me custou, aquela chamadinha,
+12 centavos de dólar,
+ó, o quim custou 002, o GPT-5, não,
+001, groca 001, o opus 006, então ó,
+6 vezes mais caro aqui, tá vendo?
+A diferença, gastei 15 centavos no total aqui,
+tá, o GPT-3 pra previu 004,
+abaixo ainda aqui, então um modelo mais caro,
+o opus 4.6, ele é mais caro,
+só que ele puxou de outra coisa, tá,
+mas ó, pra fazer aquela pergunta,
+pra todos esses modelos, ó, quando eu gastei 15,
+eu gosto de ter quase 1 real, pra fazer isso, tá,
+e eu posso vir aqui, dentro de atividade,
+e eu consigo ver efetivamente, né,
+pro Chaves de Apeio, ó,
+que é incloça aqui, era Claudette,
+eu consigo ver quando tá custando por dia,
+assim, que eu conseguia fazer aqueles vídeos
+comentando o meu custo diário da Claudette com vocês, tá,
+então, o processo é basicamente isso aqui, tá,
+a gente vai ensinar vocês um pouquinho mais pra frente,
+a usar esse carinha aqui, que é o olhama, tá,
+dentro do olhama, você consegue ter,
+como se fosse um modelo open source, né,
+de código aberto, dentro do seu vídeo deles,
+e aí você não paga o custo da detokin,
+você paga processamento, você tem um limite pra processar,
+então é assim que a gente tá rodando a Claudette,
+hoje, aí, um pouquinho mais pra frente,
+a gente vai vim aqui pra fazer essa configuração com vocês,
+beleza, pessoal, então, ó,
+só lembrando vocês, tá, guarda essas chaves,
+porque você vai precisar delas, e quando a gente
+tiver configura no efetivo na prática, né,
+e não compartilhei esse com ninguém,
+não deixei no garaberto, eu não mando um WhatsApp,
+fechou? Então é isso, a gente se vê,
+até que é pouquinho.

@@ -1,0 +1,39 @@
+Agora, se AAPI é o garçom, AAPI que ou a chave de AAPI, ela é sua identidade.
+É como o seu restaurante pedisse, deixa eu voltar aqui, a gente estava com uma cláudia de aberta.
+Aqui, tá?
+Então, AAPI que ela é como se fosse efetivamente a sua identidade.
+Então, como o seu restaurante pedisse, olha, me mostra seu documento antes de eu anotar o pedido, tá?
+Então, uma chave de AAPI, ou uma AAPI que é um código único, uma sequência de letras e números que identifica quem está fazendo pedido.
+Então, quando você cria uma conta na antrófique, por exemplo, ou no open-out, a gente vai ter aula falando só sobre isso,
+e gera uma chave de AAPI, é como se você abrir isso uma conta no restaurante.
+E a partir daí, toda vez que o seu agente faz um pedido, tá?
+Todas as vezes ele apresenta essa chave e o serviço sabe que é você.
+E é por essa chave que a cobrança acontece.
+Cada pedido que o seu agente faz usando a sua AAPI, que isso consome toquins, que são os créditos, né?
+As moedas, e os toquins são cobrados na sua conta.
+E existem algumas regras de ouro com o chave de AAPI que se precisa gravar, tá?
+Regra número um, nunca, mas nunca compartilhe sua chave de AAPI, tá?
+Ela é como se você está sendo seu banco.
+Se alguém pegar a sua chave, pode usar a inteligência artificial na sua conta e você que vai pagar o seu cartão que vai derreter ali.
+Regra número 2, define a limite de gasto.
+Toda a plataforma permite que você coloque um teto de quanto pode gastar por dia ou por mês.
+Então, coloque um limite de 5 a 10 dólares por dia no máximo no começo.
+Se acabar, o agente para, mas o seu bolso não vai sangrar.
+Beleza? Até para você se familiarizar um pouco.
+Eu não quero que você torre dinheiro à toa, mas pode acontecer.
+Regra número 3, use chave separadas, tá?
+Então, uma para o Penclaw, uma para outros projetos, assim,
+você sabe exatamente onde está gastando, tá?
+Então, só um overview rápido aqui, o Penhouter, aqui, ó, aqui, se eu pegar em...
+Aqui, ó, se eu pegar e filtrar pela chave do Penclaw,
+eu sei exatamente quanto eu estou gastando, tá?
+Então, a gente consegue saber exatamente o que está sendo consumido aqui
+dentro de uma plataforma como essas.
+A gente vai entrar nessa plataforma aqui.
+Eu gosto muito do Penhouter, fechou?
+Então, é isso.
+E a gente já se vê na próxima aula onde eu vou efetivamente te guiar,
+criar suas chaves, já peiram os principais provedores tanto nantrófico,
+quanto na OpenAI, quanto no OpenHouter,
+e vou explicar a diferença entre eles também,
+e como você escolhe qual melhor modelo, tá?

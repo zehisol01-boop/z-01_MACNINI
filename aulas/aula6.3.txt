@@ -1,0 +1,40 @@
+Então, beleza, pessoal, agora a gente vai para a aula de configuração do Telegram, então
+a gente parou aqui na última, abrir o bot ou o pentelegram, eu vim aqui ditar barra e o bot,
+vai ser CloudDat27, vai ter que ter o underlar bot, CloudDat7 bot, beleza, então a gente tem um
+toque agora, esse toque a gente vai copiar, não compartilha esse toque com ninguém, você vai colar
+aqui, plantar, nossa CloudDat começa a ter vida a partir de agora, vamos lá, vamos lá, vamos lá,
+vamos lá configurando, instalando, gente, esse sistema aqui que a gente desenvolveu, só enquanto
+ele está lá aqui, a gente demorou os oito dias para fazer ele em três, só que assim, nosso
+objetivo, nosso propósito é efetivamente transformar a vida das pessoas através da tecnologia,
+ao invés de você ter que fazer toda a restração manual, é um clique, vai configurar o moldado
+do seu jeito e você tem o seu CloudDat para começar a rodar efetivamente para você, então
+ele está gerando cada ponto aqui, essa parte do sistema aqui, visualmente foi eu que construí o
+front e o back foi todo meu time técnico, a gente construiu juntos a gente dividiu a responsabilidade
+e a gente usou muito CloudCode para ajudar a gente, mas ficou insano, insano, com isso aqui, a gente dá a
+possibilidade de qualquer pessoa ter sua própria CloudDat, então a gente configurou ela com essa
+gada, é uma chave de segurança única, então o meu Mac está atrelado, a gente gerou essa
+chave diretamente no meu Mac, então eu consigo acessar o painel diretamente do meu computador,
+beleza, e eu consigo falar com ela esternamente através do Telegram, vocês podem ver que ela demora
+um pouquinho para gerar, então a gente está construindo tudo, agora a gente vai precisar
+aguardar esse segundo aqui, que lindo de magia, eu vi com o pirada disso aqui,
+o fronte, vou te dar online, agora vou enviar um oi para ele, ópa, oi, ópa,
+aqui, eu já vou falar com cliquei no link ali já, já gerou um Pairing Code, Copil,
+esse link de pareamento, e a gente está, ah, seu meu painel, isso está configurado,
+com cliquei, não precisa daquele monte de configuração, acessar o dashboard,
+olha só, já temos atualização, a gente estamos no, estamos na beta 1, vamos fazer uma
+atualização aqui, eu não de jeito atualizado não, eu acho que deixa, vamos rodar sem
+o link, vamos mandar um oi aqui no chat, vamos ver se ela puxou a minha chave de
+API dentro of here, oi Edu, tudo isso, olha só, ela veio na minha, exatamente,
+é nova, do zero, está do zero, e como eu coloquei do ali, então ela veio
+efetivamente dessa maneira aqui, tá, a gente vai ver aqui agora, a gente vai ter uma
+aula para dar uma navegada aqui pelo, pelo menu dela, a gente vai testar no Telegram
+oi é, e a gente está rodando aqui em API, diretamente, oupa, você tá um,
+clau, estou gostando de ver, ah, só queria falar oi mesmo,
+e beleza, então a gente tem aqui agora, a sua clau deite configurada com o
+desconto da Luda Rostin, baita desconto, foi, a gente negociou com várias
+IPS, galera, mas a Lura foi que chegou no melhor custo-benefício e a gente testou
+várias IPS, eu usava outra VPS, e aí eu decidi não falei, não, preciso
+conhecer efetivamente o mercado inteiro, o que tem de melhor, para garantir que a gente
+vai dar um serviço de estabilidade, e a Lura está sensacional, tá, a gente
+estava bastante com ela aqui, então é isso, finalizamos a configuração
+inicial da nossa clau deite.

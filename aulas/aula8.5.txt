@@ -1,0 +1,2465 @@
+com o nosso agente, pode acontecer dele compactar,
+utilizando um membro de flush, ele só recuperar uma vez,
+e aí o restante é a gente ainda acaba perdendo.
+Então, talha, o problema em sessões extremamente longas,
+múltiplas compactações ocorrem o risco.
+O agente salva apenas a primeira liberação de memória
+e perde o restante devido ao loop infinito.
+Então, uma solução, a gente precisa configurar o Contra-Cipron,
+que é uma outra configuração zinha,
+que é nesse sago ser feito adentro do loop encloco,
+que vai definir o tempo de vida útil,
+porque é chegar a gente na história que recente permaneça,
+vivo sem sobrecarregar a memória do sistema, né?
+É, isso são coisas também que são interessantes,
+e eu falo muito com o pessoal que está configurando a memória,
+de sempre dar a documentação do memory do loop encloco de vocês,
+para que o clodicode,
+porque o clodicode, ele vai ver tudo isso,
+e na minha configuração,
+ele automaticamente utilizou essas boas práticas, né?
+Então, sempre fala o pessoal, pô, pega o clodicode,
+joga o link da documentação sobre memória,
+e troca uma ideia com ele,
+porque ele vai conseguir implementar isso para vocês.
+Então, está aqui, como vocês vão...
+está fazendo isso, né?
+É um outro trechinho de código
+que vocês colocam dentro do OpenClop.json,
+onde vocês vão definir o tempo de vida útil ali,
+na TTL.
+Então, está até escrito aqui o comportamento final,
+onde a gente mantará em que acha apenas dos últimos três tonos
+relevantes,
+ou limpar ao que acha cada quatro horas.
+Revenção total contra bloqueio de memória em sensões infinitas.
+Então, aqui cabe vocês customizarem,
+e acordo com aquilo que vocês
+forem utilizando, né,
+da forma que vocês utilizam,
+então, cada um utiliza de uma forma,
+tem pessoas que comam muito tempo conversando com a gente,
+outras pessoas têm vários agentes.
+Eu, por exemplo, estava...
+estou configurando, hoje eu tenho usado mais muito canais
+do terega, no específico.
+Então, vai depender do tipo de utilização,
+mas isso aqui já vai ajudar bastante também.
+Beleza?
+Essa é a princípio, o texto, o Eliseu.
+Se eu tira trabalhando com múltiplos agentes,
+ele é individual,
+cada um vai ter, então, seu argumento lá de fazer,
+vai inflando o contexto, separado isso.
+É, esse OpenCroponJSON, ele é único, né,
+para todos os agentes, né.
+Então, o que você aplicar dentro do OpenCroponJSON,
+vai ser refletido para os outros agentes também.
+Ah, está, mas cada um está usando uma LLM, né?
+Então, acaba sendo um, vamos dizer, um cache individual, né?
+Para cada gente, o subagente, ele está com o seu cache,
+e ele lá, você comentou o patocenso, um nível do OpenCroponJSON, né?
+É, o que você vai estar configurando dentro do OpenCroponJSON,
+então, você vai ser configurado, o ContreXprone,
+e o Membrano de Flush, ele, automaticamente,
+vai fazer essa implementação para todos os seus agentes.
+O que vai ser diferente, vai ser o SystemPrompti de cada agente.
+Então, cada gente, ele tem o seu Memory, ele tem o seu Agents,
+ele tem o seu Assoas Tools, né, que são,
+que a gente chama de SystemPrompti,
+isso que vai ser diferenciado.
+Então, configurando o OpenCroponJSON,
+já vai estar configurado para todos os agentes.
+Pedrão, que é um session também.
+É um session que, um session para cada um, né, que é abre.
+Cada um, cada, cada, a gente deixa uma session.
+Só que eu não trabalhei ainda com muitos agentes,
+eles podem ter, inclusive, meio destas.
+Sim, cada um, cada um vai ser uma session.
+Ah, então, isso mesmo, beleza.
+Show.
+Show.
+Não acho que dá uma palavrinha.
+Compartilhar alguma coisa.
+Pode falar?
+Não, não.
+Eu deixei a mão levantada da outra vez, se eu tira aqui.
+Ah, beleza.
+Show de bola.
+Então, isso aqui são duas configurações básicas,
+e a gente já diz, acaba passando batido mesmo.
+É, não é tão... talvez...
+Eu não sei se nas versões mais novas,
+hoje eu não sou uma versão nova,
+ainda não consegui parar para olhar muito bem.
+Não sei se ele já é implementado isso de forma automática,
+mas até a versão que eu vi, ele ainda não tinha.
+Então, isso aqui já ajuda bastante também
+na nossa configuração.
+E aí vem próximo ponto, né,
+que é o que o Renato falou sobre o Memor M.D.
+A gente falou que a gente precisa gravar isso em algum lugar.
+Então, ele já não está mais deixando um encontreista,
+ele já está... nossa gente já partiu agora,
+ele já salva isso em disco,
+e ele vai salvar onde?
+No Memor M.D.
+Só que tem um problema,
+que esse Memor M.D, ele vai começar a ficar o quê?
+Muito grande.
+E o mecanismo do OpenClaw, de busca,
+ele funciona por similaridade.
+E isso também não é tão eficiente,
+custo de toca exenorme.
+Então, nem tudo a gente precisa salvar o Memor M.D.
+A melhor prática, a gente tem um outro arquivo.
+Isso aqui é uma ideia, vocês podem ter mais arquivos,
+vocês podem até organizar isso de uma maneira diferente,
+mas o ponto inicial é vocês terem aí o LearnS.M.D.
+para todos os aprendizados, né?
+Um arquivo onde a gente de vocês vai salvar...
+O que ele aprendeu no dia?
+O que você falou com ele assim?
+Fulança, a gente, você fez isso que é raro.
+Você não pode comer ter mais esse erro.
+Ele vai salvar tudo isso dentro do LearnS.M.D.
+E além disso, é extremamente importante.
+Depois que a gente ter esse arquivo, o LearnS.M.D,
+a gente precisa ter, no A.G.M.D., uma instrução,
+que toda vez que o nosso a gente vai dar uma resposta,
+é que a gente carrega esse agentes.M.D.
+Então, isso é um padrão do OpenClaw.
+Ele carrega o agentes.M.D.
+que é o agentes.M.D.
+E o agentes.M.D., ele carrega todos esses arquivos.
+E precisa ter uma instrução lá do LearnS.M.D.
+para ele, no agentes.M.D.
+Desculpa, para ele poder sempre olhar o LearnS.M.D.
+antes de dar uma resposta, tá?
+Então, isso precisa estar setado também.
+O ponto que eu vou mandar para vocês já faz isso.
+Então, antes de ele responder, ele vai dar uma olhada lá
+nesses arquivos, e aí baseado nisso, ele vai dar uma resposta.
+Eu tenho também configurado aqui, sempre no final do dia,
+ele faz um resumão desses aprendizados, eu tenho um cron,
+e aí ele joga lá em LearnS.M.D.
+Funciona bem.
+Só que a gente precisa ter um mecanismo de busca mais eficiente,
+que conforme eu falei para vocês, a busca nativa do OpenClaw
+é por similar a idade semântica.
+E existe uma forma de a gente ter uma busca mais eficiente.
+A documentação ela mostra para a gente, um back end,
+que ele está classificado ainda como experimental,
+mas eu tenho testado durante o bastante tempo,
+desde que eu comecei a mexer com o OpenClaw,
+e vejo muitas pessoas que estão utilizando,
+estão tendo bons resultados,
+que é o que é o que é um motor de busca,
+que o que ele vai fazer?
+Ele não vai buscar as memórias só por similar idade.
+Ele vai buscar por palavra chave, similar idade,
+e depois com uma LLM, ele faz uma classificação dessa memória,
+e ele vai se classificar primeiro, segundo o terceiro,
+de acordo com aquilo, que é mais próximo do que você tá buscando ali.
+Então, isso funciona muito bem também,
+é um mecanismo de busca híbrida,
+bem mais eficiente que a busca nativa do OpenClaw,
+e funciona bem legal também.
+Beleza?
+Deixa eu dar uma olhada aqui.
+Alguém quer falar alguma coisa?
+Vamos lá.
+O helíquia, dá uma palavra.
+Pode falar aí, ele.
+Eu realmente estava com esse problema de memória,
+e uma olhada nessa questão do que me dima a internet, certo?
+Ele tem a ver alguma coisa com a Edwin,
+um Trinameguia, uma coisa.
+Ele usa as palavras chave para relacionar as palavras mais perturente,
+que é o Tabscan, seria mais ou menos isso?
+Quando a gente fala em keywords e vector, é justamente isso, né?
+Ele vai fazer uma coisa que a gente chama de Pagna,
+Retribu, Argumentes e Generations.
+Ele vai pegar todas as palavras,
+vai quebrar em palavras pequenininhas,
+já agora vem uma parte bem técnica.
+E aí ele vai fazer o que as reais fazem hoje?
+Os modelos de transforma fazem isso, né?
+Ele transforma um tudo isso em vetor, matemático.
+Então, quando a gente vai falar uma palavra,
+ele vai tentar adivinhar através de vetores matemáticos ali
+e vai fazer uma continha ali dentro para trazer a...
+O que você está buscando.
+Isso aí. Não bem mesmo, Tom.
+E aí, no final, que é o mais legal que eu gosto desse mecanismo,
+que é o Rihent, que ele vai pegar tudo aquilo,
+supondo que ele achou 10 frases aprendizados, enfim.
+Que mais fazem...
+São mais próximos do que você perram todo, que você tá buscando.
+E o Rihent, aliado com uma LLM, ele tem uma LLM,
+ele vai fazer uma classificação
+e ele vai te mostrar, tipo assim, tem 10 aqui.
+Mas esses três aqui são os mais próximos mesmo
+que ele tá buscando.
+Isso funciona tudo no Background,
+ele se nem vê isso acontecendo.
+E aí ele consegue se lembrar de uma forma mais eficiente
+de aprendizados.
+Então, sempre funciona bem legal.
+Background, Tom.
+Tom, beleza.
+Beleza?
+Eu cheguei a fazer isso aqui, gente.
+É superbeijo também no início,
+que também dá para fazer na mão ali.
+Mas sinceramente, eu achei essa aplicação aqui um pouco mais...
+mais básica e mais rápido.
+Beleza?
+Vamos avançar.
+E aí, agora vem o Heartbeat, a sangria, né?
+Que o iniciante, às vezes, ele olha isso aqui,
+ele fala, Deus me leve.
+Tem como não, que ele configurou a estalação inicial
+com um modelo muito potente.
+Ele não configurou Heartbeat com uma LLM
+mais adequada para a Heartbeat.
+E aí, quando os Heartbeat são ativados ali
+e aí no outro dia, ele vai olhar...
+O open-halter dele lá está chorando lá
+pedindo o crédito o cara nem fez nada, né?
+Então, esse é um terceiro pilar,
+que é importante a gente prestar atenção,
+que é a armadilha do Heartbeat, né?
+Por que o que acontece?
+Heartbeat é aquele mecanismo como a gente...
+Ele acorda, né?
+Ele vê se tem alguma coisa que eu preciso executar,
+é a proatividade dele e ele executa a tarefa.
+Só que, o que muita gente não sabe
+é que quando ele faz isso, ele carrega todo o sistema
+de ele de novo.
+Então, ele carrega o AgenCMD, ele carrega o SoulMD,
+ele carrega Tools, o Identity, o Heartbeat,
+o Memor MD e as skills.
+Então, vocês imaginam, pois, eu rodando a cada 30 minutos,
+que é a configuração do vem padrão dele,
+24 horas por dia.
+Toma um output desse.
+Você vai ter, ali, dependendo do que você já tiver configurado
+nos seus agentes, de 10 a 15 mil toques.
+Então, realmente torna-se muito, cara, né?
+E aí, a primeira coisa que a gente precisa prestar atenção
+é com relação a se existe a necessidade
+do Heartbeat rodar 24 horas por dia,
+e isso é o primeiro ponto.
+Porque a gente tem que entender no nosso caso de uso.
+Ah, não existe a necessidade dele rodar 24 horas por dia.
+Então, a gente consegue configurar dentro do Penclaw de som,
+um horário de início e um horário de fim, também.
+Então, é interessante a gente prestar atenção nisso.
+Ah, eles não existem, sim.
+Meu Heartbeat, meu AgenCMD tem que trabalhar de madrugada,
+ele tem que executar determinadas ações.
+E aí, a gente existe também a possibilidade
+da gente liberar uma outra variável,
+que tem a ver com o contexto leve,
+ou seja, ele vai acordar,
+ele vai executar o Heartbeat,
+mas ele não vai executar o AgenCMD,
+o MemorameD, ele não precisa carregar tudo isso.
+E a gente consegue configurar isso também através de uma instrução,
+que eu vou deixar para vocês dentro do OpenClaw.de som.
+Então, primeira coisa, olhar e analisar
+se o AgenCMD precisa executar o Heartbeat de 24 horas por dia.
+Se não existir a necessidade,
+configura o horário de início e horário de fim.
+Bom, segunda coisa, verificar
+se o LiteContext está ativado como True,
+que é ele que vai fazer apenas o Heartbeat acordar,
+não ser ativado, seja retada,
+não todos os outros documentos, outros marketing.
+E a terceira coisa, o modelo de LLM,
+que está sendo utilizado para esse objetivo do Heartbeat.
+Então, o Heartbeat não precisa ser um modelo muito robusto,
+porque ele não precisa ativar todos, enfim.
+E aí, vocês podem usar o modelo mais barato aqui,
+um Gemini, talvez um Raiku, o FuncioneBank também, enfim,
+para esse objetivo, isso já ajuda bastante.
+Então, a resum da nossa implementação aqui,
+a gente tem, agora, uma retenção,
+utilizando Memorg Flush e Contra-Ciproney ativados.
+Então, isso já está resolvido o problema da retenção.
+A gente, agora, tem um mecanismo eficiente de recuperação de memória,
+utilizando o KMD e um arquivo de Learns MD.
+E aí, vocês podem até deixar isso melhor, tá?
+Vocês podem ter um lição ZMD, um pen de ZMD para pendências.
+E isso, partir de agora, vocês vão conseguir ter uma clarisa maior sobre isso,
+e vai deixar cada vez melhor esses aprendizados,
+mas começa com Learns MD, já vai melhorar muito.
+E aí, a gente fala um pouco sobre a eficiência,
+que é isso, vai trazer um pouco de economia
+nos gastos de Tolkien, que é que você tem um arte-bit inteligente
+com o contexto leve e ativado, e o oras úteis,
+caso seja necessário, né?
+Isso é o que valevamos, a gente, você dizera um,
+logo nesse início de configuração.
+Então, seria um sistema, um extremamente consciente,
+até coloquei um sistema perfeito,
+conhecimento é salvo, antes do colapso,
+buscado no arquivo correto, operando sobre um ciclo de vida que custa
+uma fração do valor original.
+O resultado é uma bilhante de memória infinita e operacionalmente barata, né?
+Então, eu queria trazer esse conceito hoje para vocês,
+a gente ia ter uma aula específica para isso,
+mas achei mais legal trazer isso aqui nessa aula hoje.
+Entender se vocês já conheciam esse mecanismo,
+eu vi que alguns aqui já haviam feito algumas configurações
+com relação a isso também.
+Entender de vocês o que vocês estão usando aí de memória,
+se tem alguém que está utilizando algum outro mecanismo
+que considere que está sendo mais eficiente,
+ou que, enfim, queria ouvir um pouquinho de vocês aí,
+queria saber quem quer ser o primeiro a falar aí,
+para colocar essa ideia com a gente hoje.
+Alguém quer falar aí, gente?
+Posso, eu posso adicionar...
+Eu estalei o Obsidian, né?
+A metodologia do Obsidian na...
+O Pencal,
+nos Wikilinks, né?
+Junto um KMB, cara, eu tô sentindo uma boa eficiência nesse...
+Esse é a consistência, sabe?
+É um Open Source, né?
+Você não gasta?
+Você fica nos dano antes de todo o Sega ali, né?
+Exatamente, aí tem ele.
+Porque eu num paralelo em Game Graph,
+e o Open Cloud, então, assim, está sendo bem legal
+como os dois estão começando a superagia,
+o Game Graph ainda começou a rodar,
+não, mas o Open Cloud está rodando,
+considerando ainda que essa instrução entre junto
+e como que a memória tem relação entre as agentes.
+Você deu alguma instrução também no Agentes,
+a medir para a utilização do Obsidian?
+Eu peguei duas skills daquele que é ano, né?
+Acho que é o fundador, né?
+De três skills, e criei uma skill para...
+A organização, né, das pastas, né?
+Então isso facilitou muito o processo,
+dela não fica que ano pastas com a Boida, né?
+Que tinha visto esse problema no início
+e contato tudo de forma boa prática.
+E ela já vai fazendo os Wikileaks, né?
+Os IAM, em cima, né?
+Se você é certinho,
+ela pode achar os arquivos.
+Com o cara, isso tem um bom resultado também.
+Boa...
+Só por que era adicionar, né?
+Muito bom.
+E ela se luta.
+É uma ferramenta gratuita, né?
+Ah, boa, boa, boa.
+É verdade.
+Tem muita gente utilizando o Obsidian,
+ainda não parei para poder configurar
+dentro do meu Open Cloud.
+Eu já estou usando mais para base de conhecimento, né?
+Sutilizando um docho,
+onde...
+O que que meu a gente está fazendo?
+Está pegando tudo que vocês estão tendo de dúvidas
+lá da comunidade.
+E quando é de noite, ele roda um cron,
+ele me falou, olha...
+Olha a tepe dúvida sobre isso aqui,
+salvando lá na base de conhecimento,
+já estou colocando as despostas lá também,
+aí está sendo retroalimentado
+para ter um agente de dúvidas e respostas ali,
+que está funcionando bem legal também.
+Pra saber isso, sobre as dúvidas aí do Obsidian,
+o que eu vou fazer?
+Eu vou compartilhar as skills,
+para compartilhar a comunidade,
+tá aí o link deles.
+É bem legal de estalar,
+você pede pro Cloud Code,
+está lá, cara, fica sem percento.
+O Cloud Code,
+ele é, de fato,
+o game change na estalação, né, cara.
+Eu gosto muito de utilizar ele ali,
+porque eu acho que poupa um pouco de tempo em configuração, tá?
+E acaba economizando uma graninha também.
+O domingo é a vida aqui.
+O Samuel, eu também estalei ontem,
+onde é que o Obsidian,
+eu tenho que ideagar, né, gente?
+E meu, para mim,
+começou quando ele está na cabeça com o bichinho de um jeito.
+Qual é, cara?
+Estrutura e pedi pro Cloud,
+aí ajudaram a fazer uma estrutura lógica,
+que eu gosto muito,
+eu gosto muito,
+mais poderes para conversar um pouco.
+O primeiro, a estrutura,
+assim, é impressionante,
+é velocidade que ele atualiza aquilo.
+Exatamente.
+Eu falo pra ele,
+ele é estrutura isso aí,
+ele vai não mudando nos dados no conceito,
+ele vai lá,
+acitando.
+Não é?
+No Cloud Code,
+o Cloud de Iain Cloud Code, cara.
+Cara, o Cloud,
+eu uso mais o Cloud nesse caso.
+Eu já chebo na pasta,
+já do Obsidian,
+para não ter que perguntar muito,
+já tem um ponto atual de lá dentro,
+aí ele já pega a memória dele,
+ele já vai de resto,
+já trabalhando no meu decídio também.
+Inclusive, de onde eu fiz um brincadeira,
+eu tinha uma memória,
+eu precisava que o Cloud code conversatei,
+eu queria que não diga se tiver aí.
+Eu precisava que o Cloud code conversasse
+com o Cloud em Cloud.
+Eu criei uma pasta dentro do Obsidian
+e vou ter um padrão.
+Descreve Cloud na frente,
+0ª da verdade,
+Cloud e o texto,
+e falei pra ele,
+se se conversa aí,
+pra chegar numa conclusão
+do negócio de saúde conversada.
+Eles foram postando aí,
+e me trocam na ideia,
+então virou um chat entre eles,
+pra eu poder botar o Cloud
+pra conversar com o ventuo.
+E cara, isso aí eu tinha testado já
+dentro do programa,
+pra o terminal do Cloud code,
+eu precisava de uma pessoa
+de um tipo do Cloud code
+e outra pessoa,
+eu não sabia fazer agentes múltiplos,
+eu queria que eles conversasse,
+porque era um caso,
+eu queria devolver a discussão dele.
+Só que foi tão rápido,
+eu não consigo pegar a linha de velocidade
+dentro da cena,
+na linha,
+depois do loop,
+no meu velocidade,
+tá muito alta.
+Aí depois eu baixei um pouco doco,
+e pra eles não pararem de conversar,
+mas é uma loucura,
+porque ele disse,
+ele estava em treino,
+a memória,
+eles ficaram numa empolgação,
+cara,
+a gente fica a pouco de uns 30 textos ali,
+e eu não consegui abrir isso.
+Isso aí, eles eu,
+uma coisa que eu achei muito legal,
+eu queria ter esta,
+por exemplo,
+era pra um produto,
+eu queria que tivesse uma persona,
+que era um médicum,
+uma persona que era um treinador,
+uma pessoa que era uma treta,
+eu queria que eles conversasse
+pra fazer,
+como que era uma sala
+de discussão de marketing,
+né?
+Então,
+esse tipo,
+eu acho,
+se estiverem mais ideias,
+aí,
+eles tiram incríveis valoras,
+e eles poderiam morrer.
+Deixa eu o francisco falar,
+aí, o francisco,
+fala aí.
+Tá no mundo?
+Consegue tirar ele do mundo hoje, Zéi.
+Acho que ele saiu.
+Infelizmente não,
+só ele.
+Não sei se ele saiu,
+vamos guardar,
+vamos guardar mais um pouquinho.
+Eu vou mostrar pra vocês,
+também aqui,
+um caso de uso que eu testei
+durante esse semana,
+é um laboratório que eu fiz,
+que vai abrir um pouco a cabeça
+do pessoal que trabalha,
+também, com produção de conteúdo,
+né?
+Tem muita gente que tem dúvida
+sobre a parte de postagem,
+né?
+Enfim,
+produção de conteúdo como todo.
+Então, eu vou trazer um caso de uso aqui pra vocês,
+e eu implementei
+a nossa correguia tá muito grande,
+mas eu tenho tentado,
+tem estado de tudo aqui um pouquinho,
+conforme eu falei,
+pra mostrar pra vocês.
+Então, esse caso de uso, gente,
+eu vi nesse podcast aqui,
+que é do Greg Eisenberg,
+não sei se vocês conhecem,
+quem não conhece,
+fica a dica aí,
+pra começar a acompanhar esse canal,
+traz muita coisa,
+interessante.
+E o caso de uso é o seguinte,
+é, o Greg,
+ele tá com um convidado chamado ENR aqui,
+um EN inglês,
+o ENR criou um produto,
+um aplicativo,
+onde esse produto,
+basicamente,
+é um produto pra transformação
+de uma foto, né?
+Então, você pega uma foto da sua sala,
+por exemplo,
+aí você quer modificar os móveis, né?
+Aquela coisa,
+muita gente custou uma fase, né?
+Só que,
+ele sempre tinha aquele problema, né?
+do GPTPG,
+e tirar uma adicional,
+uma janela mais.
+Enfim,
+deixar o Francisco falante
+do que eu continuo aquele volto aqui.
+Fala aí, Francisco.
+Quando a diatoria é tudo bom?
+Cara, fui ligar o volume,
+desliguei.
+Acho que eu não sou a única pessoa
+nessa sala que já fez isso.
+Um monote a todos.
+Obrigado pela oportunidade de fazer minha pergunta,
+eu tô super animado aqui com esse assunto.
+E um,
+porque um,
+foi um dos principais motivadores,
+deu buscar
+essa automação,
+com o objetivo de
+criar um segundo sério, né?
+E fazer isso de forma autônoma.
+Eu vi o colega falando ali,
+e gostaria de pedir pra quem estiver
+fazendo essas automações
+de raspagem de conteúdo,
+refino,
+o que já tá fazendo?
+Eu estudei bastante sobre
+o tratamento do conteúdo,
+que a gente faz tanto,
+seja ele uso cloud.
+Eu não sei quem é que conhece cloud.
+É,
+recomendo pra todo mundo,
+super maravilhoso.
+E o GPTP,
+o GPTP no YouTube,
+faço refino,
+o tratamento,
+tem uma gente pra separar em
+colchete, diminuir,
+para 200 palavras, sem perdida de contexto.
+Cara, eu tô fazendo
+o que eu tenho que meiar.
+Tá tudo certo?
+Eu quero escalar isso, certo?
+O meu objetivo,
+é nutrir esse segundo sério,
+com as informações
+que são relevantes
+pro meu negócio, sabe?
+Eu comecei a fazer isso hoje,
+antes de eu falar sobre causa
+de uso,
+mas o mais um caso de uso de adiantão
+pra vocês,
+eu comecei a fazer,
+na verdade,
+isso é um monitoramento.
+Então, eu peguei algumas
+pessoas que eu preciso acompanhar
+nas redes
+e no YouTube.
+Eu dei o mais que o do táveli,
+pegou meu,
+pegou meu a gente,
+depois,
+se você conhece o Francisco,
+mas ele é muito boa
+pra fazer search
+e Scraping é boa,
+porque ela é excelente
+pra utilização com a gente,
+se eu não me engano,
+atualização de hoje,
+ela agora tá vendo nativa,
+o táveli.
+É bem legal.
+Então,
+ela é focada em Scraping,
+desculpa de ter uma periga,
+é só que esse é um assunto,
+é importante,
+ela é focada em Scraping,
+esse esquivo, como é que é?
+Ela é focada em search
+e ela faz Scraping também,
+só que ela é muito boa
+pra utilizar com a gente, tá?
+Ela tem,
+eu não estou me lembrando qual,
+o custo,
+ela tem um custo,
+sim, que é um plano grátis,
+mas é um plano bem,
+bem general,
+não sei qual é o volume,
+também as vocês,
+aqui com o meu caso de uso,
+é bem pequeno,
+tá funcionando bacana,
+mas recomendo você te dar
+uma olhadinha, né?
+O Edu falou também sobre a
+API, né?
+Que é uma olhadinha bem famosa.
+E o,
+esse,
+essa atualização de hoje,
+ele trouxe mais uma ferramenta,
+que é uma ferramenta opensorce,
+que é o Farcrow.
+Sei se vocês conhecem.
+É ela que eu uso.
+É ela que eu uso.
+É ela que eu uso.
+E ela agora tá...
+Só que não,
+só que eu não perdem o contexto aqui,
+isso é extremamente importante,
+pra o que a gente tá fazendo agora,
+eu estou continuando aqui.
+É...
+Como é que eu faço
+pro Open Cloud,
+formal tomática, né?
+Se ele vai usar o Cloud Code,
+por exemplo,
+pra ele pegar esse conteúdo
+e salvar em pastas
+e fazer as conexões entre
+colcheite com cheite
+quando o assunto relevante.
+Exemplo.
+Direito imobiliário.
+Existem várias áreas do direito
+que você precisa
+acionar num processo de
+parecialamento do soldo, por exemplo.
+Se eu direi ambiental,
+não tarea o registral,
+societário,
+tributário,
+contratual,
+é uma...
+uma absurdo da quantidade, tá?
+Então, digamos que eu tenho
+bastante conteúdo
+desse assunto que me fascina, né?
+Obviamente, pra resolver
+mas questões, né,
+pessoal?
+Eu sou louco nesse livro.
+Bago, eu gostei disso aqui,
+vou fazer.
+Óbvio,
+como é que eu vou salvar isso,
+certo?
+Fazer essa automação,
+isso pra mim é bastante importante,
+e se possível,
+alguém que saiba fazer
+que conheça o LUM,
+e se não conhece o LUM,
+vale muito a pena
+assinaturo do LUM,
+consegue gravar o passo a passo
+com uma câmera virada
+pra frente,
+cara, fascinante,
+tem uma olhada aí no LUM,
+e aí você vai gravar o passo a passo
+e compartilhar na comunidade.
+E se isso não aconteceu,
+me comprometo em,
+a gente vai descobrir,
+a gente compartilha,
+mas se alguém souber...
+Boa.
+Você queria então fazer
+um monitoramento
+desses conteúdos
+e de alguma forma
+chamar a atenção
+daquilo que é mais importante,
+seria isso?
+Isso, exemplo.
+Vamos dizer que eu estou monitorando
+um determinado assunto lá,
+vai de direito legislativo.
+Olha que interessante.
+Eu não sabia que existia,
+até precisar.
+E aí eu vou pegar
+dentro de uma palestra,
+um curso workshop,
+enfim, essa informação,
+e eu preciso entender
+essa informação,
+eu, na minha posição,
+eu vou precisar assistir,
+não é uma coisa maluca sem parar,
+e quando o resumo acontecer,
+ele tem que ser o
+entendimento sem a empresa de contexto,
+mas dentro da minha metodologia,
+certo?
+Com o meu,
+com a minha assinatura.
+Até porque eu quero passar longe
+da possibilidade de alguém dizer
+que o meu nome
+fez scrapping,
+ou se teve envolvido
+com uma coisa dessa,
+sabe?
+Eu não fui capaz de fazer isso.
+Não estou fazendo isso.
+Eu me interesse por alguns assuntos
+é importante relevante
+para alimentar parte
+do meu segundo sério,
+eu gostaria de fazer
+só desse detalhe
+porque daí eu escalo
+para quaisquer outra questão
+e todos nós aqui,
+eu suponho que se pegar essa onda,
+meu irmão, pelo amor de Deus,
+não existe limite, né?
+Aí os skills
+dos nossos agentes,
+vão ser muito mais poderosos.
+Eu acho que
+a primeira coisa,
+você já
+veio que deu uma resposta aí, né?
+Eu não fiz da forma
+que está falando,
+mas como que eu faria, né?
+Primeiramente,
+você pegaria
+toda essa sua metodologia,
+escreveria isso
+mais que o
+dentro do Cloud Code,
+seria o seu pop,
+a sua metodologia,
+e as ferramentas a gente já falou
+quaisquer a gente já falou
+quaisquer a gente vai usar.
+E pode exaltar, ele pode exaltar,
+ele pode exaltar e, enfim,
+e depois você vai dar uma
+instrução de como que ele vai
+salvar a onda,
+que ele vai salvar esse conteúdo
+e a partir disso,
+vai salvar uma besídea, beleza?
+E já resolviu um problema.
+E sobre, por exemplo,
+se você precisar que ele leia
+um curso,
+alguma coisa em sentido,
+você pode transcrever isso,
+ele está dentro do 15.
+E aí, ele vai conseguir também
+raspar, alheir,
+pegar o que é mais importante,
+resumir, jogar no seu opz動o,
+Então, a gente falou sobre o
+Atari para fazer
+essa busca, a gente já falou
+sobre a API,
+o Firecrow,
+que é muito elogiado, também,
+e aí para resum,
+você pode usar o Suma Rise que
+é uma ferramenta que também
+tem lá, um Cloud ranking,
+ela que agora, porque eu estou fazendo mágica para ideias de aulas, monta-ludos do OpenClaw,
+porque preciso estar atento para trazer sempre tudo em primeira mão para vocês e passar
+para transmitir esse conhecimento de você. Então hoje eu estou rodando aqui uma automação
+que ela está pegando tudo, ela está a cada... Boa ter cada duas horas, mas pode ser
+cada menos, pode ser 30, enfim, eu, que definia cada duas horas. É um quão de óbola
+roda, ela veio perfil de alguns influenciadores de youtubers específicos no assunto, me mandam
+as ideias, salva isso no arquivo do cheats e me manda através de somarais, em um resumando
+o que foi, o que foi falada, né? E como que eu posso traigar a sua máquina no
+maola? Fiz isso hoje em... Eu já petei disso, para... O refino tem que ser X-líteres sem
+perda de contexto, não pode inventar, não pode mentir, alucinar e ainda peço mais, ainda
+fontes de referência no Jusbra-Zil, por exemplo, para que elas faça a citação e o entre
+o colchete, qualquer palavra que esteja correlacionada a algumas hashtags, como se fossem canais,
+no Discord, boom. Todos os casos, o cara falar ali, ao final ela vai me dar depois, um resultado
+de onde pode haver mais daquele conteúdo para que ela continue fazendo isso, a gente continue
+estudando, né? Eu tenho uma questão que eu preciso solucionar e decidir, eu adoro
+Jusfais, Jusbra-Zil, direito, uma das etapas de uma processa que eu acho muito embora não seja
+divulgado, eu me obriguei, eu me obrigo a estudar sempre para o poder de dar com o time e
+o multínio disciplinar, e isso aí vai me ajudar de montar um cara. E você pode até
+para buscar mais oficiente, você pode usar o perplex também, funciona bem para trazer mais fontes
+de referência, eu tinha uma outra automação que eu to doido para fazer ela dentro do penclore,
+que eu acho que vai funcionar muito bem, que ela funcionava da seguinte forma, a gente pegava
+a via de RSS feed, tinha vários RLs ali, de assuntos específicos, onde a gente ficava
+cada uma hora ela rodava, buscava essa RL, isso pegava o título daquela informação, era
+um notícias, né? Verificava no nosso banco de dados, era para postagem rede social,
+ele ficava sentindo, fez alguma postagem com relação àquele tema, depois ela pegava isso,
+jogava para o, se não fosse, se não tivesse sido postada, ele jogava para o perplex
+de trazer mais fontes de dados, aí trazia mais fontes de dados, aí jogava para o nano-banana
+para gerar a imagem, porque por quanto de direitos autorais, né? Então, gerava quando a gente
+traz imagens ali, ficava um espetacular, e aí depois a gente é um a gente para fazer
+título, headline, a gente para fazer a legenda ali, rodava, depois a gente jogava os
+cascatiáveis para postagem, né? Então, ele pegava por linhas editoriais, postava dentro
+do Instagram, Stories e feed, depois jogava isso pro blog, do cliente, postava lá também,
+e no final, um, salava lá no meu banco de dados, então foi bem bacana porque a gente conseguiu
+ali fazer cerca de 24 postagens de, né? Postagem recete, e...
+Tá falando, a gente também tá estruturando essa operação para a empresa, e a pergunta
+que pra mim também fecha um pouco do cico, tu tem outros agentes pra fazer, vamos lá,
+me perdou em si, o pessoal, eu não via uma aula que já falou sobre isso, tá pessoal,
+também é o meu de ignorância, mas se tu faz na hora de fazer uma postagem, tu
+aciona um agente que hoje se fala em um agente conado com uma série de skills, e que pra
+mim vai funcionar como CEO, CFO, CMO, e assim, consequente, sabe, SDR, Tekloser, treinado
+com o PNL e coach, tudo que dá, certo? Essa é um pouco da estrutura agente, tu faz isso, irmão,
+como é que é a sua experiência com a geração de 24 postagens no dia? Eu não sei, você,
+senhores aqui, senhores, essa noite, mas eu fiquei muito interessado em saber, porque tá assinante,
+a gente deu até, aí tem um probleminha, no meio disso tudo, a gente automaticosou,
+foi incrível, só que existe também a questão do algoritmo, tá gente? A gente descobre
+o seguinte, as plataformas sabem que a gente posta via a PI, e aí nem sempre o alcance,
+acontece da forma que a gente imagina, eu vou mostrar até o caso de uso que pra vocês,
+mas é exatamente isso, isso não funcionava no PNL, isso é em outra ferramenta,
+mas eram múltiplos agentes, um pra cada tarefio específica, um com uma LLM específica pra
+determinar o assunto, tinha um a gente de percom perplexity pra fazer busca, um a gente
+com os modelos do Cloud pra poder escrever títulos, um outro a gente pra poder fazer a imagem
+da banana, mas, sinceramente da forma que eu estou venciando que o OpenClaw,
+acho totalmente possível de ser feito dentro do OpenClaw, e é o próximo caso de uso que
+quero tentar, quero tentar não, eu vou fazer isso, a gente também não, vamos muito nisso,
+nós, eu só pra finalizar, por favor gente, você usa outra forma ser homem e contente,
+porque meu ferecer não achou isso, eu acho que caro, não sei se eu entendi talvez bem
+o produto, e se vai fazer sentido depois, não sei se eu vou testar ainda, mas retiro
+o que eu disse, não acho que caro, eu ainda não sei se vai fechar conta,
+pra essa implementação, a gente usa, eu uso o N8N pra fazer isso,
+é o problema que a gente usa um pouco mais travado, a funciona super bem pro nosso caro de uso,
+e a gente começou o nosso custo pra fazer tudo isso, uma qualidade muito, considera muito boa,
+não sei se eu sou humano, peguei a idade a conta nem de fazer tantas coisas, tantas coisas,
+a gente tava gastando um dólar, meu Deus, cara, eu estou em um fase sul grave,
+não só como que faz uma vez esse processo e larga pra galera ai,
+ajuda agulizada em primeir dinheiro, tá louco,
+sei que foi bem legal, vamos tentar desenvolver isso dentro do penClock,
+tanto ser tido que vai funcionar legal e talvez vai funcionar até melhor,
+espero que vocês tenham gostado,
+espero que vocês tenham gostado, espero que vocês tenham gostado,
+espero que vocês tenham gostado, espero que vocês tenham gostado,
+antes de eu continuar, só vou responder rapidão ao Renax,
+isso era a próxima etapa, a gente já tava avisando, era apostar em todas as redes,
+a gente na verdade tava testando, e aí a gente encontrou uma ferramenta pra postar em Instagram,
+no blog, que era um gratis então, foi o primeiro laboratório ali,
+e a gente tentou integrar isso de forma nativa nas outras ferramentas,
+mas acaba sendo muito bocratico utilizar a perida meta,
+mas entre outras ferramentas, que você consegue já plugar todas as redes,
+eu acho que custa as redes de compensa pela complexidade.
+Interesse como não saber mais sobre isso.
+Joga lá, e meta eu tô assim pra trobar e matar, cara,
+uma semana eu tô correndo aqui, eu tô pegando as redes,
+a gente ficou quieto, o problema tá dando...
+A gente vai lá para o desenvolvimento meta, não sei o que eu ia chegar lá,
+eu acho que é a secret key, é um desloque no bate,
+já tá inspirado, 60 dias no seu que veio,
+eu não tentei renova, revolta, etc.
+E tá a problema aí, eu não consigo revertir,
+até alguém comentou onde fosse uma vela,
+de trabalho bem legal em estar postando Instagram,
+de todos, eu não tô aqui.
+Isso aí ainda diga boa, que se tiver,
+eu basta dar mais um ordem dele,
+isso é uma coisa deputada, eu tô no mundo aqui,
+a gente faz trabalho de que é publicar,
+aí vai publicar metas que é pouquinho,
+a gente quer meu Deus.
+Eu sempre tive uma experiência um pouco complicadas com a meta, né.
+Então, voltando aqui o nosso calculus,
+tá aqui o Greg, né, o En,
+e eu recapitulando o Enrique, que cria um produto,
+um aplicativo,
+eu já passei por isso também, cara,
+eu já queria uma startup,
+e a parte mais chata de quem queria uma startup sozinho,
+é você tem que fazer marketing,
+porque eu não gostava, não tinha tempo,
+e por que que pareça era uma época que ainda não tinha asiais,
+não ajudavam tanto,
+não tinha na...
+ia fazendo trabalho autônomo,
+e...
+porque você fazia ali,
+a beleza ficou bom,
+aí você postava, era uma droga.
+E pior, né,
+não convertia no...
+no download do aplicativo.
+E foi exatamente isso que um R começou a passar.
+Criava o marketing,
+ele escolheu o TikTok,
+porque ele queria criar um produto viral,
+e não conseguia ter alcance.
+Então, o que ele fez?
+Com o OpenClore,
+ele desenvolveu um agente,
+chamado Larry,
+onde isso é a gente,
+primeiramente ele começou a entender,
+qual era o nicho dele,
+começou a...
+trocar a ideia com um R,
+e eu vou mostrar que o resultado,
+para vocês, o que eles fizeram juntos,
+que é uma jornada de aprendizado,
+com a A,
+mas que assim me deixou muito surpreso, né.
+Então, o produto,
+é um produto que você coloca a foto
+de um determinado ambiente da sua casa,
+e esse aplicativo,
+ele geram várias fotos,
+sem alterar o ambiente.
+E ele começou a divulgar, né,
+um produto finalmente simples,
+mas que ele tinha uma certa demanda,
+e ele estava tendo lá,
+400, 400 e pouco,
+ele tentou fazer ele mesmo com o rosto,
+explicando o produto,
+mas ele não conseguia ter alcance bacana,
+até que ele começou a integrar isso com o OpenClore.
+Então,
+começou lá,
+seja muito pouco,
+e ele já colocou uma pessoa,
+então o OpenClore começou a tentar entender
+qual era o formato ideal
+desse tipo de produto,
+para apostar dentro do TikTok.
+É, ele foi postando ali,
+ele está dando ideia,
+até que, de repente,
+177,000.7 visualizações.
+Aí, beleza.
+Que é pouco,
+169,000.
+149,000.
+415,000.
+E tudo,
+ele trocando ideias,
+as fotos,
+vocês podem ver que não são,
+nossa, nada de absurdo aqui,
+eu praticamente,
+eu pessoalmente detestei as fotos,
+mas ele foi muito bom,
+porque,
+ele criou,
+tudo isso sozinho,
+a partir do momento que ele viu,
+que essa primeira postagem
+que trouxe um engajamento interessante.
+E o mais legal disso tudo,
+é que ele conseguiu converter isso
+em uma renda mensal do app dele,
+e depois eu vou deixar esse link,
+aqui na comunidade,
+para vocês assistirem,
+isso na índice,
+de 400 dólares mês,
+sem ele fazer nada,
+ele só trocava a ideia com,
+com a gente,
+a gente é melhorando o conteúdo,
+então,
+tinham postagens que flopavam,
+porque, pô,
+agora ele está sempre mudando,
+enfim,
+e faz parte,
+e ele disponibilizou a SQL,
+que é SQL do Larry,
+está de graça,
+vocês conseguem estar lá,
+essas que o dentro do agente de vocês,
+e vocês podem aperfeiçoar,
+eu utilizei a própria ferramenta
+com o GPT,
+ele só para mim,
+pô,
+vou ver como isso funciona,
+ele já vem com um analítico,
+que se não é de TikTok,
+ele tem algumas integrações
+que facilitam,
+com plataformas de postagem,
+eu entregaria aqui com postes,
+ele tem um custozinho,
+mas ele consegue postar,
+em todas as redes sociais,
+Instagram,
+você conecta a lá TikTok,
+e ele já posta rapidamente,
+uma outra dica que ele traz,
+aqui também,
+conforme eu falei para vocês,
+que infelizmente a gente não consegue,
+a gente consegue automatizar a postagem,
+em si mesmo,
+mas o alcance,
+ele tende a ser pior,
+porque,
+essas redes eles sabem,
+se a gente está postando,
+de forma manual,
+se é o seu celular,
+ou se é um robô.
+E aí, o que ele fez dentro do Larry?
+O Larry ele posta essas postagens,
+como rasco,
+e só te avisa lá,
+no TikTok lá,
+ó, a sua postagem está pronto,
+aí você simplesmente pega,
+aperta um botão e ele posta.
+E aí,
+você tem a chance de ter um,
+o alcance maior,
+achou esse caso de uso incrível,
+eu utilizo aí,
+um laboratório super rápido,
+ele vem com um borde,
+quando você instala,
+e ele fala assim,
+porra,
+ele faz alguma chance,
+qual que é o seu nicho,
+pra botar,
+ele inclusive fala,
+que você precisa fazer,
+um pré-aquecimento da sua rede,
+não sai postando logo de cara,
+com a gente,
+que se não fica muito na cara,
+enfim,
+mas eu acabei não fazendo pra,
+eu vou estar lá aqui,
+vou ver que vestida,
+e vou mostrar lá,
+pra comunidade,
+porque eu acho que é bem interessante.
+Então, eu postei aqui,
+só pra vocês terem uma ideia,
+o primeiro post,
+eu não estou especialista em rede social,
+mas o primeiro post deu
+213 de alcance,
+foi eu postei,
+vou fazer um post,
+e eu fazendo,
+o primeiro post,
+beleza.
+Segundo post,
+eu falei,
+eu criei pra mim,
+um nicho é esse,
+esse, esse,
+eu postei.
+Às imagens não ficaram,
+da forma que eu queria,
+mas eu só queria testar,
+e por que que parece,
+o alcance,
+foi parte do que,
+foi o drodo ali,
+do que,
+do que,
+eu tive,
+fazendo,
+de forma manual.
+Então,
+vou deixar essa,
+esse que está aqui,
+pra vocês testarem também,
+a perfeiçoar,
+em ela, tá?
+Podia perfeiçoar ela,
+de a coisa,
+com o caso de,
+com o caso de,
+de vocês.
+E ele fez uma,
+uma coisa aqui,
+que eu,
+que era incentivar muito a nossa
+comunidade a ter também,
+que é,
+a nossa própria,
+o nosso próprio marketplace,
+de skills,
+porque,
+vai começar todo mundo,
+até,
+ideias de várias,
+coisas específicas,
+e vários nichos específicos,
+eu acho que foi muito sentido, né?
+Existe o clorob,
+beleza,
+mas acho que faz muito sentido,
+a gente cria uma,
+que systema,
+um é que systema,
+diz que os específicos
+da nossa comunidade,
+já encelado ali,
+pelas pessoas,
+obviamente, com uma,
+conferência,
+você não tem nenhum,
+mal,
+não tem,
+nenhum código malicioso ali dentro.
+Mas eu acho que,
+é um outro produto aí,
+pra colocar na cabeça de vocês,
+a gente fala muito sobre skill,
+sobre as possibilidades,
+que a gente consegue ter,
+Francisco falou isso,
+do caso de uso,
+bem específico,
+que,
+poderia gerar mais que o pra vários,
+outras,
+empreendedores também,
+e eu acho que seria bem interessante,
+a gente ter,
+nosso próprio,
+o marketplace de skills,
+então,
+hoje,
+que eu trouxe pra vocês,
+foi isso,
+eu testei outras coisas também,
+testei,
+é,
+integrado com a N8N,
+que é uma outra ferramenta de automação,
+existe hoje de,
+uma biblioteca,
+um repositório, perdão,
+do que te rubre,
+que traz,
+a,
+a,
+a utilização do OpenClore,
+com,
+o,
+o N8N,
+ai,
+tu que pensas pra apô,
+mas,
+eu posso dar uma período,
+do,
+do N8N,
+que é uma ferramenta de automação,
+e o OpenClore,
+vai conseguir isso,
+é, por que está lá,
+mas aí existe uma boa prática,
+também que essa,
+esta lação faz,
+é,
+onde o OpenClore,
+não consegue ter acesso a chave já,
+que estão dentro do,
+do N8N,
+então,
+acham caso de uso bem legal,
+e o que ele começou a fazer diante disso?
+Ele começou,
+a criar,
+fluxos automáticos,
+lá dentro do N8N,
+a esta lação,
+que está nesse repositório,
+ela está o OpenClore,
+e o N8N juntos.
+E ai, eles dois,
+eles conseguem,
+interagir,
+dessa forma,
+onde,
+não,
+não existe,
+essa,
+esse compartilhamento de chaves já peí,
+então, pra quem trabalha com o N8N,
+já vi que tem algumas pessoas que são,
+lá da comunidade,
+que são,
+também de agência de automação,
+é uma coisa,
+também,
+para a testão,
+que funciona bem legal.
+Bom,
+porque, agora,
+é bem um espaço,
+e ver se alguém tem mais alguma dúvida,
+que é,
+saber de vocês,
+o que vocês acharam,
+se,
+deu para abrir,
+a cabeça de vocês,
+e também os restores,
+do que a gente pode estar trazendo
+nas nossos próximos encontros,
+aí.
+Alguém quer falar alguma coisa?
+Essa ideia,
+esse comentário de vídeos,
+compartilhamentos,
+aí,
+esses delas,
+em positória de
+skills sensacional,
+eu acho que isso aí,
+a gente já faz um benchmark
+junto a ele,
+muito público,
+tem muita vez,
+14 de skills,
+ou a análise escolher,
+você fica doido,
+então, a gente começou
+a fazer esse feit mais um chão,
+então,
+então, é sensacional,
+eu vi que vocês colocaram
+no Discord,
+tem lá uma sessão,
+então,
+a gente tiver,
+tem algo,
+aqui,
+muito bom isso aí,
+eu acho que vai funcionar,
+a gente vai conseguir
+pegar um ecossistema,
+bem,
+bem bacana,
+ele manda aí,
+se propotava no banheiro,
+alguém falou,
+o meu nome?
+Ah, não,
+eu comentei,
+a gente falou
+sobre a possibilidade
+de a gente no futuro ter,
+a nossa,
+o nosso próprio marketplace
+de skills,
+você, você, você,
+você tem uma,
+um caso de uso bem específico,
+que outra pessoa também
+pode ter,
+e cara,
+eu acho que,
+faz todo o sentido,
+se você quiser,
+principalmente,
+vender esse conteúdo,
+né,
+essa habilidade,
+pra alguém,
+eu acho que,
+eu acho que é justo, né,
+e ter isso ali dentro,
+o chão celular,
+a comunidade,
+o protestei,
+é compartilhado,
+enfim,
+acho que dá pra criar
+o bem, bem,
+está lá dentro de nossa comunidade.
+Cara, genial,
+eu tenho uma análise jurística
+que,
+é, pra
+sòcios
+empresários,
+que ela leve em consideração,
+análise comportamental da pessoa,
+e aí,
+que pode usar qualquer outra ia,
+que basicamente,
+você pode criar um GPD com isso,
+da skills
+pra ela de análise comportamental
+e jurídica,
+e com,
+e contar,
+transmitiu o contexto,
+com documentos
+com mentos e narratória. Cara, pude a tudo.
+Sem sensação.
+Ele disse eu, tu.
+Fala, obrigado.
+Foda o contexto e sobre o assunto memória.
+Eu tenho um questão assim,
+alguns leads interessados
+em te querer meu serviço, certo?
+Para monitorar muito,
+é possível que o meu agente com a VPS separada,
+com outra,
+consegue comunicar alguns logs,
+eu consigo fazer isso.
+Ela me enviou um log diretamente
+no canal de segurança,
+num cuno criado,
+para ter mais capacidade,
+quando tem que ter participação,
+é possível fazer isso.
+Eu só tenho que tomar cuidado com a parte de segurança aí.
+Mas é possível.
+É porque você só me explica melhor.
+Você tem um, são dois sistemas,
+um log.
+Um exemplo.
+Eu tenho meu opo com o que eu crio,
+desenvolve os projetos,
+e está rodando,
+está para teste,
+está desenvolvimento,
+e jogos do GitHub,
+certo?
+Aí eu coloque as introduções
+para o cliente.
+E eu, assim,
+a ideia de envolver um sistema que capita qualquer falha,
+qualquer erro,
+e esse sistema de outra VPS,
+ela manda essa comunicação direto para mim.
+Para mim,
+tipo assim, a ASTO,
+o cliente reclamar,
+eu já estou tomando a ação,
+para resolver o problema dele.
+Seria isso a ideia.
+É.
+Deixa eu pensar,
+isso,
+talvez não precisa ser, assim,
+tão complexo,
+talvez você poderia ter...
+Primeiro, example.
+Não, também.
+Dentro de cada VPS,
+você pode ter um monitoramento,
+e aí você consegue, talvez,
+criar um dashboard com isso,
+ou um agente específico
+para a detecção de falha,
+para mandar,
+e-mail, WhatsApp,
+idélia,
+seja lá o que for.
+E você pode ter também,
+exatamente isso.
+Você pode ter um...
+um falar, Micho contigo,
+mas vamos falar, deixa o bordo,
+que acho que é melhor.
+Um dashboard que vai ter todos os logs,
+e vai ter a imunidade,
+a gente chama imunicicent,
+e o diagnóstico,
+de como é que está
+aquela estalação
+do openclor.
+Você coloca isso dentro de um sob isso,
+dentro de um domínio,
+cria ali a...
+a filtro,
+você pode ter...
+Ah, como é que vai ser?
+Ah, precisa ter
+um dashboard
+desses KPI específicos relacionados
+à qualidade
+e da estalação.
+É, você já consegue monitorar,
+e junto com isso,
+você pode ter
+um agente específico
+para analisar
+esses logs,
+e aí você pode ter
+dentro do seu agente mesmo,
+precisando de ser do agente do cliente,
+você pode ter um agente
+que via a API,
+ele vai se conectar esse dashboard.
+Você pode olhar para você
+a cada 6 minutos,
+se for necessário,
+se alguma coisa estiver de errado,
+ele te manda ali
+uma mensagem.
+Então, a boa ideia,
+que eu vou dar uma mensagem
+nessa situação.
+Obrigado, viu?
+É, Deus, você joga ali
+para um prodeixe
+puxando os dados do seu...
+do seu openclor,
+coloca isso dentro de um domínio,
+aí coloca segurança,
+coloca senhas,
+coloca tudo ali,
+e aí você pode criar
+uma API,
+coloca,
+consegue criar isso para você,
+acadido com o openclor também com o cliente,
+para você se conectar
+dentro desse dashboard
+que vai ter várias outras vps
+conectados ali dentro
+para você ter a observabilidade com...
+Sim.
+E aí, esse configura,
+pô, agora tem uma agente aqui
+para fazer
+qualidade,
+se deu algum bão aqui dentro,
+eu tenho todos os logs
+sentados ali,
+e ele vai perder
+e vai me notificar.
+Muito bacana.
+Muito bacana.
+Boa ideia.
+Obrigado.
+Falou ele.
+Mas alguém,
+mas alguma dúvida,
+alguém que quer tocar
+algum aprendizado,
+que teve nos últimos risos,
+alguém está fazendo alguma coisa
+bem fora da curva aí,
+que é que é contar
+e compartilhar para ele com a gente.
+Eu posso comentar,
+velho,
+um pouquinho.
+Sim.
+Bom, pessoal,
+minha primeira experiência
+foi ter matado
+umas cinco Claudettes na VPS.
+Fui o teu mamães
+do Mara de Ogun,
+que foi minha experiência
+da Algunta.
+Ah, então formato, negócio.
+Olha o que eu vi de merda.
+Eu fiz até um peio,
+escreve,
+eu fiz um túnel,
+não é o SSL,
+é túnel,
+tal,
+eu consegui falar do meu computador
+com o VPS,
+mas tudo aquela dureza,
+que é o de code
+que é tudo difícil.
+Beleza.
+Aí, ao momento,
+eu estava na lojinha
+que eu finalicava
+de computadores
+onde eu consegui falar
+que ele estava,
+eu estava com esse aqui,
+eu não consigo mostrar
+para vocês,
+mas é um tinge sempre,
+tinge sempre,
+está lá em novo,
+mil e cinco,
+mil e cinquenta reais de cara
+que me entrei com esse negócio na mão.
+Eu não pude pegar um
+e mequeminha,
+agora eu me peguei
+esse negócio aqui,
+que é saber,
+ela está mais inteligente
+porque essa que estava na VPS
+está muito boa,
+porque primeiro,
+eu estalhei no meu Windows,
+está funcionando
+bonitinha,
+eu entro lá dentro da casa dela,
+lá no membro,
+eu entro lá dentro da memória dela,
+eu entro lá dentro do
+do DJ Solvella,
+eu consigo falar na linguagem,
+a linguagem em Windows,
+que eu conheço rápido,
+faço o backup,
+eu mesmo botando a direita lá,
+tem café em Workstake,
+Workstake,
+Workstake,
+e isso, para mim,
+foi uma loci,
+um game change,
+porque primeiro,
+já estava vendo que eu só falava
+bastante tudo,
+o pico, o gloss,
+coisa toda,
+você pode colocar um computador
+de este tamanho,
+e, de fato,
+pessoal,
+esse troço é absurdamente interessante,
+porque,
+meu,
+você não vai usar o LLM do GPU?
+Meu,
+joga para os nubes,
+então, já vai jogar a memória para GPU
+para os nubes,
+você não precisa ver um processamento alto,
+essa menininha,
+que está conversando muito rápido,
+é um 16 MP,
+é um processamento antique,
+de 2012,
+de computador,
+mil reais,
+então, eu possudei
+comunutar 5 Workstakes,
+estou para a Insta,
+para o negócio,
+são 5 Workstakes,
+5 Secretari,
+que eu tenho certeza
+que rodam uns 20,
+30, 40,
+agora está a gente dentro
+desse 16 GB,
+sem problema.
+Então, assim,
+é claro que eu vou querer pegar
+meu Metinim,
+mas porquê?
+Porque eu quero rodar o LLM em casa
+e deixar com o Meto,
+que, em gração isso,
+eu tinha inteiro
+fazer isso para a internet,
+e que ia caminhar esse ano.
+Agora,
+é claro que é uma coisa
+bacana.
+Agora,
+se você está usando,
+fazendo optimizando
+a $2 no dólar por dia,
+vai conseguir jogar
+nas nubes
+e forçamento,
+meu,
+essa máquina,
+que não tem nenhum auge pessoal,
+pelo menos,
+diga aí,
+dizeu,
+é viado, né, caso?
+É viado.
+É viado.
+O pessoal que está fazendo,
+utilizando,
+em máquina de locais,
+cara, tem experimentado,
+tem experimentado,
+uma melhor,
+tem uma facilidade,
+maior de configurar,
+justamente por isso que você falou.
+Por dentro,
+é de determinar,
+para você acessar os arquivos,
+é meio,
+meio chatinho,
+aí,
+uma dica que eu deixei,
+pode utilizar,
+instalar o file browse,
+aqui,
+o file browse, você consegue ver,
+que eu gostinha mesmo,
+mas é que você faz,
+achinha,
+ali já facilita,
+bem,
+então tem esse ponto,
+tem um ponto relacionado,
+a parte até,
+de segurança,
+no Mac Mini,
+por exemplo,
+né, que,
+e ele por si só,
+ali já tem,
+boas configurações,
+ali,
+de segurança,
+que nem sempre VPS,
+ela vai ter,
+ela está muito disposta ali,
+então isso é um cuidado,
+de lado,
+às vezes,
+a gente precisa ter,
+no momento de usar,
+um computador mais antigo,
+né,
+pode ter,
+um software,
+o firewall,
+desatualizado, né,
+tá uma bastante cuidado com isso,
+né,
+o que a gente está colocando,
+né,
+mas enquanto é a partir do seu tempo,
+você tem ali as partes,
+tem,
+na vegada do integrado,
+e aí você consegue,
+ter uma melhor experiência,
+principalmente,
+quando você tá,
+não tem tanta,
+facilidade com,
+com um botu,
+com terminal,
+e isso ajuda bastante,
+a sua configuração,
+inicial, né.
+Tem um cara que,
+recomendo vocês,
+a pesquisarem também,
+que é o,
+Alex Fin,
+é,
+hoje acho que é um,
+é um dos caras que,
+tá mais avançado
+em utilização de OpenColor na Gunga,
+o canal dele é bem interessante,
+e,
+ele é totalmente contra VPS,
+ele é totalmente contra.
+A gente utiliza,
+e recomendo a VPS,
+porque a nossa VPS,
+hoje ela vem configurada,
+com segurança, né.
+Então, para o iniciante,
+a gente quer que ele tenha,
+ele não se assuste,
+com a tecnologia,
+a gente quer que ele experimente
+a tecnologia de uma maneira
+mais rápida,
+mais fácil,
+e,
+antes, esse Wilson tá aqui hoje,
+mas o Wilson,
+é, um dos nossos,
+menos da comunidade,
+a gente troca a baixa a ideia também,
+são degrais, né,
+de curva de aprendizado.
+Então, começa com a VPS,
+que vai experimentar na tecnologia,
+e a partir disso,
+você vai testando em,
+novas plataformas, né.
+Então,
+é quando você vai ficando mais,
+mais craque,
+isso vai,
+vai botar,
+vai quer botar no computador local,
+no McMini,
+e assim por diante.
+Falei,
+inclusive,
+inclusive, eu tô pegando um celular de ideia,
+e eu vou testar nele também.
+Eu não tenho,
+eu não tô pegado, né,
+pessoal,
+a tecnologia é facilidade,
+e eu tô curioso até para testar nele,
+como é que funciona,
+trabalhar com as portas de celular,
+para entender a pouca solução aí,
+porque eu acho que,
+a gente não tá aqui,
+para defender nenhum nenhum partido, né,
+eu acho que,
+a tecnologia é facilidade,
+então,
+é muito legal,
+a gente se perguntar,
+com maneiras que a gente cada um,
+né, que é claro.
+Se eu deixei de perguntar,
+né, hoje a gente tá bastante.
+Isso aí.
+Pra vocês ficam falem,
+depois eu deixo a Wilson falar.
+É,
+um pouco do que,
+eu gostaria de,
+de debateira,
+quanto do hardware,
+justamente,
+pra, pra entender,
+que tipo de máquina é o suficiente,
+pra gente deixar rodando,
+ou esses,
+deixar um solto aí.
+O amigo agora falou que tem um computador
+e,
+interrogasse,
+2014,
+e que roda bem,
+acabou respondendo a minha pergunta.
+E, entretanto,
+outra que, que também importante,
+é você falar,
+pra pegar mais experiência,
+principalmente,
+pela relação da segurança, né.
+Mas eu vi você falando no grupo, né,
+que você tá se instalando o seu Mac,
+no seu terminal, certo?
+Então,
+eu, hoje,
+eu,
+eu estalei pra mostrar, né,
+na,
+na nosso workshop,
+quando que funcionava.
+É,
+mas hoje eu tô rodando o VPS,
+isolado,
+por boas práticas,
+o meu Mac,
+é meu Mac pessoal.
+Então aí,
+eu tenho um pouco de receio.
+É,
+tô guardando,
+a,
+pegar o meu Mac Mini,
+que também,
+que eu quero tudo,
+tá no Mac Mini também.
+Então,
+tô sem computador antigo aqui.
+É,
+é,
+é, e trazer isso pra,
+pra vocês também,
+em multiplas,
+placaformas, né.
+Tá,
+mas matou,
+matou a dúvida.
+É,
+essa pergunta,
+já que o,
+o nobre Renata,
+ele consegue
+fazer
+toda essa
+função,
+aí, com o computador,
+com essa,
+de mil reais,
+pelo amor de Deus, né.
+Ó,
+rodei aqui também,
+gente,
+de Wilson,
+barra,
+pra falar,
+um pouquinho com a gente,
+trocar essa experiência.
+Eu tava conversando com o pessoal da Lura,
+eu falei que,
+com eles que achavam,
+muito interessante,
+gente conseguisse ter um,
+modelo de LLM ali,
+é,
+dentro da VPS deles.
+Enfim,
+que ajudasse um pouco a minimizar esse custo com tokens.
+É,
+a gente fez alguns testes aqui,
+eles armazenaram,
+e me deram acesso,
+a um modelo que eles,
+tava armazenado,
+lá,
+tem uma experiência deles,
+numa GPU bem interessante.
+Eu utilizei que o química,
+química
+dos condicímpicos,
+e o JLM5, tá.
+Durante uma semana,
+e foi bem bacana,
+lá tem,
+extremamente,
+baixa,
+com o fome,
+meu pincolo já tava
+com uma apéria de configuração feita,
+óbvio que,
+pra tarefas,
+criação de código,
+eu chamava o óculos ali
+pra me dar uma força,
+um sloneia,
+mas, pelo dia a dia,
+esses dois funcionaram muito bem,
+pra trocar uma ideia com o Luan,
+lá da Lura,
+pra ver que peca tá isso,
+se ele vai conseguir
+disponibilizar isso em VPS também,
+e eu acho que seria bem,
+bem interessante,
+pra dentro da,
+da comunidade.
+Show Wilson,
+fala hein?
+Fala, gente,
+boa noite,
+como vocês estão?
+Então,
+de experiência,
+eu tenho trocado bastante,
+né, eles a gente conversa bastante.
+Eu sigo uma,
+uma linha aí,
+de desenvolvimento,
+porque eu tô com uma,
+com a minha ideia.
+É um aplicar,
+trabalhar com ele,
+pra, com a gente,
+pra nos auxiliar,
+em serviços da empresa.
+Hoje a gente tem um provvador de internet,
+e eu tô fazendo um trabalho de,
+é,
+interno,
+pra moralizar,
+como é que a,
+como é que a pessoa tá fazendo?
+Então, hoje,
+a gente tem,
+hoje ele já faz,
+toda a parte de proposta,
+custei,
+agora ele vai começar a falar com os fornecedores,
+né,
+hoje eu integrate ele com a pessoa do comercial,
+então a pessoa passa dúvida pra ele,
+ele tira a dúvida do pessoal,
+faz proposta,
+tá começando um trabalhinho,
+bom isso aí, né?
+E,
+eu comecei com a VPS,
+eu não matei em cinco,
+a gente,
+só um, né?
+Mas,
+foi um bom aprendizado,
+eu tô lá na VPS,
+hoje,
+acabei de fazer um upgrade
+nela,
+porque ele tá fazendo espaço, né?
+Porque a gente,
+eu tô consumindo bastante coisa lá de,
+de,
+de trabalho com memória,
+ele tá fazendo bastante versionamento,
+e,
+o que que eu notei?
+O que a gente mais precisa realmente,
+é espaço pra,
+pra aguardar coisa nela,
+isso que a gente usa bastante, tá?
+E eu tenho conectado nela,
+o,
+o SuperBase,
+eu tenho o Google também,
+então,
+ele tá bem equilibrado hoje em toque,
+ele tá gastando muito pouco,
+eu tô com,
+tanto quanto trope,
+que quanto colhama,
+tô gastando nada,
+só todas as naturas mensais mesmo, né?
+Só que,
+essa evolução,
+esse aprendizado,
+o que a gente entenda, né?
+nos ajuda também a,
+a dimensionar,
+o que eu,
+eu vi,
+tô analisando,
+processamento,
+ele usa pouco,
+memória,
+ele usa um pouco mais,
+HD,
+ele usa bastante,
+né?
+Se a gente pega,
+por exemplo,
+eu tô,
+tá acontecendo com,
+coliseu,
+eu tô com uma máquina parada,
+lá no meu pop,
+eu vou usar ela,
+ele,
+ele tem,
+ela tem um baita,
+processamento,
+tem acho que,
+tem bastante memória,
+o HD também é legal.
+Eu vou fazer o que,
+a transferência do,
+a transferência do,
+da VPS,
+pra lá,
+eu vou ter,
+botar ela local, né?
+Pra trabalhar.
+Então,
+é tudo,
+são tudo evoluções,
+acho que a gente tem que trabalhar,
+e,
+sei lá,
+imatando a gente,
+se não tiver jeito,
+vai,
+e vai desenvolver,
+vai colocando,
+né?
+E vai falar,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui deu certo,
+isso aqui eu tô fazendo hoje,
+eu fiz o primeiro,
+e hoje ele tá redondinho.
+Eu tava até agora com ele,
+aqui discutindo coisa de e-mail,
+e eu botou um,
+eu crie alguns agentes
+de,
+de desenvolvimento de ideias,
+que trabalham à noite,
+então, de um em eles me dão propostas,
+só até foi aquele,
+um daqueles vídeos
+que você me passou,
+ouviu eles eu?
+Sim.
+Muito boa.
+É.
+Então, assim,
+eu acho que, assim,
+esse agente,
+eu sempre falei,
+o limite dele é o que a gente
+puder imaginar.
+Eu vejo,
+eu vi o que o Renado colocou da capocadena,
+ele tá colocando isso aí,
+não,
+se você tiver alguma qualquer,
+tinha um esquero com memória,
+ele tá instalando lá, cara.
+Mas,
+gente,
+o que eu falo,
+o que a gente tem com esse,
+com esse,
+com esse agente,
+o que ele pode nos ajudar,
+o que a gente pode desenvolver,
+não só para a gente,
+para nossos serviços e como para vender, eu estou com umas ideias aqui também,
+eu estou rascunhando aqui, eu vou fazer uns testes aqui também,
+mas é impressionante, vou falar para vocês, e aí tem que ser gradual,
+se a gente tentar fazer tudo de uma vez, a gente vai ficar maluco,
+vai queimar dinheiro, porque ele vai comer toque até desechegra,
+e a gente não vai ter o resultado que a gente quer,
+eu acho que essa curva, que a gente sempre foi todo mundo falar curva,
+ele ia aprendizado, ela tem que ser algo uniforme,
+porque se a gente pegar um negócio muito reto,
+muito subida, muito rápida, não vai dar certo,
+não é CP-se-mista, mas é...
+para os primeiros dias que eu trabalhei, que eu estava com a primeira gente,
+eu quase não dormia, porque você vai numa pilha,
+não, vamos fazer, vamos mexer e se mexer naquilo,
+e começa a dar um monte de pau,
+mas fala que vai me assurar aí, né?
+Mas eu acho que essa curva lineária, essa análise do hardware,
+são muito importantes, até falando em hardware,
+vocês não falam, a McMean não sei o que,
+como eu mexo muito com servidores aqui?
+Cara, tem servidores que têm processador e chão,
+que é o mesmo que usa no data center,
+e às vezes você consegue comprar esses equipamentos,
+tirando o que é isso?
+Se você consegue comprar um equipamento que tem dois chão,
+com 10 núcleos, cada um, 64 GB de memória,
+ele é um máquina um pouco mais antiga,
+mas você consegue pagar 2, 3 paul nele.
+Porra, não é?
+Se você consegue, então, às vezes, eu que tenho facilidade,
+então eu estou tratando por esse lado.
+Sim.
+Que ponto sentigo?
+Com ponto sentigo, Jesus Baratini, um pouco disso,
+porque para mim, você falou, você colocou cheio um lasso,
+como um GPU, esse um pouco,
+aí tem um pouco nessa questão,
+vai ter GPU, não vai ter GPU.
+Mas até hoje, eu fiz uma pergunta,
+por isso que achar que é ter que aparecer,
+cara, aqui que é o forte do McMean M4,
+para você empolre, é a GPU, 10 núcleos,
+maravilha, eu pergunto ter que...
+Tá bom, se eu não fosse pegar o McMean,
+você vai gastar 20, 30 paul,
+então o McMean aqui, no fim das contas,
+é ótimo que o superredício.
+Não é assim, é um bom superredício.
+Então, não é ruim que o superredício é ótimo, então...
+Não, com certeza, com certeza.
+Mas você falou a verdade, mas um antiguinho,
+então ele fazia o mesmo serviço, eu ia dizer...
+Ó, se você pegar um...
+É que é assim, é que eu falo.
+Eu vou, assim, como eu tenho uma linha,
+e a gente dando a empresa,
+a gente tem essa capacidade dos servidores.
+Sim, cara.
+Um processador cheion, ele é um cavalo,
+ele processa por gente computadores convencionais,
+isso aí é comprovado.
+Então, de repente, aquele negócio,
+você compensa a GPU com um alto processamento,
+são equipamentos desenhados para rodar 24 horas por dia sem parada.
+Isso é um ponto, então...
+Mas é tudo o que eu não ia dizer,
+é o maluísio, meu Deus.
+Como é que eu não me disse, é o maluísio,
+para nós, fala aí de novo?
+Cara, você pode pegar, quer ver.
+Eu até jogo no grupo, isso...
+Não, só que isso é de idade dela, cara.
+Eu recebo o ferto de inteiro desses caras aqui.
+Deixa eu ter.
+Eu me dou um vídeo aqui.
+Eu me dou um vídeo aqui, mas ela não discorde.
+Eu coloco aqui, eu coloco os links do pessoal.
+Boa, Carol.
+Tem cada máquina, quem não é assim,
+só que é servidor.
+Você está falando de uma máquina que você vai instalar o bunto nele.
+E vai...
+E ele vai deitar qualquer coisa que você queira.
+Não é?
+É a minha opinião, né?
+São máquinas mais antigas, com 4 anos, por aí, 3 anos.
+Mas são coisas se enfuadas, fora da realidade,
+para o trabalho que a gente quer fazer.
+Você vai colocar uma gente que vai ser...
+Você vai poder botar um monte de coisa dentro dessa máquina
+e fazer um baita num trabalho.
+Vai tudo, como que a gente sempre fala.
+Para mim, hoje, esse é a gente...
+Esse é a gente que eu estou trabalhando hoje, que chama Jime.
+O que Jime faz hoje é para dentro da minha empresa, né?
+Agora, em paralelos que eu estou desenvolvendo com o Jime,
+que ele está fazendo, que ele está trabalhando, que ele está mexendo,
+eu quero desenvolver um produto com a gente.
+Isso aí é um outro trabalho.
+Mas ele é o cara que eu vou usar para colocar tudo
+que eu quiser dentro da empresa, tudo que eu quiser de funcionalidade
+e de habilidade, eu vou colocar ali.
+Ah, não deu certo?
+Eu já tenho o backup dele, o backup atualizado.
+Não deu certo?
+Não, começa de novo, cuja o backup e vamos para cima.
+Se você está fazendo o seu OS?
+Oi, não.
+Não, ele está pelo ponto direto, mas eu fiz um...
+Ele faz o backup, ele faz todo o versionamento dele.
+Está tudo externo.
+E se eu precisar puxar, eu vou trazer ele de volta.
+Então, eu não estou preocupado em perdê-lo.
+Agora, uma coisa que é...
+Porque a gente vai...
+Você tem que trabalhar com uma forma que assim...
+Vamos pensar, você quer vender isso por cliente?
+Você tem que fazer, você tem que estar seguro
+que se dar uma porcaria, você consegue restabilizar o cliente rapidamente.
+Até falando com a minha atualidade, hoje mesmo.
+Eu comentei, falei, por favor, sem te dizer encarpe, né?
+Eu, aqui na minha cabeça, um pouco mais assim, que eu não sou um depe, né?
+Ela não, agora, foi perto, ela deixou baixar o geek,
+e que já baixou o geek, e ela, em 10 de luta,
+estava lá lá na dúvida.
+Falei, porra, vocês já me colocam o nosso trabalho na dúvida.
+Já fala a dúvida.
+Então, quer dizer, é simples.
+É simples.
+Já está na dúvida, e ela não fez o que o versionamento dele.
+Ela não está trabalhando com isso.
+Por exemplo, está no calma, gente, eu tenho que for aqui um negócio de aprendizador,
+e até não estava nos 3, 700 reais, 1, 70 para 2 horas,
+e se você quiser 2,5, você vai ter 8 horas, 10 horas, você pode ter calma.
+Não, eu vou te dar valor, então eu vou te dar uma dica.
+Pega um, você pode pegar um nobrei, que é até pequeno, tá?
+De 600 VA, 1400 VA, mas pega um que tenha saído externo.
+Você mete uma bateria estacionária, ele vai te dar 6 horas brincana aí para você
+ligar um equipamento, tipo o McMind, e algum que usa essas fontes, né?
+Está acelhido, porra.
+Acana.
+Você fica tranquilo por um negócio desses.
+Caramba.
+Isso, mas é intimente, pessoal, porra.
+A bateria estacionária é o que vai te dedicar, umaquela de 2 horas?
+O que?
+A bateria estacionária, o que que é, não sei, eu não conheço a bateria estacionária.
+Isso.
+Muito bom, eu estou aqui com o problema.
+Ah, tá, eu peguei de carro mesmo, tá peguei de carro, não é bom, não peguei.
+Não, não, não.
+Vai ter estacionária.
+Vai ter estacionária, você pega, é o mesmo preço.
+O mesmo preço, também se me lembrar, eu passo o contato do Dark Santa Eficiênico,
+que você vai conseguir tudo adentro, tá?
+Ah, legal, legal.
+Faca.
+Tá, ó, nós estamos numa comunidade, então, o que eu também falava com eles, eu acho
+que a troca de informação que a gente tem é o que mais vai valer nessa comunidade,
+porque uns testam de um jeito, outros testam de outro, alguns conhecem de um jeito,
+alguns conhecem de outro, mas se juntar tudo, a gente consegue cobrir todas as lacunas
+e sendo experiente, ou sendo um iniciante total, o que a gente tem na comunidade, é um
+ajudar o outro, crescer todo mundo e poder nivelar por cima e não nivelar por baixo,
+tá?
+Eu até já fiz, deixei também, outro dia, tudo que eu faço que dá pau, e aí eu conserto,
+junto com o cloud, eu peço que ele me gerar um documento.
+E aí, eu peço, dormendo, mandando tudo pra eles, eu falo ali, eu posto aí pro pessoal,
+porque alguém pode ter tido um problema desse tipo, e foi resolvido dessa forma.
+Eu acho também muito legal a gente compartilhar essa informação.
+Por baixo, então, Lung, Lima, Oscar, Oscar Mike, Marra, vai do céu, bicho, tu vai ficar
+muito feliz com isso daí, bicho.
+Viver, dá, isso é que não duro uma mesma, minha cara, tudo vai devagar, se eu não
+tem noção, quantidade de pessoa que vai abençoar, se eu gravo, quando passo a passo da
+piúto, se eu já aprendi, e eu desligo aquilo que eu aprendi, que foi fascinante, que
+eu crie ali, que vale a pena, eu vou mandar pra vocês, tá, não?
+Eu vou fazer isso.
+De que eu utilizar e começar a experimentar, mas a gente vai utilizar a controla do
+processo para todos os processos com o ISO 40, 42, 2001, enfim, tudo que dá, e isso
+é uma das questões que pra gente vai, acho que mudar o jogo, é tanto o processo,
+esses dias eu estava contando 35 ferramentas que a gente utiliza, cara, se tu não tiver
+um repositório de como que tu faça, cada coisa, cada vez que der pauta, tu tiver que
+voltar, eu não sei vocês, eu não sou sobre o humano nessa maneira, tem risquia, mas
+eu acho que pra salvar isso é uma baita ferramenta, cara, pra não se esquecer, se eu
+vai adorar, depois de contar pra gente lá na comunidade, se o Wilson deu tanto a indica
+bacana aqui, muito bom, muito bom, muito bom, muito bom, estamos juntos, e eu falei, senhor,
+tá no céu, eu sou a Wilson, cara, desculpa, vai, fica pra gente, prazer tá com vocês,
+viu?
+Obrigado pela oportunidade.
+Eu queria só tirar uma ideia, excusa aí, cara, vocês são muito contas de pece, eu
+acho que todo mundo navegando muito no físico, muito pra trazer, vocês são muito contas
+de pece, é que vocês i chegam, cara, que eu estava pra gente não trazer equipamentos locais,
+não, o que vocês i chegam?
+Quem quer falar pra mim?
+Vamos lá, vai deixar eu já que eu tava lá, vai falar pra você mesmo?
+O WPS, eu fiz uma escolha, isso é meu, porque é o seguinte, é um valor baixo, pra você
+aprender pra você detonar, pra você fazer o que tiver que fazer, pra mim tá tendendo
+muito bem, né?
+Eu já tô virando quase um mês agora com esse brinquedo, né, e eu via a necessidade
+hoje eu já tô vendo a necessidade de trazer isso com uma máquina, porque eu quero mais
+capacidade, só sem diga, eu tô vendo que não vai dar certo, porque eu quero fazer, então
+tem uma série de coisas aí que eu tô avaliando, como eu tenho a facilidade das máquinas,
+como eu falei, né, eu, por exemplo, eu tenho uma máquina que tá parada hoje um servidor
+parado no pop, eu já pedi pro meu pessoal estar lá o bunto lá e me dá o acesso, eu
+acessava, vou jogar tudo lá dentro e depois eu vou transferir o agente pra lá, porque
+eu vou ter muito mais espaço, eu vou ter um tera, dois tera de HD, posso fazer o que eu
+fiz ali dentro.
+E o ponto também é assim, né, você falou aí o bunto, pra mim, eu nem pensaria o bunto,
+eu tô usando o índios mesmo, do começo eu achei que tive essa fase da MTS e o bundo,
+depois que eu comecei um pouco com alguns diais, não é um cara, vai direto pro índios,
+vai direto pro índios lá e tá tranquilo, é, porque é que esse servidor, esse servidor,
+esse servidor que a gente tem, para que teatura dele não aceito o índos comum, é só
+o índo sério, então o índo sério, ele tem uma série de coisas que pode ser, eu não
+testei, tá, mas pode ser que não rode do jeito que a gente precisa, já o, já o bunto,
+botando a distro lá, ele vai rodar, você joga um node, vai pra cima, não sou expert em
+Linux, tá, mas eu falei, a gente tem que avaliar, não existe, já falamos isso uma, eu já
+falei uma vez, não existe sistema perfeito, você tem que ver o que você tem mais facilidade
+para usar ele, é ele, é de valorizão, tinha, foi não, sou um Paulo, vamos do Jordão gente,
+que é a questão de manutenção com servidores físicos, qual é o seu gargal que você tem?
+Cara, eu tenho um servidor que tá ligado há cinco anos, eu só desliguei porque eu queria
+limpar os filtros dele, a gente tá aí a fazer uma manutenção no break no gerador,
+se você tem uma máquina que foi montada, que é um servidor montado, um Dell, um HP, ele vai
+ficar ligado o full time, ele não desliga, se não tiver uma, se não acabar energia, ele vai ficar
+10 anos rodando sem shell saco, e refrigeração, ele já tem um sistema próprio e refrigeração,
+o servidor que eu tenho aqui, ele tem acho que 12 coolers internos, e seu saí é tudo,
+e é tudo o rote swap, seu saca um, todos os outros aumentam a velocidade para compensar
+ele, a hora que você coloca de volta, eles voltam normal, eles têm uma arquitetura fora
+da, fora da realidade, é uma coisa que você nunca viu dentro da, você nunca viu numa máquina
+comum, outras, normalmente eles pesam uns 30, 40 quilos cada um, eles são realmente desenhados
+para, para operar em situações que a gente pode às vezes nem imagina, tá?
+É, e ordem de fala assim, tipo, o MacMigre de fato é um preço ótico, um bitlininho, e
+quer dizer, a ciência daquele trossa é absurda, então quer dizer, já chegamos a conclusão, até
+que vocês hoje com o cara, cada um do Paraguai, os fatos conseguem por três fatos contra o MacMigre,
+meu, ele é muito barato pelo espetáculo que é uma máquina dentro, e o fundo são maiores,
+por exemplo, eu pergunto a terra, meu, eu gosto de eu trole, né, perder para as suas imagens,
+eu pergunto a terra, porque, pra mim, deixa eu espetar nele aqui, pra ver se eu vou consultar
+os processais, os animais com ele, pra eu espetei aqui no meu computador, já estou com o meu,
+com o meu gato em esterno, já conectado com o meu bem-clore, repreche, já me traí, eu vou
+até me jogar num truck box, que explodiu que eu vou fazer com meus sassos, hoje quando eu
+troufava minhas imais projeiras, gera milhões de imagens lá, dois trabalhos, eu vou te comportar
+mais, acho que caras lúvidos, eu não tenho tantas possibilidades com lidar com o rei,
+eu falo que, ah, joga numa porta lá, cara, eu acho me limpo isso, mas eu,
+só que falo em portas, já me arrepio, um pouco, até eu não jogue onde te tirou,
+é legal, o maior que eu falo assim, não, eu não falo na parte, o que que eu logo
+eu tinha já ferido, estou vendo meu dashboard, é que estava lá, eu há dois anos,
+então esse tipo de vontade eu vejo, tá?
+Eu acho que é legal isso, por isso eu falei, acho que o sistema fala, não, eu vou morrer
+e defender esse sistema, não, já entendi eu que sou bem mais facilidade,
+aí eu gosto desse, vamos para esse, hoje, esse sistema, o jeito que eu estou fazendo,
+me atende, não descarto de falar, não, eu vou pegar o McMin, eu vou pegar um outro,
+para rodar, para rodar, botar um modelo, só para fazer coisa para mim, entendeu?
+meu assistente, que vai ser o cara, que eu vou, que vai me dar apoio,
+nada impede, nada impede, realmente nada impede, o que a gente tem hoje é isso,
+a beleza do negócio é, rodar em qualquer, em qualquer plataforma,
+e você pode usar, aqui você tem mais intimidade, né?
+Ah, eu vou pegar um pequenininho, eu vou pegar um maior, eu vou pegar um gigante.
+Até hoje eu estava vendo esse DIC, DIC-C, como é que se alguém conhece a Eetrônica,
+DIC-C é um pequenininho, custa 600 reais, é uma placa,
+é 8, 8 mega, até uma placa, é uma Alexa,
+claro, eu estou pensando em pegar um troço PCQ e juntar com tudo vocês,
+aí que vai de outro eetrônico, você vai saber em dê uma, um, um, um, um, um, um, um, um, um, um, um produto,
+vender como a Alexa, convertir com a Amazon, entendeu?
+Meu, se eu posso pegar um troço PCQ desse aqui, dê 600 reais e vender por dois palos,
+falar que dá esse teu assistente virtual, bota uma capa que eu vou fazer,
+eu interesse entre lá uma carinha pra ele, dá esse assistente virtual, meu,
+já os conectam no AED-PI, está conectado pra o maior dele,
+ele é meio do mundo, e por dois mil reais, sei lá, não, estou ganhando já três fontes,
+já, três de três de três do preço, é uma oportunidade pra gente muito grande.
+É, o limite é nossa imaginação, eu tô, sério,
+eu tô viajando esses dias, eu tô viajando esses dias com muitas ideias,
+aí eu tô dividindo o tempo, até meio, até meio de uma hora, eu fico na empresa
+trabalhando, depois de 60 de casa, e aí até hora que, até hora que,
+só estudando, e aperfeiçoando, ou join, inclusive já me falou,
+boa noite, três vezes aqui, até que saudade,
+com que o pessoal falou, eu também tive algumas diferenças aqui,
+com relação a VPS, com relação a estalação em Dock,
+estalação local, e tem muito a ver com alguns pontos,
+o ponto de segurança é um deles, então por mais que a estalação ali no Dock,
+aí ela traga uma segundaança maior, ou não clique facilita muito,
+porque pô, tu joga ali, e já tá com feio, tu banja,
+já tá com o Farrah, tudo o configuradinho, tá em Dock, ele isolado,
+só que depois a gente começa a ter alguns problemas de algumas integrações,
+o OpenCloyer não tem a amação que ele tá estalado dentro do Dock,
+vai tentar executar comando, não consegue, e eu preciso fazer uma segue de
+configurações aqui para deixar bacana, então isso,
+a experiência não foi muito boa, né, foi boa, porque nem nisso você está
+aprendendo a mexer, e tudo mais, tá com segurança, beleza, aí vem
+a segunda etapa, que é a VPS, que já te ajuda bastante,
+com relação às integrações com as ferramentas, o OpenCloyer roda um pouco
+mais liso, mas aí você tem que segurar um pouco mais com segurança, que tá muito
+disposto, e aí para quem não tem tanta familiaridade com terminal, aí já vem outra,
+outra questão, né, e aí até que você chega no local, né, de você tem
+as ferramentas de segurança ali configuradas certinho, e a familiaridade ali com
+postar na verdade, o andando desculptador, foi o Renato falou, ele blogou ali,
+já tá tudo feito, com uma experiência, tem de ser um pouco melhor mesmo,
+isso é verdade, isso é verdade, beleza gente, eu acho que isso olha,
+como é que está aí de tempo, uma hora, galera, a gente já até passou nosso tempo,
+mas a gente vai deixando, né, se você tem bastante esse ponto aí, se você tem
+vários pontos para compartilhar um com outro, eu acho que a gente, se ninguém
+tiver mais nenhuma dúvida, por hora, a gente pode finalizar, a gente já tem um
+próximo encontro marcado, acho que já compartilhamos, é equipe já compartilhou
+com vocês, se eu não me engano, fica para a primeira, primeira não, e tá
+mexido aqui nas agendas, fica para de a 6 de abril, segunda semana de abril,
+seja abril 8 horas novamente, essa é a nossa calma que ela vai ficar salva
+lá no, vai, todas as nossas, as nossas, os nossos bate-papos, as nossas
+interessões ficam salvas na plataforma, tá galera, a gente pede até você tem
+duas horas, porque tem de subir, salvar, a gente tira o início da nossa reunião
+que a gente bate um papo em torno antes com a equipe, mas fica tudo disponível
+para vocês depois, esse gênero, pra gente transcrever o equipe de compartilhado
+em alguma maneira, sem a ótima pessoa, isso aí pra gente jogar pra estudar, tá?
+O que eu acho pra gente, é legal, o gente, só ler só o ponto a não ter
+gente de pressão a esse rai, depois me passe a mensagem no discord, que eu
+mando para vocês os links do pessoal que vem de computador, o pessoal que vem
+de bateria, o que precisa dessa área, aí eu passo pra vocês, tem repente, pode
+ter de boa, viu? Tem um canal always, onde sugestões, são amiguinhos, pode colocar tudo lá,
+que aí fica gravadinho, eu queria firmar que pra vocês também que conforme eu
+falei, toda a configuração de memória, vocês vão receber o prompt pra vocês
+colocar, e no cloud code, cloud code, vai executar, então isso vai como anex, só
+de aula, então não precisa ficar preocupados com relação a isso, eu acho que foi
+extremamente proveitoso aqui nosso tempo hoje, a gente começou falando de memória,
+falando de caso de uso, falando de servidor, falando de máquina local, falando de muita
+coisa de hardware, e esse objetivo mesmo, a gente tem feita a comunidade, e também
+totalmente aberta a sugestões do que a gente pode estar trazendo de conceitos ali,
+de aulas mais conceituais, mais práticas dentro da nossa comunidade, estou sempre lá
+no histórico disponível, só não chamar lá gente, eu tenho que falar mais uma dica,
+aí eu estava aqui em sala do meu propósito, aí para uma próxima conversa, e o sentimento
+é material, pode mandar pra nós, quando eu comecei a treinar a minha idade, e eu senti
+um pouco, talvez eu estou sendo um pouco romântico demais pra treinar ela, não estou sendo
+causando da máquina mesmo, eu deu muito matrix, vou treinar o cara, eu fui um cara na
+máquina lá, deixa ele aprender, e eu estou um pouco curioso, se tem metros pra isso,
+eu coloco lá tipo assim, você vai ter que aprender, por exemplo, agora eu não tenho
+meu negócio que eu faço todas várias, então pra mim eu não sei se eu coloco lá um
+heartbeat pra ela de 15 minutos, eu vou dormir e falo pra você, a manhã de manhã eu quero
+acordar, igual vou ver o seu valor, eu acho que o Francis comendo, a manhã de manhã
+tem a permitir uma gênero amanhã sendo, isso aí se tiver umas técnicas assim,
+é só que a gente já tivesse que ver esse sentido, eu estou procurando mais de gente
+de estratégia, para tudo golar, não estava só no meu caso, estou buscando mais de estratégia
+e marque, esse ano a gente tem, a gente tem uma oportunidade e um desafio muito grande,
+então a gente tem uma aliada de estratégia, eu acho muito bacana, pra isso eu quero dar
+conhecimento pra esse cara, eu tenho certeza que tenha melhor estratégia ser pra gente do que eu,
+então é nesse ponto que eu acho que a gente pode talvez sempre se afirmar em técnicas,
+maneiras, estruturais, convicão, visitem com certeza, é muito legal, agora eu quero
+saber como é que estrutura é isso, como é que enchefa isso aí na cabeça desse punge?
+Sim, você vai ter que fazer, Renato, com prômpites, acho que tem muito prômpite
+bom aí, até os caras que o Elis eu comentou, esse o Alex, ele tem os prômpicos interessantes
+que você põe pro agente, e eu acho que é legal aquele pômpice pro agente trabalhar de noite,
+então ele falou, eu quero que você seja autônomo, eu vou dormir, você vai pegar tudo que a gente
+fez durante o dia e você vai mesmercutar uma tarefa que vai melhorar pra chegar no objetivo,
+cara, você tá mandando, ele trabalha noite, então tem um outro também que ele deu, o que é
+que criam agentes pra desenvolver novos produtos de acordo com o que você, com o que você
+trabalha, vão pegar o dia a dia e vão criar produtos para você, a noite apresenta de manhã,
+então são prômpites mesmo, é só você fazer um negócio ou rodar 24 horas por dia,
+vou mandar isso pra onde pra vocês, eu acho que é uma coisa bem interessante que eu tenho
+que dar pra fazer o carro aqui, isso é um prômpice reverso, ele vai fazer as perguntas pra você,
+e aí ele vai conseguir chegar no resultado, eu acho que isso que é o bacana pra gente encerrar,
+não tem a gente ficar plantando, eles eu, que comando tem que dar o terminal ali pra fazer
+o determinado coisa, gente, pede pra gente de vocês executar, a tecnologia, essa tecnologia
+foi feita pra isso, eu crio um prômpice bacana, joga lá pra ela, faz um prômpice reverso,
+e aí pode ser que ela deu umas erradas no meio do caminho, mas ela foi feita pra isso, né?
+Sim, é muito bom, tudo gente, é bom que eu peguei um outro nozé pra contar um planejamento
+é ófus, um outro planejamento tem pra minha Iactaira, é de desenho, um outro planejamento
+de várias áreas, parece que eles pegam os textos assim, tá ai olha, e tá nos links em Reddit,
+vai for atrás aí agora também isso aí que eu um pouco, isso pode deixar eu vou concurrenti
+gui deixar o trabalho a mais, deixa eu dar um com medo de de acordo de maiores não ter mais
+mais removed, pra nãoshi dar esse tortinho no woto
+Eu acho que é isso aí gente, sidЬurranos aquii, Jers hoy, muito obrigado pela
+a presença aqui de todos, 10 horas da noite e margarere ai apos for ocho colocando,
+high por underneath pra caramba aqui hoje, e já todo o senhor tem,
+para nós próximos contos.

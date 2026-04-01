@@ -1,0 +1,35 @@
+Todo a gente de A funciona com o mesmo ciclo mental.
+A gente chama de loop e a gente, ou o agente que loop, tá?
+São quatro etapas aqui que se repetem de forma quase quinta e quinta.
+A etapa 1, aqui ó, o Perseber, tá?
+O agente recebe uma informação do mundo, pode ser uma mensagem de sono telegram WhatsApp
+e um e meio que chegou uma notificação, um timer que disparou.
+Alguma coisa aconteceu e o agente percebeu.
+Etapa 2, raciocinar, o agente analisa a situação, o que foi pedido?
+O que eu sei sobre isso?
+Quais ferramentas eu tenho disponíveis?
+Qual é a melhor abordagem?
+Aqui é onde o LLM entra.
+O modelo de linguagem faz todo o RACiocínio, que é o LLM.
+Etapa 3, agir.
+O agente executa efetivamente uma ação, manda um e meio, roda um comando,
+acesse uma página, crie um arquivo, chama uma API.
+Ele faz alguma coisa concreta no mundo real.
+E etapa 4 é observar.
+O agente olha o resultado da ação, funcionou, deu erro, o resultado foi esperado,
+precisa ajustar alguma coisa, e aí o ciclo recomeça.
+Perceber raciocinar agir, observar, tá?
+Sem parar.
+Isso é radicalmente diferente de um chatbot.
+A chatbot tem uma etapa.
+Recebe pergunta?
+Gira a resposta.
+Acabou.
+O agente tem um ciclo continuo que se adapta ao resultado de cada ação.
+E é por isso que o agente do AJ lá, que eu comentei na...
+meus primeiros módros, conseguiu negocia o preço de um carro por dias.
+Ele vai dar uma proposta, observava a resposta da constronária,
+raciocinarva sobre a melhor contra a proposta, e agir de novo.
+Loop e após loop, até conseguiu melhor preço.
+Quando você entende esse loop, você entende como qualquer agente funciona.
+Não só open claw, mas qualquer sistema agente do mundo.
